@@ -1,0 +1,3836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="B. Bhuvan, School Counsellor, M.Sc. Psychology, DCGC, NCERT" />
+  <meta name="description" content="Stress Lab: Body Signals, Control & Reset — Offline interactive smartboard group counseling worksheet for residential school adolescents (Classes 6–12)." />
+  <title>Stress Lab: Body Signals, Control &amp; Reset</title>
+  <!--
+    ==========================================================================
+    STRESS LAB: BODY SIGNALS, CONTROL & RESET
+    Author: B. Bhuvan, School Counsellor, M.Sc. Psychology, DCGC, NCERT
+    Format: 100% Offline Single-File Interactive Smartboard Counseling Worksheet
+    Target Audience: Residential Schools (EMRS, Classes 6–12, Boys/Girls/Mixed)
+    ==========================================================================
+  -->
+  <style>
+    /* =====================================================================
+       1. DESIGN TOKENS & BASE STYLES (Calming High-Contrast Classroom Theme)
+       ===================================================================== */
+    :root {
+      --teal-950: #082f3a;
+      --teal-900: #0d3d4d;
+      --teal-800: #115e59;
+      --teal-700: #0f766e;
+      --teal-600: #0d9488;
+      --teal-100: #ccfbf1;
+      --teal-50: #f0fdfa;
+
+      --slate-950: #0b1320;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --canvas: #f4f7f8;
+      --surface: #ffffff;
+
+      --emerald-700: #047857;
+      --emerald-600: #059669;
+      --emerald-100: #d1fae5;
+      --emerald-50: #ecfdf5;
+
+      --amber-700: #b45309;
+      --amber-600: #d97706;
+      --amber-100: #fef3c7;
+      --amber-50: #fffbeb;
+
+      --orange-700: #c2410c;
+      --orange-600: #ea580c;
+      --orange-100: #ffedd5;
+      --orange-50: #fff7ed;
+
+      --rose-700: #be123c;
+      --rose-600: #e11d48;
+      --rose-100: #ffe4e6;
+      --rose-50: #fff1f2;
+
+      --indigo-700: #4338ca;
+      --indigo-600: #4f46e5;
+      --indigo-100: #e0e7ff;
+      --indigo-50: #eef2ff;
+
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.10);
+      --shadow-lg: 0 18px 42px rgba(15, 23, 42, 0.18);
+
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
+      background-color: var(--canvas);
+      color: var(--slate-900);
+      font-family: var(--font-sans);
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      touch-action: manipulation;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    button, select, input {
+      font-family: inherit;
+    }
+
+    button:focus-visible, select:focus-visible, input:focus-visible {
+      outline: 3px solid #38bdf8;
+      outline-offset: 2px;
+    }
+
+    /* =====================================================================
+       2. HEADER & SESSION BATCH BAR
+       ===================================================================== */
+    .top-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(135deg, var(--teal-950) 0%, var(--slate-900) 100%);
+      color: #ffffff;
+      border-bottom: 3px solid var(--teal-600);
+      box-shadow: 0 4px 18px rgba(8, 47, 58, 0.25);
+    }
+
+    .header-inner {
+      max-width: 1460px;
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .header-row-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px 16px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-emblem {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #14b8a6 0%, #0284c7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(20, 184, 166, 0.32);
+    }
+
+    .brand-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      color: #ffffff;
+      line-height: 1.15;
+    }
+
+    .brand-subtitle {
+      font-size: 0.8rem;
+      color: #bae6fd;
+      font-weight: 600;
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-header {
+      min-height: 46px;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      background: rgba(255, 255, 255, 0.11);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn-header:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .btn-header:active {
+      transform: scale(0.97);
+    }
+
+    .btn-header-credits {
+      background: rgba(20, 184, 166, 0.22);
+      border-color: rgba(94, 234, 212, 0.55);
+      color: #ccfbf1;
+    }
+
+    .btn-header-reset {
+      background: rgba(225, 29, 72, 0.24);
+      border-color: rgba(253, 164, 175, 0.5);
+      color: #ffe4e6;
+    }
+
+    .btn-header-reset:hover {
+      background: rgba(225, 29, 72, 0.42);
+      color: #ffffff;
+    }
+
+    /* Compact Session Metadata Bar */
+    .batch-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 10px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .meta-control {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius-sm);
+      padding: 4px 10px;
+      min-height: 44px;
+    }
+
+    .meta-control label {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #99f6e4;
+      white-space: nowrap;
+    }
+
+    .meta-control select,
+    .meta-control input {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 4px 2px;
+    }
+
+    .meta-control select option {
+      background: var(--slate-900);
+      color: #ffffff;
+    }
+
+    .meta-control input[type="text"] {
+      width: 145px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 3px 4px;
+    }
+
+    .meta-control input[type="date"] {
+      color-scheme: dark;
+      cursor: pointer;
+    }
+
+    /* =====================================================================
+       3. MAIN WORKSPACE & 4-STAGE NAVIGATION TABS
+       ===================================================================== */
+    .workspace {
+      max-width: 1460px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 16px 18px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .stage-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .stage-tab {
+      min-height: 64px;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--slate-300);
+      background: var(--surface);
+      color: var(--slate-700);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.16s ease;
+    }
+
+    .stage-tab:hover {
+      border-color: var(--teal-700);
+      transform: translateY(-1px);
+    }
+
+    .stage-tab.active {
+      background: var(--teal-900);
+      border-color: var(--teal-900);
+      color: #ffffff;
+      box-shadow: var(--shadow-md);
+    }
+
+    .tab-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .tab-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--slate-200);
+      color: var(--slate-900);
+      font-size: 0.98rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .stage-tab.active .tab-num {
+      background: #2dd4bf;
+      color: var(--teal-950);
+    }
+
+    .tab-labels {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .tab-title {
+      font-size: 0.98rem;
+      font-weight: 800;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tab-sub {
+      font-size: 0.76rem;
+      color: var(--slate-500);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .stage-tab.active .tab-sub {
+      color: #cbd5e1;
+    }
+
+    .tab-status-dot {
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--slate-100);
+      color: var(--slate-500);
+      border: 1px solid var(--slate-200);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .stage-tab.completed .tab-status-dot {
+      background: var(--emerald-100);
+      color: var(--emerald-700);
+      border-color: #6ee7b7;
+    }
+
+    .stage-tab.active.completed .tab-status-dot {
+      background: #10b981;
+      color: #ffffff;
+      border-color: #34d399;
+    }
+
+    .stage-panel {
+      display: none;
+      animation: fadeSlide 0.2s ease;
+    }
+
+    .stage-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Common Card, Prompt Banner & Large Smartboard Touch Buttons */
+    .card {
+      background: var(--surface);
+      border: 2px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .prompt-banner {
+      background: linear-gradient(135deg, #ecfeff 0%, #f0fdfa 100%);
+      border: 2px solid #5eead4;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .prompt-banner-body {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .prompt-tag {
+      background: var(--teal-900);
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 6px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .prompt-text {
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .touch-btn {
+      min-height: 58px;
+      min-width: 58px;
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      border: 2px solid transparent;
+      font-size: 1.04rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      user-select: none;
+      transition: transform 0.1s ease, filter 0.15s ease, background 0.15s ease;
+    }
+
+    .touch-btn:active {
+      transform: scale(0.96);
+    }
+
+    .touch-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .btn-primary { background: var(--teal-900); color: #ffffff; border-color: var(--teal-950); }
+    .btn-primary:hover:not(:disabled) { background: var(--teal-800); }
+
+    .btn-secondary { background: #ffffff; color: var(--slate-900); border-color: var(--slate-300); }
+    .btn-secondary:hover:not(:disabled) { background: var(--slate-100); border-color: var(--slate-700); }
+
+    .btn-emerald { background: var(--emerald-600); color: #ffffff; border-color: var(--emerald-700); }
+    .btn-emerald:hover:not(:disabled) { filter: brightness(1.06); }
+
+    .btn-amber { background: var(--amber-600); color: #ffffff; border-color: var(--amber-700); }
+    .btn-amber:hover:not(:disabled) { filter: brightness(1.06); }
+
+    .btn-orange { background: var(--orange-600); color: #ffffff; border-color: var(--orange-700); }
+    .btn-orange:hover:not(:disabled) { filter: brightness(1.06); }
+
+    .btn-rose { background: var(--rose-600); color: #ffffff; border-color: var(--rose-700); }
+    .btn-rose:hover:not(:disabled) { filter: brightness(1.06); }
+
+    .btn-teal { background: var(--teal-600); color: #ffffff; border-color: var(--teal-700); }
+    .btn-teal:hover:not(:disabled) { filter: brightness(1.06); }
+
+    .btn-indigo { background: var(--indigo-600); color: #ffffff; border-color: var(--indigo-700); }
+    .btn-indigo:hover:not(:disabled) { filter: brightness(1.06); }
+
+    .btn-undo { background: #ffffff; color: var(--slate-700); border-color: var(--slate-300); }
+    .btn-undo:hover:not(:disabled) { background: var(--slate-100); color: var(--slate-900); }
+
+    /* =====================================================================
+       4. STAGE 1: ANONYMOUS GROUP PULSE (4-ZONE SUDS 0-10)
+       ===================================================================== */
+    .suds-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .suds-card {
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      border: 3px solid transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .suds-card.zone-calm { background: var(--emerald-50); border-color: #6ee7b7; }
+    .suds-card.zone-mild { background: var(--amber-50); border-color: #fcd34d; }
+    .suds-card.zone-high { background: var(--orange-50); border-color: #fdba74; }
+    .suds-card.zone-over { background: var(--rose-50); border-color: #fda4af; }
+
+    .suds-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .suds-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+    }
+
+    .zone-calm .suds-pill { background: var(--emerald-100); color: var(--emerald-700); }
+    .zone-mild .suds-pill { background: var(--amber-100); color: var(--amber-700); }
+    .zone-high .suds-pill { background: var(--orange-100); color: var(--orange-700); }
+    .zone-over .suds-pill { background: var(--rose-100); color: var(--rose-700); }
+
+    .suds-title {
+      font-size: 1.18rem;
+      font-weight: 900;
+      color: var(--slate-900);
+      line-height: 1.2;
+    }
+
+    .suds-desc {
+      font-size: 0.86rem;
+      color: var(--slate-600);
+      margin-top: 4px;
+    }
+
+    .suds-stat {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .suds-num {
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .zone-calm .suds-num { color: var(--emerald-700); }
+    .zone-mild .suds-num { color: var(--amber-700); }
+    .zone-high .suds-num { color: var(--orange-700); }
+    .zone-over .suds-num { color: var(--rose-700); }
+
+    .suds-pct {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--slate-600);
+      margin-top: 2px;
+    }
+
+    .suds-btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr 1.2fr;
+      gap: 7px;
+    }
+
+    .suds-btn-row .touch-btn {
+      padding: 8px 6px;
+      min-width: 0;
+      font-size: 1rem;
+    }
+
+    /* Stage 1 Analytics Row */
+    .pulse-analytics {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .stacked-bar {
+      width: 100%;
+      height: 40px;
+      background: var(--slate-200);
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+      margin: 12px 0 16px;
+      border: 2px solid var(--slate-300);
+    }
+
+    .stacked-seg {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 0.86rem;
+      font-weight: 800;
+      transition: width 0.3s ease;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .seg-calm { background: var(--emerald-600); }
+    .seg-mild { background: var(--amber-600); }
+    .seg-high { background: var(--orange-600); }
+    .seg-over { background: var(--rose-600); }
+
+    .bar-chart-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      height: 155px;
+      align-items: end;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 10px 12px 8px;
+    }
+
+    .bar-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+
+    .bar-val {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--slate-800);
+    }
+
+    .bar-track {
+      width: 66%;
+      max-width: 72px;
+      flex: 1;
+      background: rgba(203, 213, 225, 0.5);
+      border-radius: 10px 10px 4px 4px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      transition: height 0.3s ease;
+      min-height: 4px;
+    }
+
+    .bar-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--slate-600);
+      text-align: center;
+    }
+
+    .index-card {
+      background: linear-gradient(155deg, var(--teal-950) 0%, var(--slate-900) 100%);
+      color: #ffffff;
+      border-color: var(--teal-800);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .index-kicker {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #99f6e4;
+    }
+
+    .index-big {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin: 4px 0;
+    }
+
+    .index-big strong {
+      font-size: 3.1rem;
+      font-weight: 900;
+      line-height: 1;
+      color: #5eead4;
+    }
+
+    .index-big span {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    .index-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      width: fit-content;
+    }
+
+    .index-mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .index-mini {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+
+    .index-mini small {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #cbd5e1;
+    }
+
+    .index-mini strong {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    /* Collapsible Facilitator Debrief Cue */
+    .debrief-panel {
+      background: #fffbeb;
+      border: 2px solid #f59e0b;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .debrief-toggle {
+      width: 100%;
+      min-height: 58px;
+      background: transparent;
+      border: none;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #92400e;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .debrief-body {
+      display: none;
+      padding: 0 18px 18px;
+      border-top: 1px solid #fde68a;
+    }
+
+    .debrief-body.open {
+      display: block;
+      padding-top: 14px;
+    }
+
+    .debrief-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .debrief-col {
+      background: #ffffff;
+      border: 1px solid #fcd34d;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+    }
+
+    .debrief-col h4 {
+      font-size: 0.92rem;
+      font-weight: 900;
+      color: var(--teal-900);
+      margin-bottom: 6px;
+    }
+
+    .debrief-col ul {
+      padding-left: 18px;
+      font-size: 0.9rem;
+      color: var(--slate-800);
+      display: grid;
+      gap: 5px;
+    }
+
+    .debrief-safety {
+      background: var(--rose-50);
+      border-left: 4px solid var(--rose-600);
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+      color: var(--slate-900);
+      font-weight: 600;
+    }
+
+    /* =====================================================================
+       5. STAGE 2: SOMATIC STRESS MAP (INLINE SVG + RIGHT PANEL)
+       ===================================================================== */
+    .somatic-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .body-map-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+    }
+
+    .body-map-head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .body-svg-wrap {
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .body-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+    }
+
+    .hotspot-btn {
+      cursor: pointer;
+    }
+
+    .hotspot-btn:hover .hs-core {
+      stroke-width: 4;
+    }
+
+    .hs-glow {
+      transition: r 0.3s ease, fill-opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .hs-core {
+      transition: fill 0.2s ease, stroke 0.2s ease;
+    }
+
+    .zone-chip-bar {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .zone-chip {
+      min-height: 44px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 2px solid var(--slate-300);
+      background: #ffffff;
+      color: var(--slate-800);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .zone-chip.active {
+      background: var(--teal-900);
+      border-color: var(--teal-900);
+      color: #ffffff;
+    }
+
+    .zone-chip-count {
+      background: var(--orange-100);
+      color: var(--orange-700);
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .zone-chip.active .zone-chip-count {
+      background: #f97316;
+      color: #ffffff;
+    }
+
+    .somatic-info-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .zone-title-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--slate-200);
+    }
+
+    .zone-badge-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--orange-600);
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .zone-heading {
+      font-size: 1.38rem;
+      font-weight: 900;
+      color: var(--slate-900);
+    }
+
+    .zone-clues {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      font-weight: 600;
+    }
+
+    .zone-vote-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+    }
+
+    .zone-vote-nums {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .zone-vote-nums strong {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--orange-700);
+      line-height: 1;
+    }
+
+    .zone-vote-nums span {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--slate-600);
+    }
+
+    .zone-vote-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .science-card {
+      background: var(--indigo-50);
+      border: 2px solid #c7d2fe;
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .tool-card {
+      background: var(--emerald-50);
+      border: 2px solid #6ee7b7;
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .panel-kicker {
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .science-card .panel-kicker { color: var(--indigo-700); }
+    .tool-card .panel-kicker { color: var(--emerald-700); }
+
+    .panel-text {
+      font-size: 0.98rem;
+      color: var(--slate-900);
+      font-weight: 500;
+    }
+
+    .ranking-card {
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+    }
+
+    .ranking-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--slate-600);
+      margin-bottom: 8px;
+    }
+
+    .rank-row {
+      display: grid;
+      grid-template-columns: 165px 1fr 48px;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .rank-row:last-child { margin-bottom: 0; }
+
+    .rank-track {
+      height: 12px;
+      background: var(--slate-200);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .rank-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #f59e0b, #ea580c);
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    /* =====================================================================
+       6. STAGE 3: THE CONTROL LAB (DRAG-AND-DROP + TAP-TO-SORT)
+       ===================================================================== */
+    .control-header-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .control-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .metric-pill {
+      background: var(--teal-900);
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .metric-pill.alt {
+      background: var(--teal-100);
+      color: var(--teal-800);
+      border: 1px solid #5eead4;
+    }
+
+    .control-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .deck-box {
+      background: linear-gradient(135deg, #ffffff 0%, #eef2f6 100%);
+      border: 2px dashed #94a3b8;
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      margin-bottom: 16px;
+      min-height: 136px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .deck-instruction {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--slate-600);
+      text-align: center;
+    }
+
+    .card-deck-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .stressor-card {
+      background: #ffffff;
+      border: 3px solid var(--teal-900);
+      border-radius: var(--radius-md);
+      padding: 16px 24px;
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      cursor: grab;
+      box-shadow: var(--shadow-md);
+      max-width: 720px;
+      text-align: center;
+      user-select: none;
+      transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+    }
+
+    .stressor-card.grid-card {
+      font-size: 0.95rem;
+      padding: 12px 15px;
+      max-width: 310px;
+      text-align: left;
+      border-width: 2px;
+    }
+
+    .stressor-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--teal-600);
+    }
+
+    .stressor-card.selected {
+      border-color: #0284c7;
+      background: #f0f9ff;
+      box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.24), var(--shadow-md);
+    }
+
+    .stressor-card.dragging {
+      opacity: 0.55;
+      cursor: grabbing;
+    }
+
+    .card-num-tag {
+      display: inline-block;
+      background: var(--teal-900);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .buckets-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .sort-bucket {
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      min-height: 235px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .sort-bucket.inside {
+      background: var(--teal-50);
+      border: 3px solid var(--teal-600);
+    }
+
+    .sort-bucket.outside {
+      background: var(--indigo-50);
+      border: 3px solid var(--indigo-600);
+    }
+
+    .sort-bucket.drag-over {
+      transform: scale(1.015);
+      box-shadow: 0 0 0 5px rgba(14, 165, 233, 0.3), var(--shadow-lg);
+    }
+
+    .sort-bucket.target-ready {
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.18);
+    }
+
+    .bucket-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .bucket-heading {
+      font-size: 1.18rem;
+      font-weight: 900;
+    }
+
+    .inside .bucket-heading { color: var(--teal-800); }
+    .outside .bucket-heading { color: var(--indigo-700); }
+
+    .bucket-sub {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--slate-600);
+    }
+
+    .bucket-cta {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .inside .bucket-cta { background: var(--teal-600); }
+    .outside .bucket-cta { background: var(--indigo-600); }
+
+    .sorted-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .sorted-item {
+      background: #ffffff;
+      border: 2px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .sorted-item:hover {
+      border-color: var(--teal-700);
+    }
+
+    .sorted-check {
+      background: var(--emerald-100);
+      color: var(--emerald-700);
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .bucket-empty {
+      margin: auto;
+      text-align: center;
+      color: var(--slate-500);
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 20px 8px;
+    }
+
+    /* Psychological Feedback Box */
+    .feedback-box {
+      display: none;
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      border: 2px solid var(--slate-300);
+    }
+
+    .feedback-box.visible {
+      display: block;
+      animation: fadeSlide 0.2s ease;
+    }
+
+    .feedback-box.correct {
+      background: var(--emerald-50);
+      border-color: var(--emerald-600);
+    }
+
+    .feedback-box.rethink {
+      background: var(--amber-50);
+      border-color: var(--amber-600);
+    }
+
+    .feedback-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .feedback-title {
+      font-size: 1.06rem;
+      font-weight: 900;
+    }
+
+    .feedback-box.correct .feedback-title { color: var(--emerald-700); }
+    .feedback-box.rethink .feedback-title { color: var(--amber-700); }
+
+    .feedback-reason {
+      font-size: 0.96rem;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+    }
+
+    .feedback-ask {
+      background: rgba(255, 255, 255, 0.8);
+      border-left: 4px solid var(--teal-800);
+      padding: 8px 12px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    /* =====================================================================
+       7. STAGE 4: BREATHING PACER, POST CHECK-OUT & IMPACT SNAPSHOT
+       ===================================================================== */
+    .stage4-top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 18px;
+      margin-bottom: 16px;
+      align-items: stretch;
+    }
+
+    .pacer-card {
+      background: linear-gradient(155deg, var(--teal-950) 0%, #0f172a 100%);
+      color: #ffffff;
+      border-color: var(--teal-800);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .pacer-top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pacer-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    .cycle-badge {
+      background: rgba(45, 212, 191, 0.2);
+      border: 1px solid #2dd4bf;
+      color: #99f6e4;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .pacer-svg-wrap {
+      width: 100%;
+      max-width: 310px;
+      margin: 0 auto;
+    }
+
+    .pacer-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .pacer-controls .touch-btn {
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .pacer-note {
+      width: 100%;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Post-Session Check-Out Panel */
+    .checkout-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .post-item {
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      border: 2px solid var(--slate-200);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .post-item.post-lighter { background: var(--emerald-50); border-color: #6ee7b7; }
+    .post-item.post-same { background: var(--amber-50); border-color: #fcd34d; }
+    .post-item.post-support { background: var(--indigo-50); border-color: #a5b4fc; }
+
+    .post-item-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .post-title {
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--slate-900);
+    }
+
+    .post-sub {
+      font-size: 0.82rem;
+      color: var(--slate-600);
+      font-weight: 600;
+    }
+
+    .post-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .post-num {
+      font-size: 1.55rem;
+      font-weight: 900;
+      min-width: 72px;
+      text-align: right;
+      color: var(--slate-900);
+    }
+
+    .post-bar-track {
+      width: 100%;
+      height: 10px;
+      background: rgba(15, 23, 42, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .post-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    .post-lighter .post-bar-fill { background: var(--emerald-600); }
+    .post-same .post-bar-fill { background: var(--amber-600); }
+    .post-support .post-bar-fill { background: var(--indigo-600); }
+
+    .private-support-note {
+      background: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--slate-800);
+    }
+
+    /* Bottom Panel: Session Impact Snapshot & CSV Export */
+    .snapshot-panel {
+      background: linear-gradient(135deg, #f0fdfa 0%, #eff6ff 100%);
+      border: 2px solid var(--teal-600);
+    }
+
+    .snapshot-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .snapshot-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--teal-950);
+    }
+
+    .snapshot-context {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--teal-800);
+      background: #ffffff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #99f6e4;
+    }
+
+    .snapshot-cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .snap-card {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .snap-card small {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--slate-500);
+      margin-bottom: 4px;
+    }
+
+    .snap-card strong {
+      font-size: 1.12rem;
+      font-weight: 900;
+      color: var(--slate-900);
+      word-break: break-word;
+    }
+
+    .btn-export-main {
+      width: 100%;
+      min-height: 64px;
+      font-size: 1.12rem;
+      background: linear-gradient(135deg, var(--emerald-600) 0%, var(--teal-700) 100%);
+      color: #ffffff;
+      border: 2px solid var(--emerald-700);
+      box-shadow: 0 8px 20px rgba(5, 150, 105, 0.28);
+    }
+
+    .btn-export-main:hover {
+      filter: brightness(1.06);
+    }
+
+    /* =====================================================================
+       8. STAGE PREV/NEXT BAR & PERSISTENT CREATOR FOOTER
+       ===================================================================== */
+    .stage-nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 8px;
+      border-top: 2px solid var(--slate-200);
+    }
+
+    .persistent-footer {
+      background: var(--slate-900);
+      color: #e2e8f0;
+      text-align: center;
+      padding: 12px 18px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border-top: 3px solid var(--teal-600);
+      margin-top: auto;
+    }
+
+    /* =====================================================================
+       9. CUSTOM MODALS & TOAST NOTIFICATION
+       ===================================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.68);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 100;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      max-width: 720px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--slate-300);
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--slate-200);
+      margin-bottom: 14px;
+    }
+
+    .modal-title {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--teal-950);
+    }
+
+    .modal-x {
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--slate-300);
+      background: var(--slate-100);
+      font-size: 1.25rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .credit-callout {
+      background: linear-gradient(135deg, var(--teal-50), #eff6ff);
+      border: 2px solid var(--teal-600);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+
+    .credit-callout h4 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--teal-800);
+      margin-bottom: 4px;
+    }
+
+    .credit-callout p {
+      font-size: 1.06rem;
+      font-weight: 900;
+      color: var(--slate-900);
+    }
+
+    .ref-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 12px 0;
+    }
+
+    .ref-list li {
+      background: var(--slate-100);
+      border-left: 4px solid var(--teal-700);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+      color: var(--slate-800);
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(90px);
+      background: var(--slate-950);
+      color: #ffffff;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: 2px solid #2dd4bf;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      z-index: 120;
+      max-width: 92vw;
+      text-align: center;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* =====================================================================
+       10. RESPONSIVE BREAKPOINTS
+       ===================================================================== */
+    @media (max-width: 1180px) {
+      .suds-grid { grid-template-columns: repeat(2, 1fr); }
+      .snapshot-cards { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 980px) {
+      .stage-tabs { grid-template-columns: repeat(2, 1fr); }
+      .pulse-analytics { grid-template-columns: 1fr; }
+      .somatic-layout { grid-template-columns: 1fr; }
+      .buckets-row { grid-template-columns: 1fr; }
+      .stage4-top-grid { grid-template-columns: 1fr; }
+      .debrief-split { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .workspace { padding: 12px 12px 24px; }
+      .stage-tabs { grid-template-columns: 1fr; }
+      .suds-grid { grid-template-columns: 1fr; }
+      .snapshot-cards { grid-template-columns: 1fr 1fr; }
+      .rank-row { grid-template-columns: 130px 1fr 40px; }
+      .stage-nav-bar .touch-btn { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =======================================================================
+       HEADER & SESSION BATCH BAR
+       ======================================================================= -->
+  <header class="top-header">
+    <div class="header-inner">
+      <div class="header-row-top">
+        <div class="brand-group">
+          <div class="brand-emblem" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21c-4.5-3.2-8-6.4-8-10.5A4.5 4.5 0 0 1 12 7.6 4.5 4.5 0 0 1 20 10.5c0 4.1-3.5 7.3-8 10.5z"></path>
+              <path d="M8.5 11.5h2l1.2-2.2 1.6 4.2 1.2-2h1.5"></path>
+            </svg>
+          </div>
+          <div>
+            <h1 class="brand-title">Stress Lab: Body Signals, Control &amp; Reset</h1>
+            <div class="brand-subtitle">Interactive Smartboard Group Counseling Worksheet &bull; Offline Edition</div>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button type="button" class="btn-header btn-header-credits" id="btnOpenCredits">
+            &#x1F4DA; References &amp; Credits
+          </button>
+          <button type="button" class="btn-header" id="btnFullscreen" title="Toggle Fullscreen (F11)">
+            &#x26F6; Fullscreen
+          </button>
+          <button type="button" class="btn-header btn-header-reset" id="btnResetSession">
+            &#x21BA; Reset Session
+          </button>
+        </div>
+      </div>
+
+      <!-- Compact Session Metadata Bar -->
+      <div class="batch-bar">
+        <div class="meta-control">
+          <label for="classSelect">Class</label>
+          <select id="classSelect" aria-label="Select Class">
+            <option value="Class 6">Class 6</option>
+            <option value="Class 7">Class 7</option>
+            <option value="Class 8">Class 8</option>
+            <option value="Class 9" selected>Class 9</option>
+            <option value="Class 10">Class 10</option>
+            <option value="Class 11">Class 11</option>
+            <option value="Class 12">Class 12</option>
+          </select>
+        </div>
+
+        <div class="meta-control">
+          <label for="batchSelect">Batch</label>
+          <select id="batchSelect" aria-label="Select Group Batch">
+            <option value="Boys">Boys</option>
+            <option value="Girls">Girls</option>
+            <option value="Mixed">Mixed</option>
+          </select>
+        </div>
+
+        <div class="meta-control">
+          <label for="schoolInput">School / Sec</label>
+          <input id="schoolInput" type="text" value="EMRS" maxlength="40" placeholder="EMRS" aria-label="School or Section" />
+        </div>
+
+        <div class="meta-control">
+          <label for="dateInput">Date</label>
+          <input id="dateInput" type="date" aria-label="Session Date" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       MAIN WORKSPACE
+       ======================================================================= -->
+  <main class="workspace">
+
+    <!-- 4 CLICKABLE STAGE NAVIGATION TABS WITH COMPLETION INDICATORS -->
+    <nav class="stage-tabs" aria-label="Session Stages">
+      <button type="button" class="stage-tab active" data-stage="1" id="tab-1">
+        <div class="tab-left">
+          <span class="tab-num">1</span>
+          <div class="tab-labels">
+            <span class="tab-title">Group Pulse</span>
+            <span class="tab-sub">SUDS Stress Meter (0–10)</span>
+          </div>
+        </div>
+        <span class="tab-status-dot" id="status-1">0 tallied</span>
+      </button>
+
+      <button type="button" class="stage-tab" data-stage="2" id="tab-2">
+        <div class="tab-left">
+          <span class="tab-num">2</span>
+          <div class="tab-labels">
+            <span class="tab-title">Body Stress Map</span>
+            <span class="tab-sub">6 Somatic Hotspots</span>
+          </div>
+        </div>
+        <span class="tab-status-dot" id="status-2">0 taps</span>
+      </button>
+
+      <button type="button" class="stage-tab" data-stage="3" id="tab-3">
+        <div class="tab-left">
+          <span class="tab-num">3</span>
+          <div class="tab-labels">
+            <span class="tab-title">Control Lab</span>
+            <span class="tab-sub">10 Hostel Stressor Cards</span>
+          </div>
+        </div>
+        <span class="tab-status-dot" id="status-3">0 / 10</span>
+      </button>
+
+      <button type="button" class="stage-tab" data-stage="4" id="tab-4">
+        <div class="tab-left">
+          <span class="tab-num">4</span>
+          <div class="tab-labels">
+            <span class="tab-title">Reset &amp; Export</span>
+            <span class="tab-sub">Breathing, Check-Out &amp; CSV</span>
+          </div>
+        </div>
+        <span class="tab-status-dot" id="status-4">Pending</span>
+      </button>
+    </nav>
+
+    <!-- ===================================================================
+         STAGE 1 — ANONYMOUS GROUP PULSE (ADAPTED WOLPE, 1969 SUDS 0-10)
+         =================================================================== -->
+    <section id="stage-1" class="stage-panel active" aria-label="Stage 1: Group Pulse">
+      <div class="prompt-banner">
+        <div class="prompt-banner-body">
+          <span class="prompt-tag">How to Run</span>
+          <span class="prompt-text">
+            Ask students to close their eyes and raise 1, 2, 3, or 4 fingers (or walk up row-by-row to tap their stress zone anonymously). Watch the live class stress profile build below.
+          </span>
+        </div>
+      </div>
+
+      <!-- 4 Large Color-Coded SUDS Zone Cards -->
+      <div class="suds-grid">
+        <!-- Calm & Ready (0–2) -->
+        <div class="suds-card zone-calm">
+          <div class="suds-top">
+            <div>
+              <span class="suds-pill">1 Finger &bull; SUDS 0–2</span>
+              <h2 class="suds-title">Calm &amp; Ready</h2>
+              <p class="suds-desc">Relaxed, steady energy, comfortable with routine.</p>
+            </div>
+            <div class="suds-stat">
+              <div class="suds-num" id="cntCalm">0</div>
+              <div class="suds-pct" id="pctCalm">0%</div>
+            </div>
+          </div>
+          <div class="suds-btn-row">
+            <button type="button" class="touch-btn btn-undo" data-suds="calm" data-delta="-1" aria-label="Undo 1 Calm">-1</button>
+            <button type="button" class="touch-btn btn-emerald" data-suds="calm" data-delta="1">+1</button>
+            <button type="button" class="touch-btn btn-emerald" data-suds="calm" data-delta="5">+5</button>
+          </div>
+        </div>
+
+        <!-- Mild Pressure (3–5) -->
+        <div class="suds-card zone-mild">
+          <div class="suds-top">
+            <div>
+              <span class="suds-pill">2 Fingers &bull; SUDS 3–5</span>
+              <h2 class="suds-title">Mild Pressure</h2>
+              <p class="suds-desc">Manageable workload, slight exam or hostel worry.</p>
+            </div>
+            <div class="suds-stat">
+              <div class="suds-num" id="cntMild">0</div>
+              <div class="suds-pct" id="pctMild">0%</div>
+            </div>
+          </div>
+          <div class="suds-btn-row">
+            <button type="button" class="touch-btn btn-undo" data-suds="mild" data-delta="-1" aria-label="Undo 1 Mild">-1</button>
+            <button type="button" class="touch-btn btn-amber" data-suds="mild" data-delta="1">+1</button>
+            <button type="button" class="touch-btn btn-amber" data-suds="mild" data-delta="5">+5</button>
+          </div>
+        </div>
+
+        <!-- High Tension (6–8) -->
+        <div class="suds-card zone-high">
+          <div class="suds-top">
+            <div>
+              <span class="suds-pill">3 Fingers &bull; SUDS 6–8</span>
+              <h2 class="suds-title">High Tension</h2>
+              <p class="suds-desc">Strong stress, restlessness, hard to focus in study hour.</p>
+            </div>
+            <div class="suds-stat">
+              <div class="suds-num" id="cntHigh">0</div>
+              <div class="suds-pct" id="pctHigh">0%</div>
+            </div>
+          </div>
+          <div class="suds-btn-row">
+            <button type="button" class="touch-btn btn-undo" data-suds="high" data-delta="-1" aria-label="Undo 1 High">-1</button>
+            <button type="button" class="touch-btn btn-orange" data-suds="high" data-delta="1">+1</button>
+            <button type="button" class="touch-btn btn-orange" data-suds="high" data-delta="5">+5</button>
+          </div>
+        </div>
+
+        <!-- Overwhelmed (9–10) -->
+        <div class="suds-card zone-over">
+          <div class="suds-top">
+            <div>
+              <span class="suds-pill">4 Fingers &bull; SUDS 9–10</span>
+              <h2 class="suds-title">Overwhelmed</h2>
+              <p class="suds-desc">Heavy distress, homesickness, feeling stuck or exhausted.</p>
+            </div>
+            <div class="suds-stat">
+              <div class="suds-num" id="cntOver">0</div>
+              <div class="suds-pct" id="pctOver">0%</div>
+            </div>
+          </div>
+          <div class="suds-btn-row">
+            <button type="button" class="touch-btn btn-undo" data-suds="over" data-delta="-1" aria-label="Undo 1 Overwhelmed">-1</button>
+            <button type="button" class="touch-btn btn-rose" data-suds="over" data-delta="1">+1</button>
+            <button type="button" class="touch-btn btn-rose" data-suds="over" data-delta="5">+5</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Visual Bar Chart & Group Distress Index -->
+      <div class="pulse-analytics">
+        <div class="card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <h3 style="font-size:1.05rem; font-weight:900;">Live Class Distribution</h3>
+            <span id="pulseSummaryTag" style="font-size:0.9rem; font-weight:800; color:var(--teal-800);">Total Students Tallied: 0</span>
+          </div>
+
+          <div class="stacked-bar" role="img" aria-label="Stacked bar chart of classroom stress zones">
+            <div id="segCalm" class="stacked-seg seg-calm" style="width:0%"></div>
+            <div id="segMild" class="stacked-seg seg-mild" style="width:0%"></div>
+            <div id="segHigh" class="stacked-seg seg-high" style="width:0%"></div>
+            <div id="segOver" class="stacked-seg seg-over" style="width:0%"></div>
+          </div>
+
+          <div class="bar-chart-grid">
+            <div class="bar-col">
+              <div class="bar-val" id="bValCalm">0 (0%)</div>
+              <div class="bar-track"><div class="bar-fill seg-calm" id="bFillCalm" style="height:3%"></div></div>
+              <div class="bar-label">Calm (0–2)</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-val" id="bValMild">0 (0%)</div>
+              <div class="bar-track"><div class="bar-fill seg-mild" id="bFillMild" style="height:3%"></div></div>
+              <div class="bar-label">Mild (3–5)</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-val" id="bValHigh">0 (0%)</div>
+              <div class="bar-track"><div class="bar-fill seg-high" id="bFillHigh" style="height:3%"></div></div>
+              <div class="bar-label">High (6–8)</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-val" id="bValOver">0 (0%)</div>
+              <div class="bar-track"><div class="bar-fill seg-over" id="bFillOver" style="height:3%"></div></div>
+              <div class="bar-label">Overwhelmed</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card index-card">
+          <div>
+            <div class="index-kicker">Group Distress Index (Adapted SUDS)</div>
+            <div class="index-big">
+              <strong id="distressIndexNum">0.00</strong>
+              <span>/ 10.0</span>
+            </div>
+            <div class="index-badge" id="distressStatusBadge" style="background:rgba(255,255,255,0.14); color:#e2e8f0;">
+              Waiting for Class Votes
+            </div>
+          </div>
+
+          <p style="font-size:0.84rem; color:#cbd5e1;">
+            Weighted mean using standardized zone midpoints (Calm = 1.0, Mild = 4.0, High = 7.0, Overwhelmed = 9.5) for reliable comparison across batches.
+          </p>
+
+          <div class="index-mini-grid">
+            <div class="index-mini">
+              <small>Total Students Tallied</small>
+              <strong id="kpiTotalPre">0</strong>
+            </div>
+            <div class="index-mini">
+              <small>High + Overwhelmed</small>
+              <strong id="kpiHighOverPct">0%</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collapsible Facilitator Debrief Cue -->
+      <div class="debrief-panel">
+        <button type="button" class="debrief-toggle" id="btnDebriefToggle" aria-expanded="false">
+          <span>&#x1F4AC; Facilitator Debrief Cue — Boys' &amp; Girls' Batch Reflection Prompts (Tap to Expand)</span>
+          <span id="debriefArrow">&#x25BC;</span>
+        </button>
+        <div class="debrief-body" id="debriefBody">
+          <div class="debrief-split">
+            <div class="debrief-col">
+              <h4>Prompts for Boys' Batches</h4>
+              <ul>
+                <li><strong>Performance Framing:</strong> "Think of this meter like an athlete's heart-rate monitor or a bike's RPM gauge—checking your stress early is smart self-management, not weakness."</li>
+                <li><strong>Group Normalization:</strong> "Notice how many students landed in Mild or High Tension. Even the quietest guys in the hostel carry exam or routine pressure."</li>
+                <li><strong>Action Pivot:</strong> "Before we learn how to reset the gauge, let's map where pressure shows up physically in the body."</li>
+              </ul>
+            </div>
+            <div class="debrief-col">
+              <h4>Prompts for Girls' Batches</h4>
+              <ul>
+                <li><strong>Safe Collective Space:</strong> "Without naming anyone, look at how much stress this room shares. Seeing those bars means nobody here is strange or alone."</li>
+                <li><strong>Emotional Validation:</strong> "Missing family, roommate dynamics, and exam expectations can build up quietly—naming your number from 0 to 10 is already step one."</li>
+                <li><strong>Gentle Bridge:</strong> "Let's discover how our nervous system talks to us through body clues in Stage 2."</li>
+              </ul>
+            </div>
+          </div>
+          <div class="debrief-safety">
+            <strong>Confidentiality &amp; Follow-Up Reminder:</strong> Never single out who voted in the 9–10 zone. Remind the whole class warmly that anyone carrying heavy stress this week can drop a note or meet the School Counsellor privately after class.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         STAGE 2 — SOMATIC STRESS MAP (NUMMENMAA ET AL., 2014 & ANS)
+         =================================================================== -->
+    <section id="stage-2" class="stage-panel" aria-label="Stage 2: Body Stress Map">
+      <div class="prompt-banner">
+        <div class="prompt-banner-body">
+          <span class="prompt-tag">Interactive Body Map</span>
+          <span class="prompt-text">
+            Invite students to tap directly on any numbered hotspot where they feel stress first—each tap adds +1 class vote and opens the science &amp; 60-second desk reset tool!
+          </span>
+        </div>
+        <button type="button" class="touch-btn btn-secondary" id="btnClearBodyVotes" style="min-height:48px; font-size:0.88rem;">
+          &#x21BA; Clear Body Votes
+        </button>
+      </div>
+
+      <div class="somatic-layout">
+        <!-- LEFT: Custom Inline SVG Human Silhouette with 6 Glowing Hotspots -->
+        <div class="card body-map-card">
+          <div class="body-map-head">
+            <span style="font-size:0.92rem; font-weight:800; color:var(--teal-900);">Tap a Hotspot on the Body to Add +1 Vote</span>
+            <span id="bodyTotalTapsChip" style="font-size:0.86rem; font-weight:800; color:var(--orange-700); background:var(--orange-100); padding:4px 10px; border-radius:999px;">Total Taps: 0</span>
+          </div>
+
+          <div class="body-svg-wrap">
+            <svg class="body-svg" viewBox="0 0 420 550" role="img" aria-label="Interactive human body outline with 6 somatic stress hotspots">
+              <defs>
+                <radialGradient id="somaticHeat" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#e11d48" stop-opacity="0.88" />
+                  <stop offset="55%" stop-color="#f97316" stop-opacity="0.38" />
+                  <stop offset="100%" stop-color="#f97316" stop-opacity="0" />
+                </radialGradient>
+                <linearGradient id="silhouetteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#cbd5e1" />
+                  <stop offset="100%" stop-color="#94a3b8" />
+                </linearGradient>
+              </defs>
+
+              <!-- Subtle Scientific Reference Lines -->
+              <g stroke="#e2e8f0" stroke-width="1.2" stroke-dasharray="4 4">
+                <line x1="210" y1="12" x2="210" y2="538" />
+                <line x1="30" y1="138" x2="390" y2="138" />
+                <line x1="30" y1="275" x2="390" y2="275" />
+                <line x1="30" y1="415" x2="390" y2="415" />
+              </g>
+
+              <!-- Clean Gender-Neutral Human Silhouette -->
+              <g fill="url(#silhouetteGrad)" stroke="#475569" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+                <ellipse cx="210" cy="64" rx="35" ry="43" />
+                <path d="M194 103 L194 128 L226 128 L226 103 Z" />
+                <path d="
+                  M194 126
+                  C168 128, 134 136, 122 158
+                  L92 250
+                  C88 264, 80 296, 86 312
+                  C92 322, 108 320, 112 305
+                  L144 212
+                  L152 212
+                  L154 316
+                  L148 504
+                  C148 522, 178 524, 182 504
+                  L198 358
+                  L222 358
+                  L238 504
+                  C242 524, 272 522, 272 504
+                  L266 316
+                  L268 212
+                  L276 212
+                  L308 305
+                  C312 320, 328 322, 334 312
+                  C340 296, 332 264, 328 250
+                  L298 158
+                  C286 136, 252 128, 226 126
+                  Z" />
+              </g>
+
+              <!-- 6 LARGE CLICKABLE HOTSPOTS WITH LABELS & LIVE COUNTS -->
+              <!-- 1. Head & Forehead -->
+              <g class="hotspot-btn" data-zone="head" transform="translate(210, 56)">
+                <circle class="hs-glow" id="glow-head" r="26" fill="url(#somaticHeat)" fill-opacity="0.2"></circle>
+                <circle class="hs-core" id="core-head" r="22" fill="#0d3d4d" stroke="#ffffff" stroke-width="3"></circle>
+                <text x="0" y="6" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">1</text>
+                <g transform="translate(30, -16)">
+                  <rect x="0" y="-12" width="126" height="28" rx="14" fill="#0f172a" fill-opacity="0.92" stroke="#ffffff" stroke-width="1.5"></rect>
+                  <text x="12" y="6" fill="#ffffff" font-size="11.5" font-weight="800">Head</text>
+                  <rect x="86" y="-8" width="34" height="20" rx="10" fill="#ea580c"></rect>
+                  <text id="svgcnt-head" x="103" y="6" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="900">0</text>
+                </g>
+              </g>
+
+              <!-- 2. Jaw, Neck & Shoulders -->
+              <g class="hotspot-btn" data-zone="jawNeck" transform="translate(166, 134)">
+                <circle class="hs-glow" id="glow-jawNeck" r="26" fill="url(#somaticHeat)" fill-opacity="0.2"></circle>
+                <circle class="hs-core" id="core-jawNeck" r="22" fill="#0d3d4d" stroke="#ffffff" stroke-width="3"></circle>
+                <text x="0" y="6" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">2</text>
+                <g transform="translate(-156, -14)">
+                  <rect x="0" y="-12" width="128" height="28" rx="14" fill="#0f172a" fill-opacity="0.92" stroke="#ffffff" stroke-width="1.5"></rect>
+                  <text x="10" y="6" fill="#ffffff" font-size="11" font-weight="800">Jaw &amp; Neck</text>
+                  <rect x="88" y="-8" width="34" height="20" rx="10" fill="#ea580c"></rect>
+                  <text id="svgcnt-jawNeck" x="105" y="6" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="900">0</text>
+                </g>
+              </g>
+
+              <!-- 3. Chest & Heart -->
+              <g class="hotspot-btn" data-zone="chest" transform="translate(222, 198)">
+                <circle class="hs-glow" id="glow-chest" r="26" fill="url(#somaticHeat)" fill-opacity="0.2"></circle>
+                <circle class="hs-core" id="core-chest" r="22" fill="#0d3d4d" stroke="#ffffff" stroke-width="3"></circle>
+                <text x="0" y="6" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">3</text>
+                <g transform="translate(30, -14)">
+                  <rect x="0" y="-12" width="126" height="28" rx="14" fill="#0f172a" fill-opacity="0.92" stroke="#ffffff" stroke-width="1.5"></rect>
+                  <text x="10" y="6" fill="#ffffff" font-size="11.5" font-weight="800">Chest</text>
+                  <rect x="86" y="-8" width="34" height="20" rx="10" fill="#ea580c"></rect>
+                  <text id="svgcnt-chest" x="103" y="6" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="900">0</text>
+                </g>
+              </g>
+
+              <!-- 4. Stomach & Gut -->
+              <g class="hotspot-btn" data-zone="stomach" transform="translate(210, 278)">
+                <circle class="hs-glow" id="glow-stomach" r="26" fill="url(#somaticHeat)" fill-opacity="0.2"></circle>
+                <circle class="hs-core" id="core-stomach" r="22" fill="#0d3d4d" stroke="#ffffff" stroke-width="3"></circle>
+                <text x="0" y="6" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">4</text>
+                <g transform="translate(-168, -14)">
+                  <rect x="0" y="-12" width="134" height="28" rx="14" fill="#0f172a" fill-opacity="0.92" stroke="#ffffff" stroke-width="1.5"></rect>
+                  <text x="10" y="6" fill="#ffffff" font-size="11.5" font-weight="800">Stomach</text>
+                  <rect x="94" y="-8" width="34" height="20" rx="10" fill="#ea580c"></rect>
+                  <text id="svgcnt-stomach" x="111" y="6" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="900">0</text>
+                </g>
+              </g>
+
+              <!-- 5. Hands & Palms -->
+              <g class="hotspot-btn" data-zone="hands" transform="translate(320, 306)">
+                <circle class="hs-glow" id="glow-hands" r="26" fill="url(#somaticHeat)" fill-opacity="0.2"></circle>
+                <circle class="hs-core" id="core-hands" r="22" fill="#0d3d4d" stroke="#ffffff" stroke-width="3"></circle>
+                <text x="0" y="6" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">5</text>
+                <g transform="translate(-52, 28)">
+                  <rect x="0" y="-12" width="126" height="28" rx="14" fill="#0f172a" fill-opacity="0.92" stroke="#ffffff" stroke-width="1.5"></rect>
+                  <text x="10" y="6" fill="#ffffff" font-size="11.5" font-weight="800">Hands</text>
+                  <rect x="86" y="-8" width="34" height="20" rx="10" fill="#ea580c"></rect>
+                  <text id="svgcnt-hands" x="103" y="6" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="900">0</text>
+                </g>
+              </g>
+
+              <!-- 6. Legs & Energy -->
+              <g class="hotspot-btn" data-zone="legs" transform="translate(170, 434)">
+                <circle class="hs-glow" id="glow-legs" r="26" fill="url(#somaticHeat)" fill-opacity="0.2"></circle>
+                <circle class="hs-core" id="core-legs" r="22" fill="#0d3d4d" stroke="#ffffff" stroke-width="3"></circle>
+                <text x="0" y="6" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="900">6</text>
+                <g transform="translate(-156, -14)">
+                  <rect x="0" y="-12" width="128" height="28" rx="14" fill="#0f172a" fill-opacity="0.92" stroke="#ffffff" stroke-width="1.5"></rect>
+                  <text x="10" y="6" fill="#ffffff" font-size="11.5" font-weight="800">Legs</text>
+                  <rect x="88" y="-8" width="34" height="20" rx="10" fill="#ea580c"></rect>
+                  <text id="svgcnt-legs" x="105" y="6" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="900">0</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <div style="font-size:0.78rem; font-weight:700; color:var(--slate-500); text-align:center;">
+            Tap pills below to view any zone without adding a vote:
+          </div>
+          <div class="zone-chip-bar" id="zoneChipBar"></div>
+        </div>
+
+        <!-- RIGHT: Rich Somatic Explanation & 60-Second Reset Tool -->
+        <div class="card somatic-info-card">
+          <div>
+            <div class="zone-title-bar">
+              <div class="zone-badge-num" id="zoneDetailNum">1</div>
+              <div>
+                <h2 class="zone-heading" id="zoneDetailName">Head &amp; Forehead</h2>
+                <div class="zone-clues" id="zoneDetailClues"></div>
+              </div>
+            </div>
+
+            <div class="zone-vote-strip" style="margin-top:14px;">
+              <div>
+                <div style="font-size:0.74rem; font-weight:800; text-transform:uppercase; color:var(--slate-500);">Class Votes &amp; Share</div>
+                <div class="zone-vote-nums">
+                  <strong id="zoneDetailCount">0</strong>
+                  <span id="zoneDetailShare">(0% of taps)</span>
+                </div>
+              </div>
+              <div class="zone-vote-btns">
+                <button type="button" class="touch-btn btn-undo" id="btnZoneUndo" title="Undo accidental tap">-1 Undo</button>
+                <button type="button" class="touch-btn btn-orange" id="btnZoneAdd1">+1 Tap</button>
+                <button type="button" class="touch-btn btn-orange" id="btnZoneAdd5">+5</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="science-card">
+            <div class="panel-kicker">&#x1F9E0; Why Your Body Does This (Autonomic Nervous System)</div>
+            <p class="panel-text" id="zoneDetailWhy"></p>
+          </div>
+
+          <div class="tool-card">
+            <div class="panel-kicker">&#x23F1; 60-Second Desk Reset Tool (Try Together Now)</div>
+            <p class="panel-text" id="zoneDetailTool"></p>
+          </div>
+
+          <div class="ranking-card">
+            <div class="ranking-head">
+              <span>Top Body Stress Signals in This Class</span>
+              <span id="rankTotalLabel">0 total taps</span>
+            </div>
+            <div id="somaticRankList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         STAGE 3 — THE CONTROL LAB (ROTTER, 1966; LAZARUS & FOLKMAN, 1984)
+         =================================================================== -->
+    <section id="stage-3" class="stage-panel" aria-label="Stage 3: The Control Lab">
+      <div class="prompt-banner">
+        <div class="prompt-banner-body">
+          <span class="prompt-tag">Control Lab</span>
+          <span class="prompt-text">
+            Drag each hostel/school stressor card into a bucket — OR simply TAP a card, then TAP the matching bucket below. Pause to let benches debate before locking it in!
+          </span>
+        </div>
+      </div>
+
+      <div class="control-header-bar">
+        <div class="control-chips">
+          <span class="metric-pill" id="ctrlSortedPill">0 / 10 Sorted</span>
+          <span class="metric-pill alt" id="ctrlAccuracyPill">First-Try Class Accuracy: 0%</span>
+        </div>
+        <div class="control-btns">
+          <button type="button" class="touch-btn btn-secondary" id="btnToggleCardView" style="min-height:48px; font-size:0.88rem;">
+            Show All Cards Grid
+          </button>
+          <button type="button" class="touch-btn btn-secondary" id="btnResetCards" style="min-height:48px; font-size:0.88rem;">
+            &#x21BA; Reset Cards
+          </button>
+        </div>
+      </div>
+
+      <!-- Active Card Deck / Grid -->
+      <div class="deck-box">
+        <div class="deck-instruction" id="deckInstruction"></div>
+        <div class="card-deck-list" id="cardDeckList"></div>
+      </div>
+
+      <!-- Two Large Sorting Buckets -->
+      <div class="buckets-row">
+        <div class="sort-bucket inside" id="bucketInside" data-bucket="inside" role="button" tabindex="0" aria-label="Inside My Control: Problem-Focused Action">
+          <div class="bucket-top">
+            <div>
+              <div class="bucket-heading">Inside My Control</div>
+              <div class="bucket-sub">Problem-Focused Action (Plan, Practice, Ask)</div>
+            </div>
+            <span class="bucket-cta" id="ctaInside">Tap to Place (0)</span>
+          </div>
+          <div class="sorted-list" id="listInside"></div>
+        </div>
+
+        <div class="sort-bucket outside" id="bucketOutside" data-bucket="outside" role="button" tabindex="0" aria-label="Outside My Control: Emotion-Focused and Acceptance Coping">
+          <div class="bucket-top">
+            <div>
+              <div class="bucket-heading">Outside My Control</div>
+              <div class="bucket-sub">Emotion-Focused / Acceptance Coping</div>
+            </div>
+            <span class="bucket-cta" id="ctaOutside">Tap to Place (0)</span>
+          </div>
+          <div class="sorted-list" id="listOutside"></div>
+        </div>
+      </div>
+
+      <!-- Respectful Psychological Feedback & Class Discussion Prompt -->
+      <div class="feedback-box" id="ctrlFeedbackBox" aria-live="polite">
+        <div class="feedback-head">
+          <div class="feedback-title" id="ctrlFeedbackTitle"></div>
+          <button type="button" class="touch-btn btn-primary" id="btnPlaceValidated" style="display:none; min-height:48px; font-size:0.88rem;">
+            Move to Validated Bucket
+          </button>
+        </div>
+        <p class="feedback-reason" id="ctrlFeedbackReason"></p>
+        <div class="feedback-ask" id="ctrlFeedbackAsk"></div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         STAGE 4 — LIVE AUTONOMIC RESET, CHECK-OUT & CSV REPORT
+         =================================================================== -->
+    <section id="stage-4" class="stage-panel" aria-label="Stage 4: Reset and Export">
+      <div class="prompt-banner">
+        <div class="prompt-banner-body">
+          <span class="prompt-tag">Reset &amp; Export</span>
+          <span class="prompt-text">
+            Guide the whole class through 4 calm cycles of 4-4-4-4 Box Breathing, capture the anonymous check-out pulse, and export your tidy CSV report for R or jamovi.
+          </span>
+        </div>
+      </div>
+
+      <div class="stage4-top-grid">
+        <!-- LEFT PANEL: Animated SVG Ring 4-4-4-4 Box Breathing Pacer -->
+        <div class="card pacer-card">
+          <div class="pacer-top">
+            <h2 class="pacer-title">4-4-4-4 Box Breathing Pacer</h2>
+            <span class="cycle-badge" id="breathCycleBadge">Cycle 0 / 4</span>
+          </div>
+
+          <div class="pacer-svg-wrap">
+            <svg viewBox="0 0 300 300" width="100%" height="100%" role="img" aria-label="4-4-4-4 Animated Breathing Ring">
+              <defs>
+                <radialGradient id="orbFillGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#5eead4" stop-opacity="0.72" />
+                  <stop offset="65%" stop-color="#0d9488" stop-opacity="0.34" />
+                  <stop offset="100%" stop-color="#0284c7" stop-opacity="0.12" />
+                </radialGradient>
+              </defs>
+
+              <!-- Outer Static Ring Track -->
+              <circle cx="150" cy="150" r="124" fill="none" stroke="rgba(148, 163, 184, 0.25)" stroke-width="10" />
+
+              <!-- 4 Quadrant Markers -->
+              <line x1="150" y1="18" x2="150" y2="34" stroke="#94a3b8" stroke-width="2.5" />
+              <line x1="282" y1="150" x2="266" y2="150" stroke="#94a3b8" stroke-width="2.5" />
+              <line x1="150" y1="282" x2="150" y2="266" stroke="#94a3b8" stroke-width="2.5" />
+              <line x1="18" y1="150" x2="34" y2="150" stroke="#94a3b8" stroke-width="2.5" />
+
+              <!-- Animated Progress Arc (Circumference = 2 * pi * 124 = 779.11) -->
+              <circle id="breathArc" cx="150" cy="150" r="124" fill="none" stroke="#2dd4bf" stroke-width="10"
+                      stroke-linecap="round" stroke-dasharray="779.11" stroke-dashoffset="779.11"
+                      transform="rotate(-90 150 150)" />
+
+              <!-- Soft Expanding / Contracting Breathing Circle -->
+              <circle id="breathOrb" cx="150" cy="150" r="54" fill="url(#orbFillGrad)" stroke="#5eead4" stroke-width="3" />
+
+              <!-- Phase Label & Countdown -->
+              <text id="breathPhaseTxt" x="150" y="142" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="900" letter-spacing="1.2">READY</text>
+              <text id="breathTimerTxt" x="150" y="184" text-anchor="middle" fill="#5eead4" font-size="38" font-weight="900">4</text>
+            </svg>
+          </div>
+
+          <div class="pacer-controls">
+            <button type="button" class="touch-btn btn-teal" id="btnBreathToggle">&#x25B6; Start</button>
+            <button type="button" class="touch-btn btn-secondary" id="btnBreathReset">&#x21BA; Reset</button>
+          </div>
+
+          <div class="pacer-note">
+            <strong>Autonomic Reset (Gross, 1998):</strong> Equal 4-second phases activate parasympathetic vagal tone, slowing heart rate and restoring clear thinking before exams or lights-out.
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL: Anonymous Post-Session Check-Out Tally -->
+        <div class="card checkout-card">
+          <div>
+            <h3 style="font-size:1.12rem; font-weight:900; color:var(--teal-950); margin-bottom:12px;">
+              Anonymous Post-Session Check-Out
+            </h3>
+
+            <!-- Card 1: Lighter / Calmer Now -->
+            <div class="post-item post-lighter" style="margin-bottom:10px;">
+              <div class="post-item-row">
+                <div>
+                  <div class="post-title">1. Lighter / Calmer Now</div>
+                  <div class="post-sub">Feeling calmer and equipped with at least one practical coping tool</div>
+                </div>
+                <div class="post-controls">
+                  <span class="post-num" id="postLighterVal">0 (0%)</span>
+                  <button type="button" class="touch-btn btn-undo" data-post="lighter" data-delta="-1">-1</button>
+                  <button type="button" class="touch-btn btn-emerald" data-post="lighter" data-delta="1">+1</button>
+                  <button type="button" class="touch-btn btn-emerald" data-post="lighter" data-delta="5">+5</button>
+                </div>
+              </div>
+              <div class="post-bar-track"><div class="post-bar-fill" id="postLighterBar" style="width:0%"></div></div>
+            </div>
+
+            <!-- Card 2: About the Same -->
+            <div class="post-item post-same" style="margin-bottom:10px;">
+              <div class="post-item-row">
+                <div>
+                  <div class="post-title">2. About the Same</div>
+                  <div class="post-sub">Understood the exercises, need a little more practice in hostel</div>
+                </div>
+                <div class="post-controls">
+                  <span class="post-num" id="postSameVal">0 (0%)</span>
+                  <button type="button" class="touch-btn btn-undo" data-post="same" data-delta="-1">-1</button>
+                  <button type="button" class="touch-btn btn-amber" data-post="same" data-delta="1">+1</button>
+                  <button type="button" class="touch-btn btn-amber" data-post="same" data-delta="5">+5</button>
+                </div>
+              </div>
+              <div class="post-bar-track"><div class="post-bar-fill" id="postSameBar" style="width:0%"></div></div>
+            </div>
+
+            <!-- Card 3: Still Struggling / Need 1-on-1 Support -->
+            <div class="post-item post-support">
+              <div class="post-item-row">
+                <div>
+                  <div class="post-title">3. Still Struggling / Need 1-on-1 Support</div>
+                  <div class="post-sub">Carrying heavy pressure — would benefit from a private check-in</div>
+                </div>
+                <div class="post-controls">
+                  <span class="post-num" id="postSupportVal">0 (0%)</span>
+                  <button type="button" class="touch-btn btn-undo" data-post="support" data-delta="-1">-1</button>
+                  <button type="button" class="touch-btn btn-indigo" data-post="support" data-delta="1">+1</button>
+                  <button type="button" class="touch-btn btn-indigo" data-post="support" data-delta="5">+5</button>
+                </div>
+              </div>
+              <div class="post-bar-track"><div class="post-bar-fill" id="postSupportBar" style="width:0%"></div></div>
+            </div>
+          </div>
+
+          <div class="private-support-note">
+            <strong>Discreet Support Reminder:</strong> Let students know clearly — "If you still feel heavy today, you never have to say it out loud in class. Drop your name in the Counseling Drop-Box or visit the Counselling Room quietly during break or after evening games."
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTTOM PANEL: Session Impact Snapshot & Prominent CSV Export -->
+      <div class="card snapshot-panel">
+        <div class="snapshot-header">
+          <div class="snapshot-title">&#x1F4CA; Session Impact Snapshot</div>
+          <div class="snapshot-context" id="snapContextTag">EMRS &bull; Class 9 &bull; Boys</div>
+        </div>
+
+        <div class="snapshot-cards">
+          <div class="snap-card">
+            <small>Total Students (Pre)</small>
+            <strong id="snapTotalStudents">0</strong>
+          </div>
+          <div class="snap-card">
+            <small>Pre Distress Index</small>
+            <strong id="snapPreDistress">0.00 / 10</strong>
+          </div>
+          <div class="snap-card">
+            <small>Top Somatic Signal</small>
+            <strong id="snapTopSomatic">None yet</strong>
+          </div>
+          <div class="snap-card">
+            <small>Control Lab Accuracy</small>
+            <strong id="snapCtrlAcc">0% (0/10)</strong>
+          </div>
+          <div class="snap-card">
+            <small>% Feeling Lighter/Calmer</small>
+            <strong id="snapPctLighter">0% (n=0)</strong>
+          </div>
+        </div>
+
+        <button type="button" class="touch-btn btn-export-main" id="btnExportCSV">
+          &#x2B07; Export Session CSV (R / jamovi Ready)
+        </button>
+      </div>
+    </section>
+
+    <!-- PREVIOUS / NEXT STAGE NAVIGATION BAR -->
+    <div class="stage-nav-bar">
+      <button type="button" class="touch-btn btn-secondary" id="btnPrevStage">&larr; Previous Stage</button>
+      <button type="button" class="touch-btn btn-primary" id="btnNextStage">Next Stage &rarr;</button>
+    </div>
+  </main>
+
+  <!-- =======================================================================
+       PERSISTENT DIGNIFIED CREATOR FOOTER ACROSS ALL SCREENS
+       ======================================================================= -->
+  <footer class="persistent-footer">
+    Created by B. Bhuvan | School Counsellor | M.Sc. Psychology, DCGC, NCERT
+  </footer>
+
+  <!-- =======================================================================
+       MODAL 1: REFERENCES & CREDITS
+       ======================================================================= -->
+  <div class="modal-overlay" id="creditsModal" role="dialog" aria-modal="true" aria-labelledby="creditsModalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 class="modal-title" id="creditsModalTitle">References &amp; Credits</h2>
+        <button type="button" class="modal-x" data-close-modal="creditsModal" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="credit-callout">
+        <h4>Worksheet Conceptualized &amp; Created By</h4>
+        <p>B. Bhuvan, School Counsellor, M.Sc. Psychology, DCGC, NCERT</p>
+      </div>
+
+      <p style="font-size:0.94rem; color:var(--slate-700); margin-bottom:10px;">
+        This interactive group counseling worksheet translates established, peer-reviewed psychological frameworks into standardized classroom activities suitable for residential school adolescents (Classes 6–12). Identical scales, stimulus cards, and scoring indices ensure cross-batch comparability while maintaining 100% student anonymity (only aggregate group tallies are recorded).
+      </p>
+
+      <ul class="ref-list">
+        <li>
+          <strong>Stage 1 — Subjective Units of Distress Scale (SUDS):</strong>
+          Wolpe, J. (1969). <em>The Practice of Behavior Therapy.</em> Pergamon Press. Adapted into a 4-zone anonymous classroom pulse (0–2, 3–5, 6–8, 9–10) with standardized midpoint weighting for group distress monitoring.
+        </li>
+        <li>
+          <strong>Stage 2 — Somatic Emotional Mapping &amp; ANS Physiology:</strong>
+          Nummenmaa, L., Glerean, E., Hari, R., &amp; Hietanen, J. K. (2014). <em>Bodily maps of emotions.</em> Proceedings of the National Academy of Sciences (PNAS), 111(2), 646–651. Paired with sympathetic nervous system psychoeducation and classroom-ready grounding resets.
+        </li>
+        <li>
+          <strong>Stage 3 — Locus of Control &amp; Transactional Coping Theory:</strong>
+          Rotter, J. B. (1966). <em>Generalized expectancies for internal versus external control of reinforcement.</em> Psychological Monographs, 80(1), 1–28; and Lazarus, R. S., &amp; Folkman, S. (1984). <em>Stress, Appraisal, and Coping.</em> Springer Publishing. Operationalizes coping fit between problem-focused action and emotion-focused acceptance.
+        </li>
+        <li>
+          <strong>Stage 4 — Autonomic Emotion Regulation (Paced Breathing):</strong>
+          Gross, J. J. (1998). <em>The emerging field of emotion regulation: An integrative review.</em> Review of General Psychology, 2(3), 271–299. Implements 4-4-4-4 paced breathing as an evidence-based physiological response-modulation technique.
+        </li>
+      </ul>
+
+      <p style="font-size:0.84rem; color:var(--slate-600);">
+        <strong>Ethical Note:</strong> Designed for preventive psychoeducation, group facilitation, and anonymized school wellness reporting—not individual clinical diagnosis.
+      </p>
+
+      <div class="modal-actions">
+        <button type="button" class="touch-btn btn-primary" data-close-modal="creditsModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL 2: RESET SESSION CONFIRMATION (No window.confirm)
+       ======================================================================= -->
+  <div class="modal-overlay" id="resetModal" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle">
+    <div class="modal-card" style="max-width:480px;">
+      <div class="modal-head">
+        <h2 class="modal-title" id="resetModalTitle">Reset Session for Next Batch?</h2>
+        <button type="button" class="modal-x" data-close-modal="resetModal" aria-label="Close">&times;</button>
+      </div>
+      <p style="font-size:0.96rem; color:var(--slate-800); margin-bottom:10px;">
+        This will clear all votes, body-map taps, Control Lab cards, breathing cycles, and post-session counts so the board is fresh for your next Boys or Girls batch.
+      </p>
+      <p style="font-size:0.9rem; font-weight:700; color:var(--amber-700);">
+        Reminder: Export your CSV report in Stage 4 first if you wish to save this batch's data.
+      </p>
+      <div class="modal-actions">
+        <button type="button" class="touch-btn btn-secondary" data-close-modal="resetModal">Cancel</button>
+        <button type="button" class="touch-btn btn-rose" id="btnConfirmReset">Yes, Reset Session</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toastBox" role="status" aria-live="polite"></div>
+
+  <!-- =======================================================================
+       APPLICATION SCRIPT (100% Vanilla Offline JavaScript)
+       ======================================================================= -->
+  <script>
+    (function () {
+      'use strict';
+
+      const CREATOR_CREDIT = 'B. Bhuvan, School Counsellor, M.Sc. Psychology, DCGC, NCERT';
+
+      /* =====================================================================
+         1. STANDARDIZED PSYCHOLOGICAL CONTENT DATASETS
+         ===================================================================== */
+
+      // Stage 2: 6 Somatic Stress Zones
+      const SOMATIC_ZONES = [
+        {
+          id: 'head',
+          num: 1,
+          name: 'Head & Forehead',
+          clues: 'Racing thoughts, forehead tightness, tension headaches, blanking out in study hour',
+          why: 'When your brain\'s alarm system (the amygdala) detects exam pressure or hostel stress, stress hormones temporarily pull blood flow and energy away from the prefrontal cortex (your focus center) while tightening scalp and forehead muscles.',
+          tool: '30-Second Brain Park + 5-4-3 Grounding: Write your #1 loud worry on a tiny corner of a rough page so your mind stops repeating it, soften your eyebrows, and quietly name 3 objects you see and 2 sounds you hear in the classroom.'
+        },
+        {
+          id: 'jawNeck',
+          num: 2,
+          name: 'Jaw, Neck & Shoulders',
+          clues: 'Clenched teeth, tight throat, stiff neck, heavy upper back from carrying expectations',
+          why: 'The sympathetic nervous system automatically braces your jaw, throat, and shoulder muscles to protect you under pressure. Holding back tears, anger, or long hours of tense desk posture traps stiffness right across this zone.',
+          tool: 'Turtle Drop & Soft Jaw: Unclench your back teeth, lift both shoulders tightly up toward your ears for 5 full seconds to feel the tension, then breathe out slowly and drop them completely loose for 10 seconds. Repeat twice.'
+        },
+        {
+          id: 'chest',
+          num: 3,
+          name: 'Chest & Heart',
+          clues: 'Fast heartbeat, tight chest, quick shallow breathing before tests or roll call',
+          why: 'Adrenaline signals your heart to pump faster and your lungs to pull rapid upper-chest breaths so oxygen reaches your muscles for "fight or flight"—even when you are simply sitting at your desk facing a tough question paper.',
+          tool: 'Physiological Sigh (Double Inhale, Slow Exhale): Inhale normally through your nose, take one tiny second sniff of air at the very top, then exhale slowly and smoothly through pursed lips. Repeat 3 times to trigger your natural calming brake.'
+        },
+        {
+          id: 'stomach',
+          num: 4,
+          name: 'Stomach & Gut',
+          clues: 'Butterflies, stomach knots, mild nausea, or loss of appetite when missing home',
+          why: 'Your digestive system shares a direct communication highway with the brain (the gut–brain axis). Under stress, the body shifts blood away from digestion toward your limbs, causing tight knots, butterflies, or sudden appetite changes.',
+          tool: 'Warm-Palm Belly Breath: Place one flat palm gently on your stomach. Inhale slowly for 4 counts so your belly rises softly against your hand, then exhale for 5 counts. This signals the vagus nerve that it is safe to rest and digest.'
+        },
+        {
+          id: 'hands',
+          num: 5,
+          name: 'Hands & Palms',
+          clues: 'Sweaty palms, shaky fingers while writing, clenched fists, fidgeting with pens',
+          why: 'Sympathetic activation triggers sweat glands in your palms to cool the skin and improve grip during perceived threat, while extra adrenaline causes fine hand muscles to tremble slightly during exams or viva presentations.',
+          tool: 'Palm Press & Wrist Shake: Press both palms firmly together in front of your chest for 8 seconds while taking one steady breath, then relax and shake both wrists gently beside your desk for 5 seconds to release excess muscle tension.'
+        },
+        {
+          id: 'legs',
+          num: 6,
+          name: 'Legs & Energy',
+          clues: 'Bouncing knees, restless feet, heavy/tired legs, sudden drop in physical energy',
+          why: 'Stress floods large leg muscles with quick fuel meant for running away from danger. When you must stay seated in class or the hostel study hall, that unused adrenaline shows up as restless leg tapping—or later as sudden fatigue.',
+          tool: 'Solid Floor Anchor: Place both feet completely flat on the classroom floor. Press your heels and toes steadily downward for 10 seconds, noticing the solid support beneath you, then relax your calves and roll your ankles slowly.'
+        }
+      ];
+
+      // Stage 3: 10 Realistic Indian Residential-School / Hostel Stressor Cards
+      const CONTROL_CARDS = [
+        {
+          id: 1,
+          text: 'How tough tomorrow\'s exam question paper will be',
+          bucket: 'outside',
+          why: 'Students cannot write or change the exam question paper. Spending energy worrying about surprise questions drains focus; emotion-focused acceptance helps you stay calm in the hall and score well on everything you prepared.',
+          ask: 'Ask the Class: If the very first question tomorrow looks tough, what calm step can you take in the first 30 seconds?'
+        },
+        {
+          id: 2,
+          text: 'How I plan my evening study hour and sleep schedule',
+          bucket: 'inside',
+          why: 'Even inside a fixed residential timetable, choosing which subject to revise first, avoiding last-minute distractions, and winding down before lights-out are directly inside your control—ideal for Problem-Focused action.',
+          ask: 'Ask the Class: What is one small change that makes your 1-hour evening study slot more productive?'
+        },
+        {
+          id: 3,
+          text: 'A classmate or hostel peer spreading a rumour about me',
+          bucket: 'outside',
+          why: 'You cannot directly control what another person chooses to say. Panicking or fighting often makes rumours grow. Emotion-focused grounding steadies you first so you can set healthy boundaries or inform a trusted adult.',
+          ask: 'Ask the Class: Why does staying calm often take away the power of a hostel rumour?'
+        },
+        {
+          id: 4,
+          text: 'How calmly I respond or seek help from a teacher/counsellor',
+          bucket: 'inside',
+          why: 'Your tone of voice, your decision to pause before reacting, and your choice to speak with a teacher, warden, or counsellor are 100% inside your control—a strong Problem-Focused coping habit.',
+          ask: 'Ask the Class: Who are two trusted adults on campus you feel safe approaching when a problem feels too big?'
+        },
+        {
+          id: 5,
+          text: 'Feeling homesick when festivals or family events happen',
+          bucket: 'outside',
+          why: 'Waves of homesickness are a natural human emotion when living away from family—you cannot force the feeling to vanish on command. Emotion-focused coping (naming the feeling, journaling, talking to a friend, grounding) helps the wave pass gently.',
+          ask: 'Ask the Class: What healthy comfort activity helps you most in the hostel when you miss home?'
+        },
+        {
+          id: 6,
+          text: 'Choosing whether to stay quiet or ask a doubt in class',
+          bucket: 'inside',
+          why: 'Raising your hand, asking a friend after class, or noting your doubt to show a teacher is a controllable Problem-Focused step that stops small confusions from turning into exam anxiety.',
+          ask: 'Ask the Class: What usually holds students back from asking a doubt, and how can classmates make it easier?'
+        },
+        {
+          id: 7,
+          text: 'Power cuts or heavy rain during night revision',
+          bucket: 'outside',
+          why: 'Weather and electricity outages are completely outside personal control. Getting angry does not turn the lights back on—acceptance and calm adaptation protect your mood until power returns.',
+          ask: 'Ask the Class: What is a calm, safe habit you can use during an unexpected power cut?'
+        },
+        {
+          id: 8,
+          text: 'Who I spend my free time with and my personal boundaries',
+          bucket: 'inside',
+          why: 'Selecting respectful peers, saying a polite "no" when you need revision time, and protecting your personal space are active Problem-Focused choices well within your control.',
+          ask: 'Ask the Class: What is one respectful sentence you can use to say "no" to a distraction without hurting a friendship?'
+        },
+        {
+          id: 9,
+          text: 'How strictly a subject teacher checks answer sheets',
+          bucket: 'outside',
+          why: 'A teacher\'s marking strictness is outside a student\'s control. Emotion-focused acceptance frees you from bitterness so you can channel effort into neat presentation and learning from feedback.',
+          ask: 'Ask the Class: Once marks are returned, how can we turn strict checking into an advantage for the next exam?'
+        },
+        {
+          id: 10,
+          text: 'Practising a 2-minute calming breath before entering the exam hall',
+          bucket: 'inside',
+          why: 'Using a brief breathing reset before stepping into the exam room is a concrete, trainable skill completely inside your control—helping shift your brain from panic back to clear memory recall.',
+          ask: 'Ask the Class: How would your first 5 minutes of an exam feel different if you walked in with steady breathing?'
+        }
+      ];
+
+      /* =====================================================================
+         2. STATE MANAGEMENT
+         ===================================================================== */
+      function getTodayISO() {
+        const d = new Date();
+        const pad = function (n) { return String(n).padStart(2, '0'); };
+        return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+      }
+
+      function createFreshState(keepMeta) {
+        const prev = keepMeta ? state : null;
+        return {
+          currentStage: 1,
+          className: prev ? prev.className : 'Class 9',
+          batch: prev ? prev.batch : 'Boys',
+          school: prev ? prev.school : 'EMRS',
+          date: prev ? prev.date : getTodayISO(),
+
+          // Stage 1: 4 SUDS zones
+          suds: { calm: 0, mild: 0, high: 0, over: 0 },
+
+          // Stage 2: 6 Somatic zones
+          selectedZone: 'head',
+          somatic: { head: 0, jawNeck: 0, chest: 0, stomach: 0, hands: 0, legs: 0 },
+
+          // Stage 3: Control Lab
+          cardView: 'focus', // 'focus' or 'grid'
+          selectedCardId: 1,
+          sortedMap: {}, // { [cardId]: 'inside' | 'outside' }
+          firstAttempted: {},
+          firstTryCorrect: 0,
+          firstTryTotal: 0,
+          pendingCardId: null,
+
+          // Stage 4: Breathing & Post Check-Out
+          breathCycles: 0,
+          post: { lighter: 0, same: 0, support: 0 }
+        };
+      }
+
+      let state = createFreshState(false);
+
+      // Breathing Pacer Animation State
+      const pacer = {
+        running: false,
+        rafId: null,
+        phaseIndex: 0, // 0=Inhale, 1=Hold, 2=Exhale, 3=Hold
+        phaseElapsed: 0,
+        lastTs: null,
+        phaseMs: 4000,
+        totalCycles: 4,
+        arcCircumference: 2 * Math.PI * 124
+      };
+
+      /* =====================================================================
+         3. HELPERS (TOAST, MATH, MODALS)
+         ===================================================================== */
+      let toastTimer = null;
+      function showToast(msg) {
+        const el = document.getElementById('toastBox');
+        if (!el) return;
+        el.textContent = msg;
+        el.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          el.classList.remove('show');
+        }, 3200);
+      }
+
+      function pctInt(part, total) {
+        return total > 0 ? Math.round((part / total) * 100) : 0;
+      }
+
+      function pctOneDec(part, total) {
+        return total > 0 ? ((part / total) * 100).toFixed(1) : '0.0';
+      }
+
+      function openModal(id) {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('open');
+      }
+
+      function closeModal(id) {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('open');
+      }
+
+      /* =====================================================================
+         4. NAVIGATION & TAB COMPLETION INDICATORS
+         ===================================================================== */
+      function updateTabBadges() {
+        const pre = computePreStats();
+        const tab1 = document.getElementById('tab-1');
+        const st1 = document.getElementById('status-1');
+        st1.textContent = pre.total > 0 ? '\u2713 ' + pre.total + ' tallied' : '0 tallied';
+        tab1.classList.toggle('completed', pre.total > 0);
+
+        const bodyTotal = Object.values(state.somatic).reduce(function (a, b) { return a + b; }, 0);
+        const tab2 = document.getElementById('tab-2');
+        const st2 = document.getElementById('status-2');
+        st2.textContent = bodyTotal > 0 ? '\u2713 ' + bodyTotal + ' taps' : '0 taps';
+        tab2.classList.toggle('completed', bodyTotal > 0);
+
+        const sortedCount = Object.keys(state.sortedMap).length;
+        const tab3 = document.getElementById('tab-3');
+        const st3 = document.getElementById('status-3');
+        st3.textContent = (sortedCount === CONTROL_CARDS.length ? '\u2713 ' : '') + sortedCount + ' / ' + CONTROL_CARDS.length;
+        tab3.classList.toggle('completed', sortedCount === CONTROL_CARDS.length);
+
+        const postTotal = state.post.lighter + state.post.same + state.post.support;
+        const tab4 = document.getElementById('tab-4');
+        const st4 = document.getElementById('status-4');
+        if (postTotal > 0) {
+          st4.textContent = '\u2713 ' + postTotal + ' out';
+          tab4.classList.add('completed');
+        } else if (state.breathCycles > 0) {
+          st4.textContent = state.breathCycles + '/4 breaths';
+          tab4.classList.remove('completed');
+        } else {
+          st4.textContent = 'Pending';
+          tab4.classList.remove('completed');
+        }
+      }
+
+      function setStage(stageNum) {
+        const num = Math.min(4, Math.max(1, Number(stageNum) || 1));
+        state.currentStage = num;
+
+        document.querySelectorAll('.stage-tab').forEach(function (tab) {
+          tab.classList.toggle('active', Number(tab.dataset.stage) === num);
+        });
+        document.querySelectorAll('.stage-panel').forEach(function (panel) {
+          panel.classList.toggle('active', panel.id === 'stage-' + num);
+        });
+
+        document.getElementById('btnPrevStage').disabled = (num === 1);
+        document.getElementById('btnNextStage').disabled = (num === 4);
+
+        if (num === 4) {
+          renderStage4();
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      /* =====================================================================
+         5. STAGE 1 — ANONYMOUS GROUP PULSE (4-ZONE SUDS)
+         ===================================================================== */
+      function computePreStats() {
+        const c = state.suds.calm;
+        const m = state.suds.mild;
+        const h = state.suds.high;
+        const o = state.suds.over;
+        const total = c + m + h + o;
+        // Midpoints: Calm=1, Mild=4, High=7, Overwhelmed=9.5
+        const index = total > 0 ? ((c * 1.0) + (m * 4.0) + (h * 7.0) + (o * 9.5)) / total : 0;
+        return { calm: c, mild: m, high: h, over: o, total: total, index: index };
+      }
+
+      function renderStage1() {
+        const s = computePreStats();
+        const pC = pctInt(s.calm, s.total);
+        const pM = pctInt(s.mild, s.total);
+        const pH = pctInt(s.high, s.total);
+        const pO = pctInt(s.over, s.total);
+
+        document.getElementById('cntCalm').textContent = s.calm;
+        document.getElementById('cntMild').textContent = s.mild;
+        document.getElementById('cntHigh').textContent = s.high;
+        document.getElementById('cntOver').textContent = s.over;
+
+        document.getElementById('pctCalm').textContent = pC + '%';
+        document.getElementById('pctMild').textContent = pM + '%';
+        document.getElementById('pctHigh').textContent = pH + '%';
+        document.getElementById('pctOver').textContent = pO + '%';
+
+        document.getElementById('pulseSummaryTag').textContent = 'Total Students Tallied: ' + s.total;
+
+        // Horizontal stacked bar
+        const segs = [
+          ['segCalm', pC],
+          ['segMild', pM],
+          ['segHigh', pH],
+          ['segOver', pO]
+        ];
+        segs.forEach(function (pair) {
+          const el = document.getElementById(pair[0]);
+          el.style.width = pair[1] + '%';
+          el.textContent = pair[1] >= 9 ? pair[1] + '%' : '';
+        });
+
+        // Vertical proportional bars
+        const maxVal = Math.max(1, s.calm, s.mild, s.high, s.over);
+        const bars = [
+          ['bValCalm', 'bFillCalm', s.calm, pC],
+          ['bValMild', 'bFillMild', s.mild, pM],
+          ['bValHigh', 'bFillHigh', s.high, pH],
+          ['bValOver', 'bFillOver', s.over, pO]
+        ];
+        bars.forEach(function (item) {
+          document.getElementById(item[0]).textContent = item[2] + ' (' + item[3] + '%)';
+          const hPct = s.total > 0 ? Math.max(5, Math.round((item[2] / maxVal) * 100)) : 3;
+          document.getElementById(item[1]).style.height = hPct + '%';
+        });
+
+        // Group Distress Index KPI
+        document.getElementById('distressIndexNum').textContent = s.index.toFixed(2);
+        document.getElementById('kpiTotalPre').textContent = s.total;
+        document.getElementById('kpiHighOverPct').textContent = pctInt(s.high + s.over, s.total) + '%';
+
+        const badge = document.getElementById('distressStatusBadge');
+        if (s.total === 0) {
+          badge.textContent = 'Waiting for Class Votes';
+          badge.style.background = 'rgba(255,255,255,0.14)';
+          badge.style.color = '#e2e8f0';
+        } else if (s.index < 3.0) {
+          badge.textContent = 'Calm Baseline Group Climate';
+          badge.style.background = 'rgba(16, 185, 129, 0.28)';
+          badge.style.color = '#a7f3d0';
+        } else if (s.index < 5.5) {
+          badge.textContent = 'Moderate Classroom Stress Load';
+          badge.style.background = 'rgba(245, 158, 11, 0.30)';
+          badge.style.color = '#fde68a';
+        } else if (s.index < 7.5) {
+          badge.textContent = 'High Tension — Focus on Coping Skills';
+          badge.style.background = 'rgba(234, 88, 12, 0.34)';
+          badge.style.color = '#fed7aa';
+        } else {
+          badge.textContent = 'Very High Stress — Prioritize Grounding';
+          badge.style.background = 'rgba(225, 29, 72, 0.36)';
+          badge.style.color = '#fecdd3';
+        }
+
+        updateTabBadges();
+        renderSnapshot();
+      }
+
+      /* =====================================================================
+         6. STAGE 2 — SOMATIC STRESS MAP
+         ===================================================================== */
+      function getSortedSomaticZones() {
+        return SOMATIC_ZONES
+          .map(function (z) { return { id: z.id, name: z.name, count: state.somatic[z.id] || 0 }; })
+          .sort(function (a, b) { return b.count - a.count; });
+      }
+
+      function renderStage2() {
+        const vals = Object.values(state.somatic);
+        const totalTaps = vals.reduce(function (a, b) { return a + b; }, 0);
+        const maxVal = Math.max(1, ...vals);
+
+        document.getElementById('bodyTotalTapsChip').textContent = 'Total Taps: ' + totalTaps;
+        document.getElementById('rankTotalLabel').textContent = totalTaps + ' total taps';
+
+        // Update SVG hotspots dynamically
+        SOMATIC_ZONES.forEach(function (zone) {
+          const cnt = state.somatic[zone.id] || 0;
+          const isSel = (state.selectedZone === zone.id);
+          const ratio = cnt > 0 ? cnt / maxVal : 0;
+
+          const glow = document.getElementById('glow-' + zone.id);
+          const core = document.getElementById('core-' + zone.id);
+          const cntTxt = document.getElementById('svgcnt-' + zone.id);
+
+          if (cntTxt) cntTxt.textContent = cnt;
+          if (glow) {
+            const rad = cnt > 0 ? 28 + Math.round(ratio * 28) : 24;
+            const op = cnt > 0 ? (0.35 + ratio * 0.65).toFixed(2) : '0.16';
+            glow.setAttribute('r', String(rad));
+            glow.setAttribute('fill-opacity', op);
+          }
+          if (core) {
+            core.setAttribute('fill', isSel ? '#e11d48' : (cnt > 0 ? '#ea580c' : '#0d3d4d'));
+            core.setAttribute('stroke', isSel ? '#fef08a' : '#ffffff');
+            core.setAttribute('stroke-width', isSel ? '4.5' : '3');
+          }
+        });
+
+        // Quick view chips below silhouette (inspect without adding a vote)
+        const chipBar = document.getElementById('zoneChipBar');
+        chipBar.innerHTML = '';
+        SOMATIC_ZONES.forEach(function (zone) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'zone-chip' + (state.selectedZone === zone.id ? ' active' : '');
+          btn.innerHTML = '<span>' + zone.num + '. ' + zone.name + '</span><span class="zone-chip-count">' + (state.somatic[zone.id] || 0) + '</span>';
+          btn.addEventListener('click', function () {
+            state.selectedZone = zone.id;
+            renderStage2();
+          });
+          chipBar.appendChild(btn);
+        });
+
+        // Detail panel for selected zone
+        const current = SOMATIC_ZONES.find(function (z) { return z.id === state.selectedZone; }) || SOMATIC_ZONES[0];
+        const curCount = state.somatic[current.id] || 0;
+        const curShare = pctInt(curCount, totalTaps);
+
+        document.getElementById('zoneDetailNum').textContent = current.num;
+        document.getElementById('zoneDetailName').textContent = current.name;
+        document.getElementById('zoneDetailClues').textContent = current.clues;
+        document.getElementById('zoneDetailCount').textContent = curCount;
+        document.getElementById('zoneDetailShare').textContent = '(' + curShare + '% of taps)';
+        document.getElementById('zoneDetailWhy').textContent = current.why;
+        document.getElementById('zoneDetailTool').textContent = current.tool;
+
+        // Top 3 Ranking Bars
+        const top3 = getSortedSomaticZones().slice(0, 3);
+        const rankEl = document.getElementById('somaticRankList');
+        rankEl.innerHTML = '';
+        top3.forEach(function (item) {
+          const barW = totalTaps > 0 ? Math.round((item.count / maxVal) * 100) : 0;
+          const row = document.createElement('div');
+          row.className = 'rank-row';
+          row.innerHTML =
+            '<span>' + item.name + '</span>' +
+            '<div class="rank-track"><div class="rank-fill" style="width:' + barW + '%"></div></div>' +
+            '<span style="text-align:right;">' + item.count + '</span>';
+          rankEl.appendChild(row);
+        });
+
+        updateTabBadges();
+        renderSnapshot();
+      }
+
+      /* =====================================================================
+         7. STAGE 3 — THE CONTROL LAB (DRAG-AND-DROP + TAP-TO-SORT)
+         ===================================================================== */
+      function getUnsortedCards() {
+        return CONTROL_CARDS.filter(function (c) { return !state.sortedMap[c.id]; });
+      }
+
+      function syncSelectedCard() {
+        const rem = getUnsortedCards();
+        if (rem.length === 0) {
+          state.selectedCardId = null;
+          return;
+        }
+        const exists = rem.some(function (c) { return c.id === state.selectedCardId; });
+        if (!exists) {
+          state.selectedCardId = rem[0].id;
+        }
+      }
+
+      function showControlFeedback(card, isMatch, attemptedBucket) {
+        const box = document.getElementById('ctrlFeedbackBox');
+        const title = document.getElementById('ctrlFeedbackTitle');
+        const reason = document.getElementById('ctrlFeedbackReason');
+        const ask = document.getElementById('ctrlFeedbackAsk');
+        const moveBtn = document.getElementById('btnPlaceValidated');
+
+        box.classList.remove('correct', 'rethink');
+        box.classList.add('visible', isMatch ? 'correct' : 'rethink');
+
+        const correctBucketName = card.bucket === 'inside'
+          ? 'Inside My Control (Problem-Focused Action)'
+          : 'Outside My Control (Emotion-Focused / Acceptance Coping)';
+
+        if (isMatch) {
+          title.textContent = 'Strong Coping Fit! \u2192 ' + correctBucketName;
+          moveBtn.style.display = 'none';
+          state.pendingCardId = null;
+        } else {
+          const triedName = attemptedBucket === 'inside' ? 'Inside My Control' : 'Outside My Control';
+          title.textContent = 'Let\'s Pause & Reflect: You chose "' + triedName + '" \u2014 Coping Fit points to ' + correctBucketName;
+          moveBtn.style.display = 'inline-flex';
+          state.pendingCardId = card.id;
+        }
+
+        reason.textContent = 'Coping-Fit Insight: ' + card.why;
+        ask.textContent = card.ask;
+      }
+
+      function attemptSort(cardId, targetBucket) {
+        const card = CONTROL_CARDS.find(function (c) { return c.id === Number(cardId); });
+        if (!card || state.sortedMap[card.id]) return;
+
+        const isMatch = (card.bucket === targetBucket);
+
+        if (!state.firstAttempted[card.id]) {
+          state.firstAttempted[card.id] = true;
+          state.firstTryTotal += 1;
+          if (isMatch) state.firstTryCorrect += 1;
+        }
+
+        if (isMatch) {
+          state.sortedMap[card.id] = targetBucket;
+          showControlFeedback(card, true, targetBucket);
+          syncSelectedCard();
+          renderStage3();
+        } else {
+          state.selectedCardId = card.id;
+          showControlFeedback(card, false, targetBucket);
+          renderStage3();
+        }
+      }
+
+      function renderStage3() {
+        syncSelectedCard();
+        const rem = getUnsortedCards();
+        const sortedCount = CONTROL_CARDS.length - rem.length;
+        const accPct = pctInt(state.firstTryCorrect, state.firstTryTotal);
+
+        document.getElementById('ctrlSortedPill').textContent = sortedCount + ' / ' + CONTROL_CARDS.length + ' Sorted';
+        document.getElementById('ctrlAccuracyPill').textContent =
+          'First-Try Class Accuracy: ' + accPct + '% (' + state.firstTryCorrect + '/' + state.firstTryTotal + ')';
+
+        document.getElementById('btnToggleCardView').textContent =
+          state.cardView === 'focus' ? 'Show All Cards Grid' : 'Show One-by-One Card';
+
+        const deckEl = document.getElementById('cardDeckList');
+        const instEl = document.getElementById('deckInstruction');
+        const bIn = document.getElementById('bucketInside');
+        const bOut = document.getElementById('bucketOutside');
+        deckEl.innerHTML = '';
+
+        if (rem.length === 0) {
+          instEl.textContent = 'All 10 stressor cards sorted! Tap any card inside either bucket to review its discussion prompt.';
+          bIn.classList.remove('target-ready');
+          bOut.classList.remove('target-ready');
+          const doneMsg = document.createElement('div');
+          doneMsg.style.fontWeight = '900';
+          doneMsg.style.fontSize = '1.14rem';
+          doneMsg.style.color = 'var(--emerald-700)';
+          doneMsg.textContent = 'Control Lab Complete! Move to Stage 4 for Box Breathing & Check-Out.';
+          deckEl.appendChild(doneMsg);
+        } else {
+          instEl.textContent = state.cardView === 'focus'
+            ? 'Card ' + (sortedCount + 1) + ' of ' + CONTROL_CARDS.length + ' \u2014 Drag this card OR tap either bucket below:'
+            : 'Tap any card to highlight it, then tap a bucket below (or drag directly):';
+
+          const listToShow = state.cardView === 'focus'
+            ? [rem.find(function (c) { return c.id === state.selectedCardId; }) || rem[0]]
+            : rem;
+
+          listToShow.forEach(function (card) {
+            const el = document.createElement('div');
+            el.className = 'stressor-card' +
+              (state.cardView === 'grid' ? ' grid-card' : '') +
+              (card.id === state.selectedCardId ? ' selected' : '');
+            el.draggable = true;
+            el.innerHTML = '<span class="card-num-tag">#' + card.id + '</span>' + card.text;
+
+            el.addEventListener('click', function () {
+              state.selectedCardId = card.id;
+              renderStage3();
+            });
+
+            el.addEventListener('dragstart', function (e) {
+              state.selectedCardId = card.id;
+              el.classList.add('dragging');
+              try {
+                e.dataTransfer.setData('text/plain', String(card.id));
+                e.dataTransfer.effectAllowed = 'move';
+              } catch (err) {
+                // state.selectedCardId handles fallback
+              }
+            });
+
+            el.addEventListener('dragend', function () {
+              el.classList.remove('dragging');
+            });
+
+            deckEl.appendChild(el);
+          });
+
+          const ready = state.selectedCardId !== null;
+          bIn.classList.toggle('target-ready', ready);
+          bOut.classList.toggle('target-ready', ready);
+        }
+
+        // Populate sorted buckets
+        const listIn = document.getElementById('listInside');
+        const listOut = document.getElementById('listOutside');
+        listIn.innerHTML = '';
+        listOut.innerHTML = '';
+
+        let cIn = 0;
+        let cOut = 0;
+
+        CONTROL_CARDS.forEach(function (card) {
+          const placed = state.sortedMap[card.id];
+          if (!placed) return;
+          const item = document.createElement('div');
+          item.className = 'sorted-item';
+          item.innerHTML = '<span>#' + card.id + '. ' + card.text + '</span><span class="sorted-check">\u2713 View</span>';
+          item.addEventListener('click', function (e) {
+            e.stopPropagation();
+            showControlFeedback(card, true, placed);
+          });
+          if (placed === 'inside') {
+            listIn.appendChild(item);
+            cIn++;
+          } else {
+            listOut.appendChild(item);
+            cOut++;
+          }
+        });
+
+        if (cIn === 0) {
+          listIn.innerHTML = '<div class="bucket-empty">Drop or tap stressors you can directly plan, practice, or act on.</div>';
+        }
+        if (cOut === 0) {
+          listOut.innerHTML = '<div class="bucket-empty">Drop or tap stressors best handled with acceptance and calming skills.</div>';
+        }
+
+        document.getElementById('ctaInside').textContent = state.selectedCardId ? 'Tap to Place (' + cIn + ')' : cIn + ' Placed';
+        document.getElementById('ctaOutside').textContent = state.selectedCardId ? 'Tap to Place (' + cOut + ')' : cOut + ' Placed';
+
+        updateTabBadges();
+        renderSnapshot();
+      }
+
+      function bindBucket(el, bucketKey) {
+        el.addEventListener('click', function () {
+          if (state.selectedCardId !== null) {
+            attemptSort(state.selectedCardId, bucketKey);
+          }
+        });
+
+        el.addEventListener('keydown', function (e) {
+          if ((e.key === 'Enter' || e.key === ' ') && state.selectedCardId !== null) {
+            e.preventDefault();
+            attemptSort(state.selectedCardId, bucketKey);
+          }
+        });
+
+        el.addEventListener('dragover', function (e) {
+          e.preventDefault();
+          el.classList.add('drag-over');
+        });
+
+        el.addEventListener('dragleave', function () {
+          el.classList.remove('drag-over');
+        });
+
+        el.addEventListener('drop', function (e) {
+          e.preventDefault();
+          el.classList.remove('drag-over');
+          let cardId = state.selectedCardId;
+          try {
+            const raw = e.dataTransfer.getData('text/plain');
+            if (raw) cardId = Number(raw);
+          } catch (err) {
+            // fallback to state.selectedCardId
+          }
+          if (cardId !== null) {
+            attemptSort(cardId, bucketKey);
+          }
+        });
+      }
+
+      /* =====================================================================
+         8. STAGE 4 — 4-4-4-4 BREATHING RING PACER & POST CHECK-OUT
+         ===================================================================== */
+      const BREATH_PHASES = [
+        { name: 'INHALE', color: '#2dd4bf' },
+        { name: 'HOLD', color: '#38bdf8' },
+        { name: 'EXHALE', color: '#a78bfa' },
+        { name: 'HOLD', color: '#818cf8' }
+      ];
+
+      function drawBreathPacer() {
+        const p = Math.min(1, pacer.phaseElapsed / pacer.phaseMs);
+        const phase = pacer.phaseIndex;
+
+        // Smooth orb radius: expands 54 -> 96 on Inhale, holds 96, contracts 96 -> 54 on Exhale, holds 54
+        let orbR = 54;
+        if (phase === 0) {
+          orbR = 54 + (42 * p);
+        } else if (phase === 1) {
+          orbR = 96;
+        } else if (phase === 2) {
+          orbR = 96 - (42 * p);
+        } else {
+          orbR = 54;
+        }
+
+        // Outer ring progress across the 4 phases (0..1 per cycle)
+        const cycleFraction = (phase + p) / 4;
+        const dashOffset = pacer.arcCircumference * (1 - cycleFraction);
+
+        const arc = document.getElementById('breathArc');
+        const orb = document.getElementById('breathOrb');
+        const phaseTxt = document.getElementById('breathPhaseTxt');
+        const timerTxt = document.getElementById('breathTimerTxt');
+
+        arc.setAttribute('stroke-dashoffset', dashOffset.toFixed(2));
+        arc.setAttribute('stroke', BREATH_PHASES[phase].color);
+        orb.setAttribute('r', orbR.toFixed(1));
+        orb.setAttribute('stroke', BREATH_PHASES[phase].color);
+
+        if (pacer.running) {
+          const secLeft = Math.max(1, Math.ceil((pacer.phaseMs - pacer.phaseElapsed) / 1000));
+          phaseTxt.textContent = BREATH_PHASES[phase].name;
+          timerTxt.textContent = String(secLeft);
+        } else if (state.breathCycles >= pacer.totalCycles && pacer.phaseElapsed === 0) {
+          phaseTxt.textContent = 'COMPLETE';
+          timerTxt.textContent = '\u2713';
+        } else if (state.breathCycles === 0 && pacer.phaseElapsed === 0) {
+          phaseTxt.textContent = 'READY';
+          timerTxt.textContent = '4';
+        } else {
+          phaseTxt.textContent = 'PAUSED';
+        }
+
+        document.getElementById('breathCycleBadge').textContent =
+          'Cycle ' + Math.min(state.breathCycles, pacer.totalCycles) + ' / ' + pacer.totalCycles;
+      }
+
+      function stepBreath(ts) {
+        if (!pacer.running) return;
+        if (pacer.lastTs === null) pacer.lastTs = ts;
+        const dt = Math.min(100, ts - pacer.lastTs);
+        pacer.lastTs = ts;
+        pacer.phaseElapsed += dt;
+
+        if (pacer.phaseElapsed >= pacer.phaseMs) {
+          pacer.phaseElapsed -= pacer.phaseMs;
+          pacer.phaseIndex = (pacer.phaseIndex + 1) % 4;
+          if (pacer.phaseIndex === 0) {
+            state.breathCycles += 1;
+            updateTabBadges();
+            if (state.breathCycles >= pacer.totalCycles) {
+              pacer.running = false;
+              pacer.phaseElapsed = 0;
+              pacer.lastTs = null;
+              document.getElementById('btnBreathToggle').innerHTML = '&#x25B6; Start Again';
+              drawBreathPacer();
+              showToast('4 Box Breathing cycles completed!');
+              return;
+            }
+          }
+        }
+
+        drawBreathPacer();
+        pacer.rafId = window.requestAnimationFrame(stepBreath);
+      }
+
+      function toggleBreath() {
+        const btn = document.getElementById('btnBreathToggle');
+        if (pacer.running) {
+          pacer.running = false;
+          pacer.lastTs = null;
+          if (pacer.rafId) cancelAnimationFrame(pacer.rafId);
+          btn.innerHTML = '&#x25B6; Resume';
+          drawBreathPacer();
+        } else {
+          if (state.breathCycles >= pacer.totalCycles) {
+            state.breathCycles = 0;
+            pacer.phaseIndex = 0;
+            pacer.phaseElapsed = 0;
+          }
+          pacer.running = true;
+          pacer.lastTs = null;
+          btn.innerHTML = '&#x23F8; Pause';
+          pacer.rafId = window.requestAnimationFrame(stepBreath);
+        }
+      }
+
+      function resetBreath() {
+        pacer.running = false;
+        pacer.phaseIndex = 0;
+        pacer.phaseElapsed = 0;
+        pacer.lastTs = null;
+        state.breathCycles = 0;
+        if (pacer.rafId) cancelAnimationFrame(pacer.rafId);
+        document.getElementById('btnBreathToggle').innerHTML = '&#x25B6; Start';
+        drawBreathPacer();
+        updateTabBadges();
+      }
+
+      function renderStage4() {
+        const l = state.post.lighter;
+        const s = state.post.same;
+        const sup = state.post.support;
+        const total = l + s + sup;
+
+        const pL = pctInt(l, total);
+        const pS = pctInt(s, total);
+        const pSup = pctInt(sup, total);
+
+        document.getElementById('postLighterVal').textContent = l + ' (' + pL + '%)';
+        document.getElementById('postSameVal').textContent = s + ' (' + pS + '%)';
+        document.getElementById('postSupportVal').textContent = sup + ' (' + pSup + '%)';
+
+        document.getElementById('postLighterBar').style.width = pL + '%';
+        document.getElementById('postSameBar').style.width = pS + '%';
+        document.getElementById('postSupportBar').style.width = pSup + '%';
+
+        drawBreathPacer();
+        updateTabBadges();
+        renderSnapshot();
+      }
+
+      function renderSnapshot() {
+        const pre = computePreStats();
+        const rankedBody = getSortedSomaticZones();
+        const topBody = (rankedBody[0] && rankedBody[0].count > 0)
+          ? rankedBody[0].name + ' (' + rankedBody[0].count + ')'
+          : 'None yet';
+
+        const sortedCount = Object.keys(state.sortedMap).length;
+        const accPct = pctInt(state.firstTryCorrect, state.firstTryTotal);
+
+        const postTotal = state.post.lighter + state.post.same + state.post.support;
+        const lighterPct = pctInt(state.post.lighter, postTotal);
+
+        const schoolLabel = (state.school || 'EMRS').trim() || 'EMRS';
+        document.getElementById('snapContextTag').textContent =
+          schoolLabel + ' \u2022 ' + state.className + ' \u2022 ' + state.batch + ' \u2022 ' + state.date;
+
+        document.getElementById('snapTotalStudents').textContent = String(pre.total);
+        document.getElementById('snapPreDistress').textContent = pre.index.toFixed(2) + ' / 10';
+        document.getElementById('snapTopSomatic').textContent = topBody;
+        document.getElementById('snapCtrlAcc').textContent = accPct + '% (' + sortedCount + '/10)';
+        document.getElementById('snapPctLighter').textContent = lighterPct + '% (n=' + postTotal + ')';
+      }
+
+      /* =====================================================================
+         9. CSV REPORT EXPORT (R / jamovi READY)
+         ===================================================================== */
+      function csvEscape(val) {
+        const str = String(val == null ? '' : val);
+        if (/[",\r\n]/.test(str)) {
+          return '"' + str.replace(/"/g, '""') + '"';
+        }
+        return str;
+      }
+
+      function exportCSV() {
+        try {
+          const pre = computePreStats();
+          const rankedBody = getSortedSomaticZones();
+          const topBodyZone = (rankedBody[0] && rankedBody[0].count > 0) ? rankedBody[0].name : 'None';
+
+          const sortedCount = Object.keys(state.sortedMap).length;
+          const accPct = pctOneDec(state.firstTryCorrect, state.firstTryTotal);
+
+          const postTotal = state.post.lighter + state.post.same + state.post.support;
+          const pctImproved = pctOneDec(state.post.lighter, postTotal);
+
+          const schoolName = (state.school || 'EMRS').trim() || 'EMRS';
+          const sessionDate = state.date || getTodayISO();
+
+          const headers = [
+            'Date',
+            'School',
+            'Class',
+            'Group_Batch',
+            'Total_Pre_Students',
+            'SUDS_Calm_0_2',
+            'SUDS_Mild_3_5',
+            'SUDS_High_6_8',
+            'SUDS_Overwhelmed_9_10',
+            'Group_Distress_Index',
+            'Somatic_Head',
+            'Somatic_JawNeck',
+            'Somatic_Chest',
+            'Somatic_Stomach',
+            'Somatic_Hands',
+            'Somatic_Legs',
+            'Top_Somatic_Zone',
+            'Control_Cards_Sorted',
+            'Control_FirstTry_Accuracy_Pct',
+            'Post_Total_Students',
+            'Post_Lighter_Calmer',
+            'Post_Same',
+            'Post_Need_Support',
+            'Pct_Improved',
+            'Created_By'
+          ];
+
+          const row = [
+            sessionDate,
+            schoolName,
+            state.className,
+            state.batch,
+            pre.total,
+            pre.calm,
+            pre.mild,
+            pre.high,
+            pre.over,
+            pre.index.toFixed(2),
+            state.somatic.head,
+            state.somatic.jawNeck,
+            state.somatic.chest,
+            state.somatic.stomach,
+            state.somatic.hands,
+            state.somatic.legs,
+            topBodyZone,
+            sortedCount,
+            accPct,
+            postTotal,
+            state.post.lighter,
+            state.post.same,
+            state.post.support,
+            pctImproved,
+            CREATOR_CREDIT
+          ];
+
+          const csvText = headers.map(csvEscape).join(',') + '\n' + row.map(csvEscape).join(',') + '\n';
+          const blob = new Blob([csvText], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+
+          const cleanClass = state.className.replace(/[^A-Za-z0-9]/g, '');
+          const cleanBatch = state.batch.replace(/[^A-Za-z0-9]/g, '');
+          const fileName = 'StressLab_' + cleanClass + '_' + cleanBatch + '_' + sessionDate + '.csv';
+
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = fileName;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+
+          showToast('CSV Downloaded: ' + fileName);
+        } catch (err) {
+          showToast('Open this .html file directly in Chrome or Edge to download the CSV report.');
+        }
+      }
+
+      /* =====================================================================
+         10. FULLSCREEN & RESET SESSION
+         ===================================================================== */
+      function toggleFullscreen() {
+        try {
+          if (!document.fullscreenElement) {
+            const req = document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen;
+            if (req) {
+              const p = req.call(document.documentElement);
+              if (p && typeof p.catch === 'function') {
+                p.catch(function () { showToast('Press F11 for Fullscreen Smartboard view.'); });
+              }
+            } else {
+              showToast('Press F11 for Fullscreen Smartboard view.');
+            }
+          } else {
+            const ex = document.exitFullscreen || document.webkitExitFullscreen;
+            if (ex) ex.call(document);
+          }
+        } catch (err) {
+          showToast('Press F11 for Fullscreen Smartboard view.');
+        }
+      }
+
+      function executeSessionReset() {
+        resetBreath();
+        state = createFreshState(true);
+        const fb = document.getElementById('ctrlFeedbackBox');
+        fb.classList.remove('visible', 'correct', 'rethink');
+        renderStage1();
+        renderStage2();
+        renderStage3();
+        renderStage4();
+        setStage(1);
+        closeModal('resetModal');
+        showToast('Session reset — ready for your next batch!');
+      }
+
+      /* =====================================================================
+         11. INITIALIZE ALL EVENT LISTENERS
+         ===================================================================== */
+      function init() {
+        // Initialize today's date
+        const dateEl = document.getElementById('dateInput');
+        dateEl.value = state.date;
+
+        // Metadata listeners
+        document.getElementById('classSelect').addEventListener('change', function (e) {
+          state.className = e.target.value;
+          renderSnapshot();
+        });
+        document.getElementById('batchSelect').addEventListener('change', function (e) {
+          state.batch = e.target.value;
+          renderSnapshot();
+        });
+        document.getElementById('schoolInput').addEventListener('input', function (e) {
+          state.school = e.target.value;
+          renderSnapshot();
+        });
+        dateEl.addEventListener('change', function (e) {
+          state.date = e.target.value || getTodayISO();
+          renderSnapshot();
+        });
+
+        // Header actions
+        document.getElementById('btnOpenCredits').addEventListener('click', function () {
+          openModal('creditsModal');
+        });
+        document.getElementById('btnFullscreen').addEventListener('click', toggleFullscreen);
+        document.getElementById('btnResetSession').addEventListener('click', function () {
+          openModal('resetModal');
+        });
+        document.getElementById('btnConfirmReset').addEventListener('click', executeSessionReset);
+
+        // Modal dismissal
+        document.querySelectorAll('[data-close-modal]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            closeModal(btn.dataset.closeModal);
+          });
+        });
+        document.querySelectorAll('.modal-overlay').forEach(function (ov) {
+          ov.addEventListener('click', function (e) {
+            if (e.target === ov) closeModal(ov.id);
+          });
+        });
+
+        // Stage navigation tabs & prev/next
+        document.querySelectorAll('.stage-tab').forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            setStage(tab.dataset.stage);
+          });
+        });
+        document.getElementById('btnPrevStage').addEventListener('click', function () {
+          setStage(state.currentStage - 1);
+        });
+        document.getElementById('btnNextStage').addEventListener('click', function () {
+          setStage(state.currentStage + 1);
+        });
+
+        // Stage 1: SUDS tally buttons
+        document.querySelectorAll('[data-suds]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const key = btn.dataset.suds;
+            const delta = parseInt(btn.dataset.delta, 10);
+            state.suds[key] = Math.max(0, state.suds[key] + delta);
+            renderStage1();
+          });
+        });
+
+        // Stage 1: Debrief Cue toggle
+        document.getElementById('btnDebriefToggle').addEventListener('click', function () {
+          const body = document.getElementById('debriefBody');
+          const arrow = document.getElementById('debriefArrow');
+          const open = body.classList.toggle('open');
+          this.setAttribute('aria-expanded', String(open));
+          arrow.innerHTML = open ? '&#x25B2;' : '&#x25BC;';
+        });
+
+        // Stage 2: SVG Hotspot clicks (+1 vote & select zone)
+        document.querySelectorAll('.hotspot-btn').forEach(function (hs) {
+          hs.addEventListener('click', function () {
+            const zoneId = hs.dataset.zone;
+            state.selectedZone = zoneId;
+            state.somatic[zoneId] = (state.somatic[zoneId] || 0) + 1;
+            renderStage2();
+          });
+        });
+
+        document.getElementById('btnZoneUndo').addEventListener('click', function () {
+          state.somatic[state.selectedZone] = Math.max(0, (state.somatic[state.selectedZone] || 0) - 1);
+          renderStage2();
+        });
+        document.getElementById('btnZoneAdd1').addEventListener('click', function () {
+          state.somatic[state.selectedZone] = (state.somatic[state.selectedZone] || 0) + 1;
+          renderStage2();
+        });
+        document.getElementById('btnZoneAdd5').addEventListener('click', function () {
+          state.somatic[state.selectedZone] = (state.somatic[state.selectedZone] || 0) + 5;
+          renderStage2();
+        });
+        document.getElementById('btnClearBodyVotes').addEventListener('click', function () {
+          Object.keys(state.somatic).forEach(function (k) { state.somatic[k] = 0; });
+          renderStage2();
+          showToast('Body Stress Map votes cleared.');
+        });
+
+        // Stage 3: Control Lab interactions
+        bindBucket(document.getElementById('bucketInside'), 'inside');
+        bindBucket(document.getElementById('bucketOutside'), 'outside');
+
+        document.getElementById('btnToggleCardView').addEventListener('click', function () {
+          state.cardView = (state.cardView === 'focus') ? 'grid' : 'focus';
+          renderStage3();
+        });
+
+        document.getElementById('btnResetCards').addEventListener('click', function () {
+          state.sortedMap = {};
+          state.firstAttempted = {};
+          state.firstTryCorrect = 0;
+          state.firstTryTotal = 0;
+          state.selectedCardId = 1;
+          state.pendingCardId = null;
+          document.getElementById('ctrlFeedbackBox').classList.remove('visible', 'correct', 'rethink');
+          renderStage3();
+          showToast('Control Lab cards reset.');
+        });
+
+        document.getElementById('btnPlaceValidated').addEventListener('click', function () {
+          if (state.pendingCardId !== null) {
+            const card = CONTROL_CARDS.find(function (c) { return c.id === state.pendingCardId; });
+            if (card) {
+              state.sortedMap[card.id] = card.bucket;
+              showControlFeedback(card, true, card.bucket);
+              syncSelectedCard();
+              renderStage3();
+            }
+          }
+        });
+
+        // Stage 4: Breathing & Post Check-Out & Export
+        document.getElementById('btnBreathToggle').addEventListener('click', toggleBreath);
+        document.getElementById('btnBreathReset').addEventListener('click', resetBreath);
+
+        document.querySelectorAll('[data-post]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const key = btn.dataset.post;
+            const delta = parseInt(btn.dataset.delta, 10);
+            state.post[key] = Math.max(0, state.post[key] + delta);
+            renderStage4();
+          });
+        });
+
+        document.getElementById('btnExportCSV').addEventListener('click', exportCSV);
+
+        // Initial Render
+        renderStage1();
+        renderStage2();
+        renderStage3();
+        renderStage4();
+        setStage(1);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
+</html>

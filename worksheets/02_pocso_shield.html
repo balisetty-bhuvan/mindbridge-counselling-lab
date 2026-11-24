@@ -1,0 +1,3844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="B. Bhuvan, School Counsellor, M.Sc. Psychology, DCGC, NCERT" />
+  <meta name="description" content="Safe Boundaries & POCSO Shield: Know Your Rights, Spot Red Flags, Act Safe — Offline interactive smartboard personal safety and child rights workshop for residential school adolescents (Classes 6–12)." />
+  <title>Safe Boundaries &amp; POCSO Shield — Know Your Rights, Spot Red Flags, Act Safe</title>
+  <!--
+    ==========================================================================
+    SAFE BOUNDARIES & POCSO SHIELD
+    Know Your Rights, Spot Red Flags, Act Safe
+    Author: B. Bhuvan, School Counsellor, M.Sc. Psychology, DCGC, NCERT
+    Format: 100% Offline Single-File Interactive Smartboard Group Counselling Worksheet
+    Audience: Residential School Adolescents (Classes 6–12, Boys & Girls Batches)
+    ==========================================================================
+  -->
+  <style>
+    /* =====================================================================
+       1. DESIGN TOKENS & BASE RESET (High-Contrast Smartboard Palette)
+       ===================================================================== */
+    :root {
+      --navy-950: #091b2c;
+      --navy-900: #0f2942;
+      --navy-800: #173b5e;
+      --navy-700: #1e4b75;
+
+      --canvas: #f4f7fb;
+      --surface: #ffffff;
+      --surface-soft: #eef3f9;
+
+      --teal-800: #095659;
+      --teal-700: #0d7377;
+      --teal-600: #0f8b8f;
+      --teal-100: #d5f3f3;
+      --teal-50: #eefafa;
+
+      --emerald-800: #166534;
+      --emerald-700: #15803d;
+      --emerald-600: #16a34a;
+      --emerald-100: #dcfce7;
+      --emerald-50: #f0fdf4;
+
+      --amber-800: #92400e;
+      --amber-700: #b45309;
+      --amber-600: #d97706;
+      --amber-100: #fef3c7;
+      --amber-50: #fffbeb;
+
+      --crimson-800: #9f1239;
+      --crimson-700: #be123c;
+      --crimson-600: #e11d48;
+      --crimson-100: #ffe4e6;
+      --crimson-50: #fff1f2;
+
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+
+      --shadow-sm: 0 2px 8px rgba(15, 41, 66, 0.06);
+      --shadow-md: 0 8px 22px rgba(15, 41, 66, 0.10);
+      --shadow-lg: 0 18px 42px rgba(15, 41, 66, 0.18);
+
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
+      background-color: var(--canvas);
+      color: var(--slate-900);
+      font-family: var(--font-sans);
+      line-height: 1.48;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      touch-action: manipulation;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    button, select, input {
+      font-family: inherit;
+    }
+
+    button:focus-visible, select:focus-visible, input:focus-visible, [tabindex="0"]:focus-visible {
+      outline: 3px solid #38bdf8;
+      outline-offset: 2px;
+    }
+
+    /* =====================================================================
+       2. TOP SESSION HEADER & CLINICAL SAFEGUARD BANNER
+       ===================================================================== */
+    .top-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-950) 100%);
+      color: #ffffff;
+      border-bottom: 3px solid var(--teal-700);
+      box-shadow: 0 4px 18px rgba(9, 27, 44, 0.25);
+    }
+
+    .header-inner {
+      max-width: 1460px;
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 18px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 240px;
+    }
+
+    .shield-emblem {
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--teal-600) 0%, #0284c7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(13, 115, 119, 0.35);
+    }
+
+    .brand-title {
+      font-size: 1.24rem;
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      color: #ffffff;
+      line-height: 1.15;
+    }
+
+    .brand-subtitle {
+      font-size: 0.82rem;
+      color: #bae6fd;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .session-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ctrl-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.11);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 4px 10px;
+      min-height: 52px;
+    }
+
+    .ctrl-pill label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #99f6e4;
+      white-space: nowrap;
+    }
+
+    .ctrl-pill select,
+    .ctrl-pill input {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 0.94rem;
+      font-weight: 800;
+      padding: 4px 2px;
+    }
+
+    .ctrl-pill select option {
+      background: var(--navy-900);
+      color: #ffffff;
+    }
+
+    .ctrl-pill input[type="number"] {
+      width: 58px;
+      text-align: center;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-header {
+      min-height: 52px;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease, transform 0.1s ease;
+      white-space: nowrap;
+    }
+
+    .btn-header:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .btn-header:active {
+      transform: scale(0.97);
+    }
+
+    .btn-header-law {
+      background: rgba(13, 115, 119, 0.45);
+      border-color: rgba(153, 246, 228, 0.6);
+      color: #e6fffa;
+    }
+
+    .btn-header-reset {
+      background: rgba(190, 18, 60, 0.35);
+      border-color: rgba(253, 164, 175, 0.58);
+      color: #ffe4e6;
+    }
+
+    .btn-header-reset:hover {
+      background: rgba(190, 18, 60, 0.58);
+      color: #ffffff;
+    }
+
+    /* Strict Clinical Safeguard Banner */
+    .safeguard-bar {
+      background: linear-gradient(90deg, #e6f4f4 0%, #eef6ff 100%);
+      border-bottom: 2px solid #99d6d8;
+      color: var(--navy-900);
+    }
+
+    .safeguard-inner {
+      max-width: 1460px;
+      margin: 0 auto;
+      padding: 9px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .safeguard-badge {
+      background: var(--teal-700);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* =====================================================================
+       3. MAIN WORKSPACE & 4-STAGE NAVIGATION
+       ===================================================================== */
+    .workspace {
+      max-width: 1460px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 16px 18px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .stage-nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .stage-tab {
+      min-height: 68px;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--slate-300);
+      background: var(--surface);
+      color: var(--slate-800);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.16s ease;
+    }
+
+    .stage-tab:hover {
+      border-color: var(--teal-700);
+      transform: translateY(-1px);
+    }
+
+    .stage-tab.active {
+      background: var(--navy-900);
+      border-color: var(--navy-900);
+      color: #ffffff;
+      box-shadow: var(--shadow-md);
+    }
+
+    .stage-tab-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .stage-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--slate-200);
+      color: var(--navy-900);
+      font-size: 1rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .stage-tab.active .stage-num {
+      background: #2dd4bf;
+      color: var(--navy-950);
+    }
+
+    .stage-labels {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .stage-title {
+      font-size: 0.96rem;
+      font-weight: 900;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .stage-sub {
+      font-size: 0.76rem;
+      color: var(--slate-500);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .stage-tab.active .stage-sub {
+      color: #cbd5e1;
+    }
+
+    .stage-status {
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--slate-100);
+      color: var(--slate-600);
+      border: 1px solid var(--slate-200);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .stage-tab.completed .stage-status {
+      background: var(--emerald-100);
+      color: var(--emerald-800);
+      border-color: #86efac;
+    }
+
+    .stage-tab.active.completed .stage-status {
+      background: var(--emerald-700);
+      color: #ffffff;
+      border-color: #4ade80;
+    }
+
+    .stage-panel {
+      display: none;
+      animation: fadeSlide 0.22s ease;
+    }
+
+    .stage-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Common Cards, Section Titles & Large Smartboard Touch Buttons */
+    .card {
+      background: var(--surface);
+      border: 2px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 1.18rem;
+      font-weight: 900;
+      color: var(--navy-900);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-badge {
+      background: var(--teal-100);
+      color: var(--teal-800);
+      border: 1px solid #99e2e2;
+      font-size: 0.84rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .touch-btn {
+      min-height: 54px;
+      min-width: 54px;
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      border: 2px solid transparent;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      user-select: none;
+      transition: transform 0.1s ease, filter 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .touch-btn:active {
+      transform: scale(0.96);
+    }
+
+    .touch-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .btn-navy { background: var(--navy-900); color: #ffffff; border-color: var(--navy-950); }
+    .btn-navy:hover:not(:disabled) { background: var(--navy-800); }
+
+    .btn-teal { background: var(--teal-700); color: #ffffff; border-color: var(--teal-800); }
+    .btn-teal:hover:not(:disabled) { background: var(--teal-600); }
+
+    .btn-emerald { background: var(--emerald-700); color: #ffffff; border-color: var(--emerald-800); }
+    .btn-emerald:hover:not(:disabled) { filter: brightness(1.08); }
+
+    .btn-amber { background: var(--amber-700); color: #ffffff; border-color: var(--amber-800); }
+    .btn-amber:hover:not(:disabled) { filter: brightness(1.08); }
+
+    .btn-crimson { background: var(--crimson-700); color: #ffffff; border-color: var(--crimson-800); }
+    .btn-crimson:hover:not(:disabled) { filter: brightness(1.08); }
+
+    .btn-secondary { background: #ffffff; color: var(--slate-900); border-color: var(--slate-300); }
+    .btn-secondary:hover:not(:disabled) { background: var(--slate-100); border-color: var(--slate-600); }
+
+    .btn-undo { background: #ffffff; color: var(--slate-700); border-color: var(--slate-300); }
+    .btn-undo:hover:not(:disabled) { background: var(--slate-100); color: var(--slate-900); }
+
+    /* Adaptive Facilitator Cue Collapsible Panel */
+    .cue-box {
+      margin-top: 16px;
+      background: #fffbeb;
+      border: 2px solid #f59e0b;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .cue-toggle {
+      width: 100%;
+      min-height: 56px;
+      background: transparent;
+      border: none;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--amber-800);
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .cue-batch-pill {
+      display: inline-block;
+      background: var(--navy-900);
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .cue-body {
+      display: none;
+      padding: 0 18px 16px;
+      border-top: 1px solid #fde68a;
+    }
+
+    .cue-body.open {
+      display: block;
+      padding-top: 14px;
+    }
+
+    .cue-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .cue-list li {
+      background: #ffffff;
+      border-left: 4px solid var(--teal-700);
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.94rem;
+      color: var(--slate-800);
+    }
+
+    /* =====================================================================
+       4. STAGE 1: CONFIDENCE CHECK & MYTH-BUSTER
+       ===================================================================== */
+    .tally-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .tally-card {
+      border-radius: var(--radius-md);
+      padding: 16px;
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .tally-card.lvl-low { background: var(--crimson-50); border-color: #fda4af; }
+    .tally-card.lvl-mid { background: var(--amber-50); border-color: #fcd34d; }
+    .tally-card.lvl-high { background: var(--emerald-50); border-color: #86efac; }
+
+    .tally-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .tally-kicker {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 999px;
+      margin-bottom: 5px;
+    }
+
+    .lvl-low .tally-kicker { background: var(--crimson-100); color: var(--crimson-700); }
+    .lvl-mid .tally-kicker { background: var(--amber-100); color: var(--amber-700); }
+    .lvl-high .tally-kicker { background: var(--emerald-100); color: var(--emerald-700); }
+
+    .tally-title {
+      font-size: 1.12rem;
+      font-weight: 900;
+      color: var(--slate-900);
+    }
+
+    .tally-desc {
+      font-size: 0.84rem;
+      color: var(--slate-600);
+      margin-top: 3px;
+    }
+
+    .tally-stat {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .tally-num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .lvl-low .tally-num { color: var(--crimson-700); }
+    .lvl-mid .tally-num { color: var(--amber-700); }
+    .lvl-high .tally-num { color: var(--emerald-700); }
+
+    .tally-pct {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--slate-600);
+      margin-top: 2px;
+    }
+
+    .tally-btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr 1.2fr;
+      gap: 8px;
+    }
+
+    .tally-btn-row .touch-btn {
+      padding: 8px 6px;
+      min-width: 0;
+    }
+
+    .confidence-bar-panel {
+      background: var(--surface-soft);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .conf-metrics-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .conf-kpi-pill {
+      background: var(--navy-900);
+      color: #ffffff;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.94rem;
+      font-weight: 900;
+    }
+
+    .conf-kpi-pill strong {
+      color: #5eead4;
+      font-size: 1.06rem;
+    }
+
+    .stacked-bar {
+      width: 100%;
+      height: 36px;
+      background: var(--slate-200);
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+      border: 2px solid var(--slate-300);
+    }
+
+    .stacked-seg {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 0.84rem;
+      font-weight: 900;
+      transition: width 0.32s ease;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .seg-low { background: var(--crimson-700); }
+    .seg-mid { background: var(--amber-600); }
+    .seg-high { background: var(--emerald-700); }
+
+    /* Part B: Myth vs. Law Interactive Challenge */
+    .myth-card-wrap {
+      margin-top: 16px;
+    }
+
+    .myth-dots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .myth-dot {
+      min-height: 52px;
+      min-width: 56px;
+      padding: 6px 14px;
+      border-radius: 12px;
+      border: 2px solid var(--slate-300);
+      background: var(--surface);
+      color: var(--slate-700);
+      font-size: 0.94rem;
+      font-weight: 900;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .myth-dot.active {
+      border-color: var(--navy-900);
+      background: var(--navy-900);
+      color: #ffffff;
+    }
+
+    .myth-dot.answered-right {
+      border-color: var(--emerald-700);
+      background: var(--emerald-50);
+      color: var(--emerald-800);
+    }
+
+    .myth-dot.answered-right.active {
+      background: var(--emerald-700);
+      color: #ffffff;
+    }
+
+    .myth-dot.answered-review {
+      border-color: var(--amber-700);
+      background: var(--amber-50);
+      color: var(--amber-800);
+    }
+
+    .myth-dot.answered-review.active {
+      background: var(--amber-700);
+      color: #ffffff;
+    }
+
+    .myth-focus-box {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f6fc 100%);
+      border: 3px solid var(--navy-900);
+      border-radius: var(--radius-lg);
+      padding: 24px 26px;
+      text-align: center;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .myth-counter-tag {
+      display: inline-block;
+      background: var(--teal-700);
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .myth-statement {
+      font-size: 1.46rem;
+      font-weight: 900;
+      color: var(--navy-950);
+      line-height: 1.35;
+      max-width: 920px;
+      margin: 0 auto 20px;
+    }
+
+    .myth-vote-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .myth-vote-btn {
+      min-width: 240px;
+      min-height: 62px;
+      font-size: 1.12rem;
+    }
+
+    .myth-verdict-box {
+      display: none;
+      margin-top: 18px;
+      text-align: left;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      border: 2px solid transparent;
+      animation: fadeSlide 0.2s ease;
+    }
+
+    .myth-verdict-box.visible {
+      display: block;
+    }
+
+    .myth-verdict-box.right {
+      background: var(--emerald-50);
+      border-color: var(--emerald-700);
+    }
+
+    .myth-verdict-box.wrong {
+      background: var(--amber-50);
+      border-color: var(--amber-700);
+    }
+
+    .verdict-heading {
+      font-size: 1.08rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .myth-verdict-box.right .verdict-heading { color: var(--emerald-800); }
+    .myth-verdict-box.wrong .verdict-heading { color: var(--amber-800); }
+
+    .verdict-truth {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .myth-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* =====================================================================
+       5. STAGE 2: BOUNDARY RADAR (DRAG-AND-DROP + TAP-TO-PLACE)
+       ===================================================================== */
+    .radar-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .radar-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .radar-pill {
+      background: var(--navy-900);
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .radar-pill.alt {
+      background: var(--teal-100);
+      color: var(--teal-800);
+      border: 1px solid #99e2e2;
+    }
+
+    .deck-stage {
+      background: linear-gradient(135deg, #ffffff 0%, #eef4fa 100%);
+      border: 2px dashed #94a3b8;
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      margin-bottom: 16px;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .deck-hint {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--slate-600);
+      text-align: center;
+    }
+
+    .radar-card-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .scenario-card {
+      background: #ffffff;
+      border: 3px solid var(--navy-900);
+      border-radius: var(--radius-md);
+      padding: 18px 24px;
+      font-size: 1.16rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      cursor: grab;
+      box-shadow: var(--shadow-md);
+      max-width: 820px;
+      text-align: center;
+      user-select: none;
+      transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+    }
+
+    .scenario-card.grid-mode {
+      font-size: 0.94rem;
+      padding: 12px 15px;
+      max-width: 330px;
+      text-align: left;
+      border-width: 2px;
+    }
+
+    .scenario-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--teal-700);
+    }
+
+    .scenario-card.selected {
+      border-color: #0284c7;
+      background: #f0f9ff;
+      box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.24), var(--shadow-md);
+    }
+
+    .scenario-card.dragging {
+      opacity: 0.55;
+      cursor: grabbing;
+    }
+
+    .card-num-badge {
+      display: inline-block;
+      background: var(--navy-900);
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 900;
+      padding: 3px 9px;
+      border-radius: 999px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .buckets-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .radar-bucket {
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      min-height: 245px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .radar-bucket.safe {
+      background: var(--emerald-50);
+      border: 3px solid var(--emerald-700);
+    }
+
+    .radar-bucket.redflag {
+      background: var(--crimson-50);
+      border: 3px solid var(--crimson-700);
+    }
+
+    .radar-bucket.drag-over {
+      transform: scale(1.015);
+      box-shadow: 0 0 0 5px rgba(14, 165, 233, 0.35), var(--shadow-lg);
+    }
+
+    .radar-bucket.target-ready {
+      box-shadow: 0 0 0 3px rgba(13, 115, 119, 0.20);
+    }
+
+    .bucket-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .bucket-title {
+      font-size: 1.16rem;
+      font-weight: 900;
+    }
+
+    .safe .bucket-title { color: var(--emerald-800); }
+    .redflag .bucket-title { color: var(--crimson-800); }
+
+    .bucket-sub {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--slate-600);
+      margin-top: 2px;
+    }
+
+    .bucket-cta {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 900;
+      color: #ffffff;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .safe .bucket-cta { background: var(--emerald-700); }
+    .redflag .bucket-cta { background: var(--crimson-700); }
+
+    .sorted-items {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .sorted-card {
+      background: #ffffff;
+      border: 2px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .sorted-card:hover {
+      border-color: var(--navy-900);
+    }
+
+    .sorted-view-tag {
+      font-size: 0.74rem;
+      font-weight: 900;
+      padding: 3px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .safe .sorted-view-tag { background: var(--emerald-100); color: var(--emerald-800); }
+    .redflag .sorted-view-tag { background: var(--crimson-100); color: var(--crimson-800); }
+
+    .bucket-empty {
+      margin: auto;
+      text-align: center;
+      color: var(--slate-500);
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 18px 8px;
+    }
+
+    .radar-feedback {
+      display: none;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      border: 2px solid var(--slate-300);
+    }
+
+    .radar-feedback.visible {
+      display: block;
+      animation: fadeSlide 0.2s ease;
+    }
+
+    .radar-feedback.correct {
+      background: var(--emerald-50);
+      border-color: var(--emerald-700);
+    }
+
+    .radar-feedback.rethink {
+      background: var(--amber-50);
+      border-color: var(--amber-700);
+    }
+
+    .rf-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .rf-title {
+      font-size: 1.06rem;
+      font-weight: 900;
+    }
+
+    .radar-feedback.correct .rf-title { color: var(--emerald-800); }
+    .radar-feedback.rethink .rf-title { color: var(--amber-800); }
+
+    .rf-rule {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    /* =====================================================================
+       6. STAGE 3: NO - GO - TELL ACTION SIMULATOR
+       ===================================================================== */
+    .ngt-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .ngt-step {
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      color: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .ngt-step.s-no { background: linear-gradient(135deg, var(--crimson-700), #9f1239); }
+    .ngt-step.s-go { background: linear-gradient(135deg, var(--amber-700), #92400e); }
+    .ngt-step.s-tell { background: linear-gradient(135deg, var(--emerald-700), #166534); }
+
+    .ngt-big {
+      font-size: 1.38rem;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      margin-bottom: 4px;
+    }
+
+    .ngt-desc {
+      font-size: 0.88rem;
+      font-weight: 600;
+      opacity: 0.96;
+    }
+
+    .digital-rule-pill {
+      background: var(--navy-900);
+      color: #e0f2fe;
+      border: 2px solid var(--teal-600);
+      border-radius: var(--radius-md);
+      padding: 10px 16px;
+      font-size: 0.94rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .digital-badge {
+      background: #0284c7;
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+    }
+
+    .sim-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .sim-tab {
+      min-height: 60px;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--slate-300);
+      background: var(--surface);
+      color: var(--slate-800);
+      font-size: 0.94rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      text-align: left;
+      transition: all 0.15s ease;
+    }
+
+    .sim-tab.active {
+      background: var(--teal-700);
+      border-color: var(--teal-800);
+      color: #ffffff;
+      box-shadow: var(--shadow-md);
+    }
+
+    .sim-tab-badge {
+      font-size: 0.74rem;
+      font-weight: 900;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--slate-100);
+      color: var(--slate-600);
+      white-space: nowrap;
+    }
+
+    .sim-tab.done .sim-tab-badge {
+      background: var(--emerald-100);
+      color: var(--emerald-800);
+    }
+
+    .sim-tab.active.done .sim-tab-badge {
+      background: #ffffff;
+      color: var(--emerald-800);
+    }
+
+    .sim-scenario-banner {
+      background: linear-gradient(135deg, #f8fafc 0%, #eaf3fb 100%);
+      border: 2px solid #93c5fd;
+      border-left: 6px solid var(--navy-900);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+
+    .sim-scenario-kicker {
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--teal-800);
+      margin-bottom: 4px;
+    }
+
+    .sim-scenario-text {
+      font-size: 1.16rem;
+      font-weight: 800;
+      color: var(--navy-950);
+    }
+
+    .sim-options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .sim-option-card {
+      background: var(--surface);
+      border: 3px solid var(--slate-300);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 150px;
+      transition: transform 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease;
+    }
+
+    .sim-option-card:hover {
+      border-color: var(--navy-900);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .sim-option-card.selected-safe {
+      background: var(--emerald-50);
+      border-color: var(--emerald-700);
+      box-shadow: 0 0 0 4px rgba(21, 128, 61, 0.18);
+    }
+
+    .sim-option-card.selected-passive {
+      background: var(--amber-50);
+      border-color: var(--amber-700);
+      box-shadow: 0 0 0 4px rgba(180, 83, 9, 0.18);
+    }
+
+    .sim-option-card.selected-risky {
+      background: var(--crimson-50);
+      border-color: var(--crimson-700);
+      box-shadow: 0 0 0 4px rgba(190, 18, 60, 0.18);
+    }
+
+    .sim-opt-label {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--slate-100);
+      color: var(--slate-700);
+      width: fit-content;
+    }
+
+    .sim-option-card.selected-safe .sim-opt-label { background: var(--emerald-700); color: #ffffff; }
+    .sim-option-card.selected-passive .sim-opt-label { background: var(--amber-700); color: #ffffff; }
+    .sim-option-card.selected-risky .sim-opt-label { background: var(--crimson-700); color: #ffffff; }
+
+    .sim-opt-text {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+
+    .sim-opt-hint {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--teal-700);
+    }
+
+    /* Outcome Side-by-Side Comparison + Safe Script Callout */
+    .sim-outcome-panel {
+      display: none;
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      border: 2px solid var(--slate-300);
+      background: var(--surface);
+      animation: fadeSlide 0.2s ease;
+    }
+
+    .sim-outcome-panel.visible {
+      display: block;
+    }
+
+    .sim-outcome-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .sim-outcome-badge {
+      font-size: 1.02rem;
+      font-weight: 900;
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+
+    .sim-outcome-badge.safe { background: var(--emerald-100); color: var(--emerald-800); }
+    .sim-outcome-badge.passive { background: var(--amber-100); color: var(--amber-800); }
+    .sim-outcome-badge.risky { background: var(--crimson-100); color: var(--crimson-800); }
+
+    .outcome-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .outcome-col {
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      background: var(--surface-soft);
+      border: 1px solid var(--slate-200);
+    }
+
+    .outcome-col h4 {
+      font-size: 0.82rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--slate-600);
+      margin-bottom: 6px;
+    }
+
+    .outcome-col p {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .safe-script-callout {
+      background: linear-gradient(135deg, var(--teal-50) 0%, var(--emerald-50) 100%);
+      border: 2px solid var(--teal-700);
+      border-left: 6px solid var(--emerald-700);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+    }
+
+    .safe-script-callout h4 {
+      font-size: 0.82rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--emerald-800);
+      margin-bottom: 4px;
+    }
+
+    .safe-script-callout p {
+      font-size: 1.06rem;
+      font-weight: 900;
+      color: var(--navy-950);
+    }
+
+    /* =====================================================================
+       7. STAGE 4: HELPLINES, 30-SEC LOCK-IN, POST CHECK & CSV EXPORT
+       ===================================================================== */
+    .helpline-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .helpline-card {
+      border-radius: var(--radius-md);
+      padding: 16px 14px;
+      border: 2px solid var(--slate-200);
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .helpline-card.primary-hl {
+      background: linear-gradient(145deg, var(--navy-900), var(--navy-800));
+      color: #ffffff;
+      border-color: var(--teal-600);
+    }
+
+    .helpline-card.emergency-hl {
+      background: linear-gradient(145deg, var(--crimson-700), var(--crimson-800));
+      color: #ffffff;
+      border-color: var(--crimson-800);
+    }
+
+    .hl-number {
+      font-size: 1.95rem;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: 0.02em;
+    }
+
+    .helpline-card.primary-hl .hl-number { color: #5eead4; }
+    .helpline-card.emergency-hl .hl-number { color: #ffffff; }
+    .helpline-card:not(.primary-hl):not(.emergency-hl) .hl-number {
+      font-size: 1.3rem;
+      color: var(--teal-800);
+    }
+
+    .hl-title {
+      font-size: 0.96rem;
+      font-weight: 900;
+    }
+
+    .hl-desc {
+      font-size: 0.82rem;
+      opacity: 0.92;
+      line-height: 1.4;
+    }
+
+    .mandatory-note {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 5px solid var(--navy-900);
+      border-radius: 0 10px 10px 0;
+      padding: 11px 16px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy-950);
+    }
+
+    /* Part B: 30-Second Whole-Class Lock-In Check */
+    .recall-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .recall-pill {
+      min-height: 118px;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 3px solid var(--teal-700);
+      background: var(--teal-50);
+      color: var(--navy-950);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.16s ease;
+    }
+
+    .recall-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .recall-pill.revealed {
+      background: var(--emerald-700);
+      border-color: var(--emerald-800);
+      color: #ffffff;
+    }
+
+    .recall-q {
+      font-size: 1.04rem;
+      font-weight: 900;
+    }
+
+    .recall-a {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: var(--teal-800);
+      background: rgba(255, 255, 255, 0.85);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .recall-pill.revealed .recall-a {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+    }
+
+    /* Part C: Impact Snapshot Dashboard & CSV Export */
+    .impact-panel {
+      background: linear-gradient(135deg, #eefafa 0%, #eef5ff 100%);
+      border: 2px solid var(--teal-700);
+      margin-top: 16px;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .impact-kpi {
+      background: #ffffff;
+      border: 2px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .impact-kpi.highlight {
+      border-color: var(--emerald-700);
+      background: var(--emerald-50);
+    }
+
+    .impact-kpi small {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--slate-600);
+      margin-bottom: 4px;
+    }
+
+    .impact-kpi strong {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--navy-950);
+      display: block;
+    }
+
+    .impact-kpi.highlight strong {
+      color: var(--emerald-800);
+    }
+
+    .impact-kpi span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--slate-500);
+    }
+
+    .btn-export-csv {
+      width: 100%;
+      min-height: 64px;
+      font-size: 1.14rem;
+      background: linear-gradient(135deg, var(--emerald-700) 0%, var(--teal-700) 100%);
+      color: #ffffff;
+      border: 2px solid var(--emerald-800);
+      box-shadow: 0 8px 20px rgba(21, 128, 61, 0.25);
+    }
+
+    .btn-export-csv:hover {
+      filter: brightness(1.07);
+    }
+
+    /* =====================================================================
+       8. STAGE PREV/NEXT FOOTER & PERSISTENT ATTRIBUTION FOOTER
+       ===================================================================== */
+    .stage-footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 10px;
+      border-top: 2px solid var(--slate-200);
+    }
+
+    .persistent-footer {
+      background: var(--navy-950);
+      color: #e2e8f0;
+      text-align: center;
+      padding: 13px 18px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border-top: 3px solid var(--teal-700);
+      margin-top: auto;
+    }
+
+    /* =====================================================================
+       9. CUSTOM MODALS & TOAST NOTIFICATION (Zero alert/confirm)
+       ===================================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 27, 44, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 100;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      max-width: 760px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--slate-300);
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--slate-200);
+      margin-bottom: 14px;
+    }
+
+    .modal-title {
+      font-size: 1.24rem;
+      font-weight: 900;
+      color: var(--navy-950);
+    }
+
+    .modal-close {
+      min-width: 46px;
+      min-height: 46px;
+      border-radius: 50%;
+      border: 1px solid var(--slate-300);
+      background: var(--slate-100);
+      font-size: 1.35rem;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .credit-box {
+      background: linear-gradient(135deg, var(--teal-50), #eef5ff);
+      border: 2px solid var(--teal-700);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+
+    .credit-box small {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--teal-800);
+      margin-bottom: 3px;
+    }
+
+    .credit-box strong {
+      font-size: 1.06rem;
+      color: var(--navy-950);
+    }
+
+    .ref-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 12px 0;
+    }
+
+    .ref-list li {
+      background: var(--surface-soft);
+      border-left: 4px solid var(--navy-900);
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.92rem;
+      color: var(--slate-800);
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(90px);
+      background: var(--navy-950);
+      color: #ffffff;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      border: 2px solid #2dd4bf;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.24s ease, opacity 0.24s ease;
+      z-index: 120;
+      max-width: 92vw;
+      text-align: center;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* =====================================================================
+       10. RESPONSIVE BREAKPOINTS (Mobile, Tablet, Smartboard)
+       ===================================================================== */
+    @media (max-width: 1220px) {
+      .helpline-grid { grid-template-columns: repeat(3, 1fr); }
+      .impact-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 980px) {
+      .stage-nav { grid-template-columns: repeat(2, 1fr); }
+      .tally-grid-3 { grid-template-columns: 1fr; }
+      .buckets-grid { grid-template-columns: 1fr; }
+      .ngt-strip { grid-template-columns: 1fr; }
+      .sim-tabs { grid-template-columns: 1fr; }
+      .sim-options-grid { grid-template-columns: 1fr; }
+      .outcome-compare-grid { grid-template-columns: 1fr; }
+      .recall-grid { grid-template-columns: 1fr; }
+      .helpline-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .workspace { padding: 12px 12px 24px; }
+      .stage-nav { grid-template-columns: 1fr; }
+      .helpline-grid { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+      .myth-statement { font-size: 1.2rem; }
+      .myth-vote-btn { min-width: 100%; }
+      .stage-footer-nav .touch-btn { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =======================================================================
+       TOP SESSION BAR (ALWAYS ACCESSIBLE)
+       ======================================================================= -->
+  <header class="top-header">
+    <div class="header-inner">
+      <div class="brand-group">
+        <div class="shield-emblem" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">Safe Boundaries &amp; POCSO Shield</h1>
+          <div class="brand-subtitle">Interactive Personal Safety &amp; Child Rights Workshop</div>
+        </div>
+      </div>
+
+      <div class="session-controls">
+        <div class="ctrl-pill">
+          <label for="classSelect">Class</label>
+          <select id="classSelect" aria-label="Select Class">
+            <option value="Class 6">Class 6</option>
+            <option value="Class 7">Class 7</option>
+            <option value="Class 8">Class 8</option>
+            <option value="Class 9" selected>Class 9</option>
+            <option value="Class 10">Class 10</option>
+            <option value="Class 11">Class 11</option>
+            <option value="Class 12">Class 12</option>
+          </select>
+        </div>
+
+        <div class="ctrl-pill">
+          <label for="batchSelect">Batch</label>
+          <select id="batchSelect" aria-label="Select Boys or Girls Group">
+            <option value="Boys Group">Boys Group</option>
+            <option value="Girls Group">Girls Group</option>
+          </select>
+        </div>
+
+        <div class="ctrl-pill">
+          <label for="batchSizeInput">Batch Size</label>
+          <input id="batchSizeInput" type="number" min="1" max="200" value="35" aria-label="Batch Size" />
+        </div>
+
+        <button type="button" class="btn-header btn-header-law" id="btnOpenLawModal">
+          &#x2696; References &amp; Law
+        </button>
+
+        <button type="button" class="btn-header" id="btnFullscreen" title="Fullscreen Mode (F11)">
+          &#x26F6; Fullscreen
+        </button>
+
+        <button type="button" class="btn-header btn-header-reset" id="btnOpenResetModal">
+          &#x21BA; Reset Board
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- STRICT CLINICAL SAFEGUARD BANNER -->
+  <div class="safeguard-bar" role="region" aria-label="Group Safety and Privacy Rule">
+    <div class="safeguard-inner">
+      <span class="safeguard-badge">Group Safety &amp; Privacy Rule</span>
+      <span>
+        Learning Space Rule: Discuss concepts &amp; scenarios only &mdash; never share personal stories or real names in the group. Need to talk privately about yourself or a friend? Meet the School Counsellor 1-on-1 anytime.
+      </span>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MAIN WORKSPACE
+       ======================================================================= -->
+  <main class="workspace">
+
+    <!-- 4-STAGE NAVIGATION BAR WITH COMPLETION INDICATORS -->
+    <nav class="stage-nav" aria-label="Workshop Stages">
+      <button type="button" class="stage-tab active" data-stage="1" id="nav-stage-1">
+        <div class="stage-tab-left">
+          <span class="stage-num">1</span>
+          <div class="stage-labels">
+            <span class="stage-title">Confidence &amp; Myth-Buster</span>
+            <span class="stage-sub">Pre-Check + 6 Legal Facts</span>
+          </div>
+        </div>
+        <span class="stage-status" id="status-stage-1">0 / 6</span>
+      </button>
+
+      <button type="button" class="stage-tab" data-stage="2" id="nav-stage-2">
+        <div class="stage-tab-left">
+          <span class="stage-num">2</span>
+          <div class="stage-labels">
+            <span class="stage-title">Boundary Radar</span>
+            <span class="stage-sub">8-Card Safe vs. Red Flag Lab</span>
+          </div>
+        </div>
+        <span class="stage-status" id="status-stage-2">0 / 8</span>
+      </button>
+
+      <button type="button" class="stage-tab" data-stage="3" id="nav-stage-3">
+        <div class="stage-tab-left">
+          <span class="stage-num">3</span>
+          <div class="stage-labels">
+            <span class="stage-title">NO&ndash;GO&ndash;TELL Simulator</span>
+            <span class="stage-sub">3 Action Scenarios &amp; Scripts</span>
+          </div>
+        </div>
+        <span class="stage-status" id="status-stage-3">0 / 3</span>
+      </button>
+
+      <button type="button" class="stage-tab" data-stage="4" id="nav-stage-4">
+        <div class="stage-tab-left">
+          <span class="stage-num">4</span>
+          <div class="stage-labels">
+            <span class="stage-title">Support Map &amp; CSV Export</span>
+            <span class="stage-sub">Helplines, Recall &amp; Post-Check</span>
+          </div>
+        </div>
+        <span class="stage-status" id="status-stage-4">Pending</span>
+      </button>
+    </nav>
+
+    <!-- ===================================================================
+         STAGE 1: CONFIDENCE CHECK & LEGAL MYTH-BUSTER
+         =================================================================== -->
+    <section id="stage-1" class="stage-panel active" aria-label="Stage 1: Confidence Check and Legal Myth-Buster">
+
+      <!-- Part A: Anonymous Pre-Session Safety Confidence Check -->
+      <div class="card">
+        <div class="section-head">
+          <h2 class="section-title">Part A: Anonymous Pre-Session Safety Confidence Check</h2>
+          <span class="section-badge" id="preCountVsBatch">Counted: 0 / 35 students</span>
+        </div>
+        <p style="font-size:0.94rem; color:var(--slate-600); font-weight:600; margin-bottom:14px;">
+          Ask students to close their eyes and raise 1, 2, or 3 fingers to show how clearly they know POCSO rights, red flags, and where to get help right now. (Measures safety knowledge confidence only &mdash; never personal experiences.)
+        </p>
+
+        <div class="tally-grid-3">
+          <!-- Level 1: Not Sure Yet -->
+          <div class="tally-card lvl-low">
+            <div class="tally-top">
+              <div>
+                <span class="tally-kicker">1 Finger</span>
+                <div class="tally-title">Not Sure Yet</div>
+                <div class="tally-desc">Unclear about POCSO rights or what to do</div>
+              </div>
+              <div class="tally-stat">
+                <div class="tally-num" id="preLowCnt">0</div>
+                <div class="tally-pct" id="preLowPct">0%</div>
+              </div>
+            </div>
+            <div class="tally-btn-row">
+              <button type="button" class="touch-btn btn-undo" data-pre="low" data-delta="-1">-1</button>
+              <button type="button" class="touch-btn btn-crimson" data-pre="low" data-delta="1">+1</button>
+              <button type="button" class="touch-btn btn-crimson" data-pre="low" data-delta="5">+5</button>
+            </div>
+          </div>
+
+          <!-- Level 2: Know Some Basics -->
+          <div class="tally-card lvl-mid">
+            <div class="tally-top">
+              <div>
+                <span class="tally-kicker">2 Fingers</span>
+                <div class="tally-title">Know Some Basics</div>
+                <div class="tally-desc">Know general rules, unsure about reporting/boundaries</div>
+              </div>
+              <div class="tally-stat">
+                <div class="tally-num" id="preMidCnt">0</div>
+                <div class="tally-pct" id="preMidPct">0%</div>
+              </div>
+            </div>
+            <div class="tally-btn-row">
+              <button type="button" class="touch-btn btn-undo" data-pre="mid" data-delta="-1">-1</button>
+              <button type="button" class="touch-btn btn-amber" data-pre="mid" data-delta="1">+1</button>
+              <button type="button" class="touch-btn btn-amber" data-pre="mid" data-delta="5">+5</button>
+            </div>
+          </div>
+
+          <!-- Level 3: Clear & Confident -->
+          <div class="tally-card lvl-high">
+            <div class="tally-top">
+              <div>
+                <span class="tally-kicker">3 Fingers</span>
+                <div class="tally-title">Clear &amp; Confident</div>
+                <div class="tally-desc">Know exact rights, red flags, and where to get help</div>
+              </div>
+              <div class="tally-stat">
+                <div class="tally-num" id="preHighCnt">0</div>
+                <div class="tally-pct" id="preHighPct">0%</div>
+              </div>
+            </div>
+            <div class="tally-btn-row">
+              <button type="button" class="touch-btn btn-undo" data-pre="high" data-delta="-1">-1</button>
+              <button type="button" class="touch-btn btn-emerald" data-pre="high" data-delta="1">+1</button>
+              <button type="button" class="touch-btn btn-emerald" data-pre="high" data-delta="5">+5</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="confidence-bar-panel">
+          <div class="conf-metrics-row">
+            <div class="conf-kpi-pill">
+              Pre-Session Confidence % (Clear &amp; Confident): <strong id="preConfPctBadge">0.0%</strong>
+            </div>
+            <div style="font-size:0.88rem; font-weight:800; color:var(--slate-700);" id="preWeightedNote">
+              Waiting for student tally...
+            </div>
+          </div>
+          <div class="stacked-bar" role="img" aria-label="Pre-session safety confidence distribution">
+            <div id="preBarLow" class="stacked-seg seg-low" style="width:0%"></div>
+            <div id="preBarMid" class="stacked-seg seg-mid" style="width:0%"></div>
+            <div id="preBarHigh" class="stacked-seg seg-high" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part B: Myth vs. Law Interactive Challenge (6 Cards) -->
+      <div class="card myth-card-wrap">
+        <div class="section-head">
+          <h2 class="section-title">Part B: &ldquo;Myth vs. Law&rdquo; Interactive Challenge</h2>
+          <span class="section-badge" id="mythScoreBadge">First-Try Class Accuracy: 0 / 6 (0%)</span>
+        </div>
+
+        <div class="myth-dots" id="mythDotsBar" role="tablist" aria-label="Myth vs Law Cards"></div>
+
+        <div class="myth-focus-box">
+          <span class="myth-counter-tag" id="mythCounterTag">Statement 1 of 6</span>
+          <div class="myth-statement" id="mythStatementText"></div>
+
+          <div class="myth-vote-row">
+            <button type="button" class="touch-btn btn-emerald myth-vote-btn" id="btnVoteFact">
+              &#x2714; FACT / LAW
+            </button>
+            <button type="button" class="touch-btn btn-crimson myth-vote-btn" id="btnVoteMyth">
+              &#x2716; MYTH (FALSE)
+            </button>
+          </div>
+
+          <div class="myth-verdict-box" id="mythVerdictBox" aria-live="polite">
+            <div class="verdict-heading" id="mythVerdictHeading"></div>
+            <div class="verdict-truth" id="mythVerdictTruth"></div>
+          </div>
+        </div>
+
+        <div class="myth-nav-row">
+          <button type="button" class="touch-btn btn-secondary" id="btnMythPrev">&larr; Previous Card</button>
+          <button type="button" class="touch-btn btn-secondary" id="btnMythReset" style="font-size:0.9rem;">&#x21BA; Reset Myth Cards</button>
+          <button type="button" class="touch-btn btn-navy" id="btnMythNext">Next Card &rarr;</button>
+        </div>
+
+        <!-- Adaptive Facilitator Cue: Stage 1 -->
+        <div class="cue-box">
+          <button type="button" class="cue-toggle" data-cue-target="cue-body-1" aria-expanded="false">
+            <span>&#x1F4AC; Facilitator Cue <span class="cue-batch-pill" data-batch-label>Boys Group</span> &mdash; Tap to Expand</span>
+            <span class="cue-arrow">&#x25BC;</span>
+          </button>
+          <div class="cue-body" id="cue-body-1">
+            <ul class="cue-list" id="cue-list-1"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         STAGE 2: BOUNDARY RADAR — SAFE VS. RED FLAG SORTING LAB
+         =================================================================== -->
+    <section id="stage-2" class="stage-panel" aria-label="Stage 2: Boundary Radar Sorting Lab">
+      <div class="card">
+        <div class="section-head">
+          <h2 class="section-title">Boundary Radar &mdash; Safe vs. Red Flag Sorting Lab</h2>
+          <span class="section-badge">Protective Behaviours &amp; NCERT/UNICEF Pedagogy</span>
+        </div>
+
+        <div class="radar-toolbar">
+          <div class="radar-pills">
+            <span class="radar-pill" id="radarSortedPill">0 / 8 Sorted</span>
+            <span class="radar-pill alt" id="radarAccuracyPill">First-Try Class Accuracy: 0 / 0 (0%)</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <button type="button" class="touch-btn btn-secondary" id="btnToggleRadarView" style="min-height:52px; font-size:0.9rem;">
+              Show All 8 Cards Grid
+            </button>
+            <button type="button" class="touch-btn btn-secondary" id="btnResetRadar" style="min-height:52px; font-size:0.9rem;">
+              &#x21BA; Reset Cards
+            </button>
+          </div>
+        </div>
+
+        <!-- Active Scenario Deck -->
+        <div class="deck-stage">
+          <div class="deck-hint" id="radarDeckHint"></div>
+          <div class="radar-card-list" id="radarCardList"></div>
+        </div>
+
+        <!-- Two Sorting Buckets (Drag-and-Drop + Tap-to-Place) -->
+        <div class="buckets-grid">
+          <div class="radar-bucket safe" id="bucketSafe" data-bucket="safe" role="button" tabindex="0" aria-label="Safe and Respectful Boundary">
+            <div class="bucket-header">
+              <div>
+                <div class="bucket-title">&#x2714; Safe &amp; Respectful Boundary</div>
+                <div class="bucket-sub">Transparent, respectful, respects your comfort &amp; consent</div>
+              </div>
+              <span class="bucket-cta" id="ctaSafe">Tap to Place (0)</span>
+            </div>
+            <div class="sorted-items" id="listSafe"></div>
+          </div>
+
+          <div class="radar-bucket redflag" id="bucketRedFlag" data-bucket="redflag" role="button" tabindex="0" aria-label="Red Flag or Unsafe Boundary — Act Immediately">
+            <div class="bucket-header">
+              <div>
+                <div class="bucket-title">&#x26A0; Red Flag / Unsafe Boundary &mdash; Act Immediately</div>
+                <div class="bucket-sub">Grooming, unsafe secret, body/privacy violation, digital pressure</div>
+              </div>
+              <span class="bucket-cta" id="ctaRedFlag">Tap to Place (0)</span>
+            </div>
+            <div class="sorted-items" id="listRedFlag"></div>
+          </div>
+        </div>
+
+        <!-- Immediate Feedback & Protective Rule -->
+        <div class="radar-feedback" id="radarFeedbackBox" aria-live="polite">
+          <div class="rf-head">
+            <div class="rf-title" id="radarFeedbackTitle"></div>
+            <button type="button" class="touch-btn btn-navy" id="btnMoveValidated" style="display:none; min-height:52px; font-size:0.9rem;">
+              Place in Correct Bucket
+            </button>
+          </div>
+          <p class="rf-rule" id="radarFeedbackRule"></p>
+        </div>
+
+        <!-- Adaptive Facilitator Cue: Stage 2 -->
+        <div class="cue-box">
+          <button type="button" class="cue-toggle" data-cue-target="cue-body-2" aria-expanded="false">
+            <span>&#x1F4AC; Facilitator Cue <span class="cue-batch-pill" data-batch-label>Boys Group</span> &mdash; Tap to Expand</span>
+            <span class="cue-arrow">&#x25BC;</span>
+          </button>
+          <div class="cue-body" id="cue-body-2">
+            <ul class="cue-list" id="cue-list-2"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         STAGE 3: THE NO - GO - TELL ACTION SIMULATOR
+         =================================================================== -->
+    <section id="stage-3" class="stage-panel" aria-label="Stage 3: NO-GO-TELL Action Simulator">
+      <div class="card">
+        <div class="section-head">
+          <h2 class="section-title">The NO &ndash; GO &ndash; TELL Action Simulator</h2>
+          <span class="section-badge" id="simCompletedBadge">Protective Path Practised: 0 / 3 Scenarios</span>
+        </div>
+
+        <!-- Top 3-Step Visual Strip -->
+        <div class="ngt-strip">
+          <div class="ngt-step s-no">
+            <div class="ngt-big">1. NO</div>
+            <div class="ngt-desc">Firm voice &amp; clear boundary &mdash; &ldquo;Stop! I don&rsquo;t like this.&rdquo; No guilt, no apology needed.</div>
+          </div>
+          <div class="ngt-step s-go">
+            <div class="ngt-big">2. GO</div>
+            <div class="ngt-desc">Move immediately to a safe, public place with other people or trusted adults.</div>
+          </div>
+          <div class="ngt-step s-tell">
+            <div class="ngt-big">3. TELL</div>
+            <div class="ngt-desc">Report to a trusted adult (Counsellor, Warden, Principal, Parent) or call 1098/112. If the first adult doesn&rsquo;t listen, KEEP TELLING until someone acts!</div>
+          </div>
+        </div>
+
+        <div class="digital-rule-pill">
+          <span class="digital-badge">Digital Safety Rule</span>
+          <span>ONLINE: Don&rsquo;t Reply &rarr; Screenshot Evidence &rarr; Block &rarr; Tell Immediately.</span>
+        </div>
+
+        <!-- 3-Scenario Switcher -->
+        <div class="sim-tabs" id="simTabsRow" role="tablist" aria-label="Safety Action Scenarios"></div>
+
+        <!-- Active Scenario Description -->
+        <div class="sim-scenario-banner">
+          <div class="sim-scenario-kicker" id="simScenarioKicker"></div>
+          <div class="sim-scenario-text" id="simScenarioText"></div>
+        </div>
+
+        <p style="font-size:0.92rem; font-weight:700; color:var(--slate-600); margin-bottom:10px;">
+          Let the class debate and test any option below to compare what happens &mdash; then lock in the protective NO&ndash;GO&ndash;TELL action:
+        </p>
+
+        <!-- 3 Clickable Response Cards -->
+        <div class="sim-options-grid" id="simOptionsGrid"></div>
+
+        <!-- Outcome Side-by-Side Comparison + Safe Script -->
+        <div class="sim-outcome-panel" id="simOutcomePanel" aria-live="polite">
+          <div class="sim-outcome-head">
+            <span class="sim-outcome-badge" id="simOutcomeBadge"></span>
+            <span style="font-size:0.86rem; font-weight:800; color:var(--slate-600);">Tip: Tap the other cards above to compare all three outcomes.</span>
+          </div>
+
+          <div class="outcome-compare-grid">
+            <div class="outcome-col">
+              <h4>Short-Term Effect (Right Now)</h4>
+              <p id="simShortTermTxt"></p>
+            </div>
+            <div class="outcome-col">
+              <h4>Safety Outcome (What Happens Next)</h4>
+              <p id="simLongTermTxt"></p>
+            </div>
+          </div>
+
+          <div class="safe-script-callout">
+            <h4>&#x1F6E1; Ready-to-Use Safe Script (Say Out Loud Together)</h4>
+            <p id="simSafeScriptTxt"></p>
+          </div>
+        </div>
+
+        <!-- Adaptive Facilitator Cue: Stage 3 -->
+        <div class="cue-box">
+          <button type="button" class="cue-toggle" data-cue-target="cue-body-3" aria-expanded="false">
+            <span>&#x1F4AC; Facilitator Debrief Cue <span class="cue-batch-pill" data-batch-label>Boys Group</span> &mdash; Tap to Expand</span>
+            <span class="cue-arrow">&#x25BC;</span>
+          </button>
+          <div class="cue-body" id="cue-body-3">
+            <ul class="cue-list" id="cue-list-3"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         STAGE 4: SUPPORT MAP, QUICK RECALL, POST-CHECK & CSV EXPORT
+         =================================================================== -->
+    <section id="stage-4" class="stage-panel" aria-label="Stage 4: Support Map, Quick Recall and CSV Export">
+
+      <!-- Part A: Official Help & Reporting Directory -->
+      <div class="card">
+        <div class="section-head">
+          <h2 class="section-title">Part A: My Support Circle &amp; Official Reporting Directory</h2>
+          <span class="section-badge">Save These Numbers &amp; Safe People</span>
+        </div>
+
+        <div class="helpline-grid">
+          <div class="helpline-card primary-hl">
+            <div>
+              <div class="hl-number">1098</div>
+              <div class="hl-title">Child Helpline (24&times;7 Toll-Free)</div>
+            </div>
+            <div class="hl-desc">Ministry of WCD / Mission Vatsalya. Any child or adult can call anytime for free, confidential help and protection.</div>
+          </div>
+
+          <div class="helpline-card emergency-hl">
+            <div>
+              <div class="hl-number">112</div>
+              <div class="hl-title">National Emergency Response</div>
+            </div>
+            <div class="hl-desc">Immediate Police &amp; physical safety emergency response anywhere in India (24&times;7).</div>
+          </div>
+
+          <div class="helpline-card">
+            <div>
+              <div class="hl-number">POCSO e-Box</div>
+              <div class="hl-title">NCPCR Confidential Portal</div>
+            </div>
+            <div class="hl-desc"><strong>ncpcr.gov.in</strong> &mdash; Direct, child-friendly confidential online complaint portal run by NCPCR.</div>
+          </div>
+
+          <div class="helpline-card">
+            <div>
+              <div class="hl-number">1930</div>
+              <div class="hl-title">National Cyber Crime Helpline</div>
+            </div>
+            <div class="hl-desc"><strong>cybercrime.gov.in</strong> &mdash; Report online harassment, fake profiles, inappropriate chats, or photo blackmail.</div>
+          </div>
+
+          <div class="helpline-card" style="background:var(--teal-50); border-color:var(--teal-700);">
+            <div>
+              <div class="hl-number">Campus Circle</div>
+              <div class="hl-title">Trusted Campus Adults</div>
+            </div>
+            <div class="hl-desc">School Counsellor (Private 1-on-1), Principal, Hostel Warden, Trusted Teacher, Hostel Complaint Box, Parents/Guardians.</div>
+          </div>
+        </div>
+
+        <div class="mandatory-note">
+          &#x2696; <strong>Mandatory Reporting Rule (POCSO Act, Section 19):</strong> Once a child informs a school staff member or adult about an unsafe incident, adults and schools are legally required to act promptly and protect the child. You will NEVER be blamed for reporting in good faith.
+        </div>
+      </div>
+
+      <!-- Part B: 30-Second Whole-Class Lock-In Check -->
+      <div class="card" style="margin-top:16px;">
+        <div class="section-head" style="margin-bottom:4px;">
+          <h2 class="section-title">Part B: 30-Second Whole-Class Lock-In Check</h2>
+          <span class="section-badge" id="recallStatusBadge">0 / 3 Verified Together</span>
+        </div>
+        <p style="font-size:0.92rem; color:var(--slate-600); font-weight:600;">
+          Ask the whole class to shout out the answer first, then tap each card to lock it in on screen:
+        </p>
+
+        <div class="recall-grid">
+          <button type="button" class="recall-pill" data-recall="0" id="recall-0">
+            <span class="recall-q">1. Who does the POCSO Act protect?</span>
+            <span class="recall-a" id="recall-a-0">Tap to Reveal Answer &rarr;</span>
+          </button>
+
+          <button type="button" class="recall-pill" data-recall="1" id="recall-1">
+            <span class="recall-q">2. What is the 3-word Safety Action Rule?</span>
+            <span class="recall-a" id="recall-a-1">Tap to Reveal Answer &rarr;</span>
+          </button>
+
+          <button type="button" class="recall-pill" data-recall="2" id="recall-2">
+            <span class="recall-q">3. What is the 24&times;7 Toll-Free Child Helpline?</span>
+            <span class="recall-a" id="recall-a-2">Tap to Reveal Answer &rarr;</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Part C: Anonymous Post-Session Safety Confidence Check -->
+      <div class="card" style="margin-top:16px;">
+        <div class="section-head">
+          <h2 class="section-title">Part C: Anonymous Post-Session Safety Confidence Check</h2>
+          <span class="section-badge" id="postCountVsBatch">Counted: 0 / 35 students</span>
+        </div>
+        <p style="font-size:0.92rem; color:var(--slate-600); font-weight:600; margin-bottom:14px;">
+          Repeat the same 1&ndash;3 eyes-closed hand raise now that the session is complete so the class can see its growth in confidence:
+        </p>
+
+        <div class="tally-grid-3">
+          <div class="tally-card lvl-low">
+            <div class="tally-top">
+              <div>
+                <span class="tally-kicker">1 Finger</span>
+                <div class="tally-title">Not Sure Yet</div>
+                <div class="tally-desc">Still unclear about rules or where to get help</div>
+              </div>
+              <div class="tally-stat">
+                <div class="tally-num" id="postLowCnt">0</div>
+                <div class="tally-pct" id="postLowPct">0%</div>
+              </div>
+            </div>
+            <div class="tally-btn-row">
+              <button type="button" class="touch-btn btn-undo" data-post="low" data-delta="-1">-1</button>
+              <button type="button" class="touch-btn btn-crimson" data-post="low" data-delta="1">+1</button>
+              <button type="button" class="touch-btn btn-crimson" data-post="low" data-delta="5">+5</button>
+            </div>
+          </div>
+
+          <div class="tally-card lvl-mid">
+            <div class="tally-top">
+              <div>
+                <span class="tally-kicker">2 Fingers</span>
+                <div class="tally-title">Know Some Basics</div>
+                <div class="tally-desc">Understand key rules, want a little more review</div>
+              </div>
+              <div class="tally-stat">
+                <div class="tally-num" id="postMidCnt">0</div>
+                <div class="tally-pct" id="postMidPct">0%</div>
+              </div>
+            </div>
+            <div class="tally-btn-row">
+              <button type="button" class="touch-btn btn-undo" data-post="mid" data-delta="-1">-1</button>
+              <button type="button" class="touch-btn btn-amber" data-post="mid" data-delta="1">+1</button>
+              <button type="button" class="touch-btn btn-amber" data-post="mid" data-delta="5">+5</button>
+            </div>
+          </div>
+
+          <div class="tally-card lvl-high">
+            <div class="tally-top">
+              <div>
+                <span class="tally-kicker">3 Fingers</span>
+                <div class="tally-title">Clear &amp; Confident</div>
+                <div class="tally-desc">Know exact rights, red flags, and where to get help</div>
+              </div>
+              <div class="tally-stat">
+                <div class="tally-num" id="postHighCnt">0</div>
+                <div class="tally-pct" id="postHighPct">0%</div>
+              </div>
+            </div>
+            <div class="tally-btn-row">
+              <button type="button" class="touch-btn btn-undo" data-post="high" data-delta="-1">-1</button>
+              <button type="button" class="touch-btn btn-emerald" data-post="high" data-delta="1">+1</button>
+              <button type="button" class="touch-btn btn-emerald" data-post="high" data-delta="5">+5</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="confidence-bar-panel">
+          <div class="conf-metrics-row">
+            <div class="conf-kpi-pill">
+              Post-Session Confidence % (Clear &amp; Confident): <strong id="postConfPctBadge">0.0%</strong>
+            </div>
+            <div style="font-size:0.9rem; font-weight:900; color:var(--emerald-800);" id="postGainInline">
+              Confidence Gain: +0.0%
+            </div>
+          </div>
+          <div class="stacked-bar" role="img" aria-label="Post-session safety confidence distribution">
+            <div id="postBarLow" class="stacked-seg seg-low" style="width:0%"></div>
+            <div id="postBarMid" class="stacked-seg seg-mid" style="width:0%"></div>
+            <div id="postBarHigh" class="stacked-seg seg-high" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Session Impact Snapshot & 1-Click CSV Export -->
+      <div class="card impact-panel">
+        <div class="section-head">
+          <h2 class="section-title">&#x1F4CA; Session Impact Snapshot</h2>
+          <span class="section-badge" id="snapshotContextBadge">Class 9 &bull; Boys Group &bull; Batch Size: 35</span>
+        </div>
+
+        <div class="impact-grid">
+          <div class="impact-kpi">
+            <small>Pre &rarr; Post Confidence</small>
+            <strong id="snapPrePost">0.0% &rarr; 0.0%</strong>
+            <span id="snapPrePostN">Pre n=0 | Post n=0</span>
+          </div>
+
+          <div class="impact-kpi highlight">
+            <small>Improvement Gain</small>
+            <strong id="snapGain">+0.0%</strong>
+            <span>Clear &amp; Confident Shift</span>
+          </div>
+
+          <div class="impact-kpi">
+            <small>Myth-Buster Accuracy</small>
+            <strong id="snapMyth">0 / 6</strong>
+            <span id="snapMythPct">0.0% first-try</span>
+          </div>
+
+          <div class="impact-kpi">
+            <small>Boundary Radar Accuracy</small>
+            <strong id="snapBoundary">0 / 8</strong>
+            <span id="snapBoundaryPct">0.0% first-try</span>
+          </div>
+
+          <div class="impact-kpi">
+            <small>Action Simulator Safe</small>
+            <strong id="snapSim">0 / 3</strong>
+            <span>NO&ndash;GO&ndash;TELL Practised</span>
+          </div>
+        </div>
+
+        <button type="button" class="touch-btn btn-export-csv" id="btnExportCSV">
+          &#x2B07; Export Session CSV (R / jamovi Ready)
+        </button>
+
+        <!-- Adaptive Facilitator Cue: Stage 4 -->
+        <div class="cue-box">
+          <button type="button" class="cue-toggle" data-cue-target="cue-body-4" aria-expanded="false">
+            <span>&#x1F4AC; Closing Facilitator Cue <span class="cue-batch-pill" data-batch-label>Boys Group</span> &mdash; Tap to Expand</span>
+            <span class="cue-arrow">&#x25BC;</span>
+          </button>
+          <div class="cue-body" id="cue-body-4">
+            <ul class="cue-list" id="cue-list-4"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVIOUS / NEXT STAGE NAVIGATION BAR -->
+    <div class="stage-footer-nav">
+      <button type="button" class="touch-btn btn-secondary" id="btnPrevStage">&larr; Previous Stage</button>
+      <button type="button" class="touch-btn btn-navy" id="btnNextStage">Next Stage &rarr;</button>
+    </div>
+  </main>
+
+  <!-- =======================================================================
+       PERSISTENT CLEAN ATTRIBUTION FOOTER
+       ======================================================================= -->
+  <footer class="persistent-footer">
+    Created &amp; Facilitated by B. Bhuvan, School Counsellor, M.Sc. Psychology, DCGC, NCERT
+  </footer>
+
+  <!-- =======================================================================
+       MODAL 1: REFERENCES & LEGAL BASIS
+       ======================================================================= -->
+  <div class="modal-overlay" id="lawModal" role="dialog" aria-modal="true" aria-labelledby="lawModalTitle">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 class="modal-title" id="lawModalTitle">References &amp; Legal Basis</h2>
+        <button type="button" class="modal-close" data-close-modal="lawModal" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="credit-box">
+        <small>Created &amp; Facilitated By</small>
+        <strong>B. Bhuvan, School Counsellor, M.Sc. Psychology, DCGC, NCERT</strong>
+      </div>
+
+      <ul class="ref-list">
+        <li>
+          <strong>1. The Protection of Children from Sexual Offences (POCSO) Act, 2012 (as amended in 2019) &amp; POCSO Rules, 2020:</strong>
+          Sections 3&ndash;15 (contact &amp; non-contact offences including Section 11 sexual harassment), Section 19 (Mandatory Reporting), Section 21 (accountability for failure to report), Section 23 (strict prohibition on disclosing child&rsquo;s identity), Sections 33 &amp; 37 (child-friendly Special Court procedures and in-camera trials).
+        </li>
+        <li>
+          <strong>2. National Commission for Protection of Child Rights (NCPCR):</strong>
+          User Handbook on the POCSO Act &amp; <strong>POCSO e-Box</strong> Confidential Online Complaint Mechanism (<code>ncpcr.gov.in</code>).
+        </li>
+        <li>
+          <strong>3. Ministry of Women and Child Development (MWCD), Government of India:</strong>
+          Mission Vatsalya 24&times;7 Toll-Free <strong>Child Helpline 1098</strong> (integrated with National Emergency Response Support System <strong>112</strong>) and National Cyber Crime Reporting Portal (<strong>1930 / cybercrime.gov.in</strong>).
+        </li>
+        <li>
+          <strong>4. NCERT &amp; UNICEF India:</strong>
+          Adolescent Life Skills &amp; Personal Safety Education Guidelines (globally validated <strong>NO&ndash;GO&ndash;TELL</strong> Protective Action Protocol).
+        </li>
+        <li>
+          <strong>5. Protective Behaviours Framework:</strong>
+          Two Core Themes &mdash; <em>&ldquo;We all have the right to feel safe all the time&rdquo;</em> and <em>&ldquo;We can talk with someone about anything, even if it feels awful or small.&rdquo;</em>
+        </li>
+        <li>
+          <strong>6. Author &amp; Facilitator:</strong>
+          B. Bhuvan, School Counsellor, M.Sc. Psychology, DCGC, NCERT. Designed for preventive psychoeducation, classroom empowerment, and anonymized group outcome evaluation.
+        </li>
+      </ul>
+
+      <div class="modal-actions">
+        <button type="button" class="touch-btn btn-navy" data-close-modal="lawModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL 2: RESET BOARD CONFIRMATION (Custom Dialog — No window.confirm)
+       ======================================================================= -->
+  <div class="modal-overlay" id="resetModal" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle">
+    <div class="modal-box" style="max-width:500px;">
+      <div class="modal-head">
+        <h2 class="modal-title" id="resetModalTitle">Reset Board for Next Batch?</h2>
+        <button type="button" class="modal-close" data-close-modal="resetModal" aria-label="Close">&times;</button>
+      </div>
+      <p style="font-size:0.96rem; color:var(--slate-800); margin-bottom:10px;">
+        This will clear all Pre/Post confidence tallies, Myth-Buster scores, Boundary Radar cards, Action Simulator selections, and Quick Recall checks so the board is clean for your next batch.
+      </p>
+      <p style="font-size:0.9rem; font-weight:800; color:var(--amber-800);">
+        Tip: Click &ldquo;Export Session CSV&rdquo; in Stage 4 before resetting if you want to save this batch&rsquo;s data.
+      </p>
+      <div class="modal-actions">
+        <button type="button" class="touch-btn btn-secondary" data-close-modal="resetModal">Cancel</button>
+        <button type="button" class="touch-btn btn-crimson" id="btnConfirmReset">Yes, Reset Board</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toastBox" role="status" aria-live="polite"></div>
+
+  <!-- =======================================================================
+       OFFLINE APPLICATION LOGIC (100% Vanilla JavaScript)
+       ======================================================================= -->
+  <script>
+    (function () {
+      'use strict';
+
+      const CREATOR_ATTRIBUTION = 'B. Bhuvan, School Counsellor, M.Sc. Psychology, DCGC, NCERT';
+
+      /* =====================================================================
+         1. STANDARDIZED CONTENT DATASETS
+         ===================================================================== */
+
+      // Stage 1 Part B: 6 Myth vs. Law Cards
+      const MYTH_CARDS = [
+        {
+          id: 1,
+          statement: 'The POCSO Act, 2012 protects only girls, not boys.',
+          answer: 'myth',
+          truth: 'POCSO is 100% gender-neutral. It protects EVERY child below 18 years \u2014 boys, girls, and all children \u2014 equally under Indian law.'
+        },
+        {
+          id: 2,
+          statement: 'Unsafe behaviour only comes from strangers in lonely places.',
+          answer: 'myth',
+          truth: 'Most boundary violations happen with someone already known to the child. Safety is judged by BEHAVIOUR, never by whether a person is familiar or senior.'
+        },
+        {
+          id: 3,
+          statement: 'Only physical touch is a crime under POCSO; inappropriate comments, gestures, or showing bad videos/photos on a phone are not covered.',
+          answer: 'myth',
+          truth: 'Section 11 of POCSO strictly punishes non-contact sexual harassment \u2014 including inappropriate remarks, gestures, stalking, or showing explicit photos/videos offline or online.'
+        },
+        {
+          id: 4,
+          statement: 'If a student freezes, stays silent, or accepted a gift earlier, then it is partly the student\'s fault.',
+          answer: 'myth',
+          truth: 'ZERO Victim Blame. Freezing is a normal brain stress reflex. Under 18, legal and moral responsibility is 100% on the person who crosses the boundary \u2014 never the child.'
+        },
+        {
+          id: 5,
+          statement: 'If someone reports to Child Helpline 1098 or Police, the child\'s name will be announced in school or media.',
+          answer: 'myth',
+          truth: 'Section 23 of POCSO strictly forbids revealing a child\'s identity in media or public. Statements and support follow child-friendly, confidential procedures.'
+        },
+        {
+          id: 6,
+          statement: 'If an adult or senior warns "Keep this a secret between us or you will get into trouble," you must stay quiet.',
+          answer: 'myth',
+          truth: 'Safe Surprises bring happiness and are revealed soon (like a birthday). UNSAFE SECRETS cause fear, guilt, or discomfort \u2014 they must ALWAYS be broken to a trusted adult.'
+        }
+      ];
+
+      // Stage 2: 8 Concrete Boundary Radar Sorting Cards
+      const BOUNDARY_CARDS = [
+        {
+          id: 1,
+          text: 'A school doctor examines a student\'s chest/stomach with a parent or female/same-gender nurse present after explaining why.',
+          bucket: 'safe',
+          rule: 'Medical check-ups are safe when transparent, explained clearly, and done with a trusted adult/nurse present.'
+        },
+        {
+          id: 2,
+          text: 'Someone gives you extra snacks or special favours and says, "Don\'t tell your warden or parents, this is just our secret."',
+          bucket: 'redflag',
+          rule: 'Classic grooming trap. Unexplained special gifts + secrecy = major boundary red flag.'
+        },
+        {
+          id: 3,
+          text: 'A friend asks permission before borrowing your notebook or sitting next to you, and steps back when you say "No."',
+          bucket: 'safe',
+          rule: 'Respecting "No" without anger or guilt-tripping is the core sign of a healthy boundary.'
+        },
+        {
+          id: 4,
+          text: 'A senior or acquaintance keeps making uncomfortable comments about your body or shows inappropriate images on a mobile phone.',
+          bucket: 'redflag',
+          rule: 'Non-contact harassment (POCSO Sec. 11). Even without touch, inappropriate remarks or explicit media are legally wrong.'
+        },
+        {
+          id: 5,
+          text: 'Someone touches you in a way that feels confusing or uncomfortable, even if they smile and call it "just joking" or "affection."',
+          bucket: 'redflag',
+          rule: 'Trust your internal alarm (Early Warning Signs). If a touch makes you feel unsafe or uneasy, you have the right to say STOP immediately.'
+        },
+        {
+          id: 6,
+          text: 'During vacation, someone you met online asks you to send private photos or join a secret video call and threatens to leak chats if you refuse.',
+          bucket: 'redflag',
+          rule: 'Online coercion / cyber grooming. NEVER send photos; take screenshots, block, and report immediately to a trusted adult / 1930 / 1098.'
+        },
+        {
+          id: 7,
+          text: 'A classmate plans a small birthday card surprise for you and tells the teacher so the whole class can wish you tomorrow.',
+          bucket: 'safe',
+          rule: 'Safe Surprise \u2014 it brings joy, involves trusted adults openly, and has a clear happy reveal.'
+        },
+        {
+          id: 8,
+          text: 'An adult or senior tries to call you alone to an isolated room/corner outside normal school hours without a valid reason or witness.',
+          bucket: 'redflag',
+          rule: 'Isolation is a classic safety red flag. Stay in open areas, bring a friend, or leave immediately and inform your Warden/Counsellor.'
+        }
+      ];
+
+      // Stage 3: 3 Concrete NO-GO-TELL Scenarios (varied card ordering so students debate genuinely)
+      const ACTION_SCENARIOS = [
+        {
+          id: 0,
+          shortTitle: '1. Special Favours & Secret',
+          kicker: 'Scenario 1: The "Special Favours & Secret" Trap',
+          description: 'During evening free time, a familiar person offers you a ride or expensive gift and asks you to come to a quiet spot alone, saying "Don\'t tell anyone at the hostel."',
+          options: [
+            {
+              key: 'passive',
+              type: 'passive',
+              label: 'Option A \u2022 Stay Silent & Comply',
+              text: 'Take the gift politely and walk toward the quiet spot so they don\'t feel offended.',
+              verdict: 'Passive / Silence \u2014 High Risk',
+              shortTerm: 'Avoids a 5-second awkward refusal right now, but moves you into an isolated, unsafe situation.',
+              longTerm: 'Groomers use gifts to create false guilt ("I gave you something, now obey"). Secrecy increases ongoing risk.',
+              script: '"No, thank you. I don\'t keep secrets from my hostel warden or parents. I am going back to the playground now."'
+            },
+            {
+              key: 'safe',
+              type: 'safe',
+              label: 'Option B \u2022 NO \u2013 GO \u2013 TELL Action',
+              text: 'Refuse firmly, walk straight back to the crowded hostel/playground area, and report the secrecy demand to your Warden or Counsellor.',
+              verdict: 'Protective NO\u2013GO\u2013TELL Response \u2014 Safest Choice!',
+              shortTerm: 'Breaks the secrecy trap immediately and keeps you visible around peers and trusted staff.',
+              longTerm: 'Protects BOTH you and younger students in the hostel by alerting responsible adults early.',
+              script: '"No, I don\'t want the gift and I am not going anywhere alone. I am returning to my group right now." (Then GO to an open area and TELL the Warden/Counsellor.)'
+            },
+            {
+              key: 'risky',
+              type: 'risky',
+              label: 'Option C \u2022 Confront Alone in Secret',
+              text: 'Follow them to the quiet spot to argue angrily and tell them off by yourself, without informing any adult later.',
+              verdict: 'Isolated Reaction \u2014 Unnecessary Danger',
+              shortTerm: 'Feels brave for a moment, but stepping into an isolated corner alone puts your physical safety at risk.',
+              longTerm: 'Keeping the incident secret afterward allows the person to target you again or approach another student.',
+              script: 'Never confront alone in an isolated spot. Use NO\u2013GO\u2013TELL: "No, I\'m not coming." Walk to safety and inform a trusted adult.'
+            }
+          ]
+        },
+        {
+          id: 1,
+          shortTitle: '2. Travelling Home Touch',
+          kicker: 'Scenario 2: Uncomfortable Touch While Travelling Home',
+          description: 'On a crowded bus/train heading home for holidays, a passenger repeatedly presses against you inappropriately and stares even after you shift away.',
+          options: [
+            {
+              key: 'passive',
+              type: 'passive',
+              label: 'Option A \u2022 Freeze & Say Nothing',
+              text: 'Look down at the floor and stay quiet hoping they will stop at the next station.',
+              verdict: 'Passive / Silence \u2014 Unsafe Behaviour Continues',
+              shortTerm: 'Avoids drawing attention in the moment, though you feel trapped, anxious, and unsafe.',
+              longTerm: 'Offenders rely on silence and embarrassment to continue boundary violations. You deserve immediate physical safety.',
+              script: '"Excuse me \u2014 step back! Stop touching me!" (Said loud enough for nearby passengers or the conductor to hear.)'
+            },
+            {
+              key: 'risky',
+              type: 'risky',
+              label: 'Option B \u2022 Jump Off at Unknown Stop',
+              text: 'Get off the bus/train alone at an unfamiliar stop without telling your escort, family, or the conductor.',
+              verdict: 'Risky / Isolated Reaction \u2014 Creates New Danger',
+              shortTerm: 'Gets away from the passenger, but leaves you stranded alone in an unfamiliar place without support.',
+              longTerm: 'Being isolated away from transport staff and family creates a bigger safety hazard than moving toward help on board.',
+              script: 'Stay safe around people: Say "STOP!" clearly, move near the conductor/TTE or family group, and call your parents or 112/1098 if needed.'
+            },
+            {
+              key: 'safe',
+              type: 'safe',
+              label: 'Option C \u2022 NO \u2013 GO \u2013 TELL Action',
+              text: 'Speak up loudly ("Step back!"), move immediately next to the conductor/TTE or a family/safe passenger, and tell your escort/parents (or 112/1098).',
+              verdict: 'Protective NO\u2013GO\u2013TELL Response \u2014 Safest Choice!',
+              shortTerm: 'Public attention instantly removes the offender\'s secrecy and stops the behaviour right away.',
+              longTerm: 'Keeps you safe for the rest of the journey and ensures transport staff or police (112) can intervene.',
+              script: '"Stop! Move your hand back right now!" -> Move to the conductor/TTE or safe family seat -> "Uncle/Sir/Ma\'am, that passenger was touching me inappropriately. Please help me stay safe."'
+            }
+          ]
+        },
+        {
+          id: 2,
+          shortTitle: '3. Vacation Digital Pressure',
+          kicker: 'Scenario 3: Digital Pressure During Vacation',
+          description: 'While using a phone at home, an online contact who seemed friendly starts sending inappropriate messages and pressures you for a private photo, saying "If you\'re my real friend, prove it."',
+          options: [
+            {
+              key: 'safe',
+              type: 'safe',
+              label: 'Option A \u2022 Digital NO \u2013 GO \u2013 TELL',
+              text: 'Do NOT reply or send any photo. Take screenshots of the chat & profile, BLOCK the account, and TELL your parent/Counsellor (report on 1930 / 1098).',
+              verdict: 'Protective Digital NO\u2013GO\u2013TELL \u2014 Safest Choice!',
+              shortTerm: 'Cuts off the manipulator immediately while preserving solid proof of their misconduct.',
+              longTerm: 'Protects your privacy completely and allows trusted adults and Cyber Helpline 1930 to stop online predators.',
+              script: 'Do NOT argue online. Screenshot the messages & username -> Block -> Tell your parent/Counsellor: "Someone online is pressuring me for private photos. I took screenshots and blocked them. Please help me report this."'
+            },
+            {
+              key: 'passive',
+              type: 'passive',
+              label: 'Option B \u2022 Give In Out of Fear/Guilt',
+              text: 'Send one photo just to prove friendship or keep them from getting angry.',
+              verdict: 'Passive Compliance \u2014 Extreme Risk',
+              shortTerm: 'Feels like it will stop the nagging for a minute, but hands permanent control to an unsafe stranger.',
+              longTerm: 'Online groomers almost always escalate demands and use sent photos for threats or blackmail. A real friend NEVER demands private photos.',
+              script: 'Real friendship never requires unsafe proof. NEVER send private images. Screenshot, block, and tell a trusted adult immediately.'
+            },
+            {
+              key: 'risky',
+              type: 'risky',
+              label: 'Option C \u2022 Delete Everything & Hide It',
+              text: 'Argue back angrily, delete the whole chat history so parents never find out, and keep it secret.',
+              verdict: 'Risky Reaction \u2014 Destroys Evidence & Leaves You Alone',
+              shortTerm: 'Hides the message from family, but deletes the proof needed if the person creates a fake account to harass you.',
+              longTerm: 'Carrying online blackmail or harassment alone causes severe stress. Adults and 1930/1098 are there to protect you, not punish you.',
+              script: 'Keep evidence safe! Don\'t delete chats before taking screenshots. Block the user and show a trusted adult immediately.'
+            }
+          ]
+        }
+      ];
+
+      // Stage 4 Part B: 30-Second Lock-In Answers
+      const RECALL_ANSWERS = [
+        'Every person below 18 years \u2014 Boys & Girls equally!',
+        'NO \u2014 GO \u2014 TELL (and keep telling until safe!)',
+        '1098 (and 112 for immediate emergency)'
+      ];
+
+      // Dynamic Facilitator Cues (Adapts automatically to Boys Group vs Girls Group in EVERY stage!)
+      const FACILITATOR_CUES = {
+        'Boys Group': {
+          1: [
+            '<strong>Break the Silence Myth:</strong> Adolescent boys often stay silent due to shame or the myth that "boys should handle everything alone." Remind the group clearly: POCSO protects boys and girls identically up to age 18.',
+            '<strong>Strength & Leadership Framing:</strong> Frame knowing the law and respecting boundaries as real strength, self-respect, and protecting younger classmates or hostel juniors.',
+            '<strong>Zero Stigma:</strong> Emphasize that freezing or staying quiet during an unsafe moment is an automatic nervous-system reflex, never weakness or consent.'
+          ],
+          2: [
+            '<strong>Peer & Senior Dynamics:</strong> In boys\' hostels, boundary violations are sometimes disguised as "ragging," "just joking," or "senior favours." Reinforce that any uncomfortable touch, humiliating comment, or explicit phone media is a Red Flag, never harmless fun.',
+            '<strong>Mutual Respect:</strong> Point out Card #3 (respecting "No") as the mark of a genuinely trustworthy friend and senior.'
+          ],
+          3: [
+            '<strong>Why Not Fight Alone?</strong> Boys sometimes feel pressured to handle threats aggressively or secretly ("Option C"). Help them see why stepping into an isolated spot to argue alone increases danger, whereas NO\u2013GO\u2013TELL uses smart strategy and real backup.',
+            '<strong>Normalizing Reporting:</strong> Clarify that reporting an unsafe adult or peer to the Warden, Counsellor, or 1098 is NOT "snitching" \u2014 it is protecting yourself and every younger boy on campus.'
+          ],
+          4: [
+            '<strong>Private 1-on-1 Door Open:</strong> Close calmly by reminding boys that meeting the School Counsellor privately is completely confidential and respected \u2014 whether for themselves or to help a friend who is hesitant to speak up.',
+            '<strong>Memorize 1098 & 1930:</strong> Have the whole boys\' group repeat 1098 (Child Helpline) and 1930 (Cyber Helpline) aloud once before dispersing.'
+          ]
+        },
+        'Girls Group': {
+          1: [
+            '<strong>Zero Shame & Zero Victim-Blaming:</strong> Reinforce strongly that responsibility for crossing a boundary is 100% on the perpetrator \u2014 NEVER on a girl\'s clothing, timing, friendliness, or silence.',
+            '<strong>Authority vs. Safety:</strong> Many girls are socialized to stay polite and never question elders. State clearly: Saying "No" to an adult or senior who crosses a personal boundary is NOT disrespect \u2014 it is your legal right and self-protection.',
+            '<strong>Confidentiality Reassurance:</strong> Highlight POCSO Section 23 so girls know reporting will NOT bring public gossip or media exposure.'
+          ],
+          2: [
+            '<strong>Trusting Early Warning Signs:</strong> Girls are often told they are "overreacting" when a stare, comment, or "friendly" touch feels wrong. Validate their internal alarm: if it feels confusing or uncomfortable, it counts as a Red Flag.',
+            '<strong>Online Coercion Safety:</strong> Discuss Card #6 calmly \u2014 remind girls never to give in to threats of leaking chats or photos; trusted adults and 1930/1098 stand firmly on their side.'
+          ],
+          3: [
+            '<strong>Using a Loud, Firm Voice:</strong> Encourage girls to practise the loud NO script for crowded buses/trains ("Step back! Stop touching me!"). Offenders count on silence and embarrassment \u2014 public attention stops them fast.',
+            '<strong>Keep Telling Rule:</strong> Emphasize clearly: if one adult minimizes your concern, do not stop \u2014 go straight to the Counsellor, Warden, Principal, or call 1098.'
+          ],
+          4: [
+            '<strong>Safe Campus Access:</strong> Remind girls of the Hostel Complaint/Suggestion Box and private 1-on-1 counselling hours so they always have a discreet way to ask for support for themselves or a roommate.',
+            '<strong>Empowerment Closing:</strong> End on strength: "Your body, your dignity, and your safety belong to you \u2014 and Indian law + your trusted adults stand behind you."'
+          ]
+        }
+      };
+
+      /* =====================================================================
+         2. APPLICATION STATE
+         ===================================================================== */
+      function getTodayISO() {
+        const d = new Date();
+        const pad = function (n) { return String(n).padStart(2, '0'); };
+        return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+      }
+
+      function createFreshState(keepMeta) {
+        const prev = keepMeta ? state : null;
+        return {
+          currentStage: 1,
+          className: prev ? prev.className : 'Class 9',
+          batch: prev ? prev.batch : 'Boys Group',
+          batchSize: prev ? prev.batchSize : 35,
+
+          // Stage 1A: Pre-session confidence
+          pre: { low: 0, mid: 0, high: 0 },
+
+          // Stage 1B: Myth-Buster
+          mythIdx: 0,
+          mythFirstTry: {}, // { [id]: true | false }
+          mythLastChoice: {}, // { [id]: 'fact' | 'myth' }
+
+          // Stage 2: Boundary Radar
+          radarView: 'focus', // 'focus' | 'grid'
+          selectedRadarCardId: 1,
+          radarSorted: {}, // { [id]: 'safe' | 'redflag' }
+          radarFirstAttempted: {},
+          radarFirstCorrect: 0,
+          radarFirstTotal: 0,
+          radarPendingCardId: null,
+
+          // Stage 3: Action Simulator
+          simScenarioIdx: 0,
+          simSelectedOpt: {}, // { [scenarioId]: 'safe' | 'passive' | 'risky' }
+          simSafeCompleted: {}, // { [scenarioId]: true }
+
+          // Stage 4: Lock-In Recall & Post-Session Confidence
+          recallRevealed: [false, false, false],
+          post: { low: 0, mid: 0, high: 0 }
+        };
+      }
+
+      let state = createFreshState(false);
+
+      /* =====================================================================
+         3. UTILITIES (SAFE MATH, TOAST, MODALS)
+         ===================================================================== */
+      function pctInt(part, total) {
+        return total > 0 ? Math.round((part / total) * 100) : 0;
+      }
+
+      function pctOneDecNum(part, total) {
+        return total > 0 ? Number(((part / total) * 100).toFixed(1)) : 0;
+      }
+
+      function formatSignedGain(num) {
+        const fixed = Number(num).toFixed(1);
+        return num >= 0 ? '+' + fixed + '%' : fixed + '%';
+      }
+
+      let toastTimer = null;
+      function showToast(msg) {
+        const box = document.getElementById('toastBox');
+        if (!box) return;
+        box.textContent = msg;
+        box.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          box.classList.remove('show');
+        }, 3200);
+      }
+
+      function openModal(id) {
+        const m = document.getElementById(id);
+        if (m) m.classList.add('open');
+      }
+
+      function closeModal(id) {
+        const m = document.getElementById(id);
+        if (m) m.classList.remove('open');
+      }
+
+      /* =====================================================================
+         4. ADAPTIVE FACILITATOR CUES & STAGE NAVIGATION
+         ===================================================================== */
+      function renderFacilitatorCues() {
+        const batchCues = FACILITATOR_CUES[state.batch] || FACILITATOR_CUES['Boys Group'];
+        document.querySelectorAll('[data-batch-label]').forEach(function (el) {
+          el.textContent = state.batch;
+        });
+
+        [1, 2, 3, 4].forEach(function (stageNum) {
+          const ul = document.getElementById('cue-list-' + stageNum);
+          if (!ul) return;
+          ul.innerHTML = '';
+          (batchCues[stageNum] || []).forEach(function (htmlStr) {
+            const li = document.createElement('li');
+            li.innerHTML = htmlStr;
+            ul.appendChild(li);
+          });
+        });
+      }
+
+      function updateStageStatuses() {
+        // Stage 1 status
+        const mythAnswered = Object.keys(state.mythFirstTry).length;
+        const preTotal = state.pre.low + state.pre.mid + state.pre.high;
+        const st1 = document.getElementById('status-stage-1');
+        const nav1 = document.getElementById('nav-stage-1');
+        st1.textContent = (mythAnswered === MYTH_CARDS.length ? '\u2713 ' : '') + mythAnswered + ' / ' + MYTH_CARDS.length;
+        nav1.classList.toggle('completed', mythAnswered === MYTH_CARDS.length && preTotal > 0);
+
+        // Stage 2 status
+        const sortedCnt = Object.keys(state.radarSorted).length;
+        const st2 = document.getElementById('status-stage-2');
+        const nav2 = document.getElementById('nav-stage-2');
+        st2.textContent = (sortedCnt === BOUNDARY_CARDS.length ? '\u2713 ' : '') + sortedCnt + ' / ' + BOUNDARY_CARDS.length;
+        nav2.classList.toggle('completed', sortedCnt === BOUNDARY_CARDS.length);
+
+        // Stage 3 status
+        const simDone = Object.keys(state.simSafeCompleted).length;
+        const st3 = document.getElementById('status-stage-3');
+        const nav3 = document.getElementById('nav-stage-3');
+        st3.textContent = (simDone === ACTION_SCENARIOS.length ? '\u2713 ' : '') + simDone + ' / ' + ACTION_SCENARIOS.length;
+        nav3.classList.toggle('completed', simDone === ACTION_SCENARIOS.length);
+
+        // Stage 4 status
+        const postTotal = state.post.low + state.post.mid + state.post.high;
+        const recallDone = state.recallRevealed.filter(Boolean).length;
+        const st4 = document.getElementById('status-stage-4');
+        const nav4 = document.getElementById('nav-stage-4');
+        if (postTotal > 0) {
+          st4.textContent = '\u2713 ' + postTotal + ' out';
+          nav4.classList.add('completed');
+        } else if (recallDone > 0) {
+          st4.textContent = recallDone + '/3 recall';
+          nav4.classList.remove('completed');
+        } else {
+          st4.textContent = 'Pending';
+          nav4.classList.remove('completed');
+        }
+      }
+
+      function setStage(stageNum) {
+        const num = Math.min(4, Math.max(1, Number(stageNum) || 1));
+        state.currentStage = num;
+
+        document.querySelectorAll('.stage-tab').forEach(function (tab) {
+          tab.classList.toggle('active', Number(tab.dataset.stage) === num);
+        });
+        document.querySelectorAll('.stage-panel').forEach(function (panel) {
+          panel.classList.toggle('active', panel.id === 'stage-' + num);
+        });
+
+        document.getElementById('btnPrevStage').disabled = (num === 1);
+        document.getElementById('btnNextStage').disabled = (num === 4);
+
+        if (num === 4) {
+          renderStage4();
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      /* =====================================================================
+         5. STAGE 1: PRE-CONFIDENCE & MYTH VS. LAW
+         ===================================================================== */
+      function renderConfidenceBlock(prefix, counts) {
+        const total = counts.low + counts.mid + counts.high;
+        const pLow = pctInt(counts.low, total);
+        const pMid = pctInt(counts.mid, total);
+        const pHigh = pctInt(counts.high, total);
+        const highPctDec = pctOneDecNum(counts.high, total);
+
+        document.getElementById(prefix + 'LowCnt').textContent = counts.low;
+        document.getElementById(prefix + 'MidCnt').textContent = counts.mid;
+        document.getElementById(prefix + 'HighCnt').textContent = counts.high;
+
+        document.getElementById(prefix + 'LowPct').textContent = pLow + '%';
+        document.getElementById(prefix + 'MidPct').textContent = pMid + '%';
+        document.getElementById(prefix + 'HighPct').textContent = pHigh + '%';
+
+        document.getElementById(prefix + 'CountVsBatch').textContent =
+          'Counted: ' + total + ' / ' + state.batchSize + ' students';
+
+        document.getElementById(prefix + 'ConfPctBadge').textContent = highPctDec.toFixed(1) + '%';
+
+        const segs = [
+          [prefix + 'BarLow', pLow],
+          [prefix + 'BarMid', pMid],
+          [prefix + 'BarHigh', pHigh]
+        ];
+        segs.forEach(function (pair) {
+          const el = document.getElementById(pair[0]);
+          el.style.width = pair[1] + '%';
+          el.textContent = pair[1] >= 10 ? pair[1] + '%' : '';
+        });
+
+        return { total: total, highPctDec: highPctDec };
+      }
+
+      function renderStage1Pre() {
+        const res = renderConfidenceBlock('pre', state.pre);
+        const noteEl = document.getElementById('preWeightedNote');
+        if (res.total === 0) {
+          noteEl.textContent = 'Waiting for student tally...';
+        } else {
+          // Helpful weighted readiness score alongside exact % Confident
+          const weighted = ((state.pre.low * 0 + state.pre.mid * 50 + state.pre.high * 100) / res.total).toFixed(0);
+          noteEl.textContent = 'Overall Readiness Index: ' + weighted + '/100  (n=' + res.total + ')';
+        }
+        updateStageStatuses();
+        renderImpactSnapshot();
+      }
+
+      function renderMythBuster() {
+        const card = MYTH_CARDS[state.mythIdx];
+        const totalCards = MYTH_CARDS.length;
+
+        // Calculate first-try accuracy
+        let correctCnt = 0;
+        let answeredCnt = 0;
+        MYTH_CARDS.forEach(function (c) {
+          if (Object.prototype.hasOwnProperty.call(state.mythFirstTry, c.id)) {
+            answeredCnt++;
+            if (state.mythFirstTry[c.id]) correctCnt++;
+          }
+        });
+
+        const accPct = pctInt(correctCnt, totalCards);
+        document.getElementById('mythScoreBadge').textContent =
+          'First-Try Class Accuracy: ' + correctCnt + ' / ' + totalCards + ' (' + accPct + '%)';
+
+        // Render clickable progress dots 1..6
+        const dotsBar = document.getElementById('mythDotsBar');
+        dotsBar.innerHTML = '';
+        MYTH_CARDS.forEach(function (c, idx) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'myth-dot';
+          if (idx === state.mythIdx) btn.classList.add('active');
+          if (Object.prototype.hasOwnProperty.call(state.mythFirstTry, c.id)) {
+            btn.classList.add(state.mythFirstTry[c.id] ? 'answered-right' : 'answered-review');
+          }
+          const mark = Object.prototype.hasOwnProperty.call(state.mythFirstTry, c.id)
+            ? (state.mythFirstTry[c.id] ? ' \u2713' : ' \u2022')
+            : '';
+          btn.textContent = (idx + 1) + '/' + totalCards + mark;
+          btn.addEventListener('click', function () {
+            state.mythIdx = idx;
+            renderMythBuster();
+          });
+          dotsBar.appendChild(btn);
+        });
+
+        document.getElementById('mythCounterTag').textContent = 'Statement ' + (state.mythIdx + 1) + ' of ' + totalCards;
+        document.getElementById('mythStatementText').textContent = '\u201C' + card.statement + '\u201D';
+
+        const vBox = document.getElementById('mythVerdictBox');
+        const vHead = document.getElementById('mythVerdictHeading');
+        const vTruth = document.getElementById('mythVerdictTruth');
+
+        const lastChoice = state.mythLastChoice[card.id];
+        vBox.classList.remove('visible', 'right', 'wrong');
+        if (lastChoice) {
+          const isCorrect = (lastChoice === card.answer);
+          vBox.classList.add('visible', isCorrect ? 'right' : 'wrong');
+          vHead.textContent = isCorrect
+            ? '\u2714 Correct! This statement is a MYTH (FALSE) under Indian Law.'
+            : '\u26A0 Important Legal Correction: Actually, this statement is a MYTH (FALSE)!';
+          vTruth.textContent = 'Legal Truth: ' + card.truth;
+        }
+
+        document.getElementById('btnMythPrev').disabled = (state.mythIdx === 0);
+        document.getElementById('btnMythNext').disabled = (state.mythIdx === totalCards - 1);
+
+        updateStageStatuses();
+        renderImpactSnapshot();
+      }
+
+      function voteMythCard(choice) {
+        const card = MYTH_CARDS[state.mythIdx];
+        if (!card) return;
+        const isCorrect = (choice === card.answer);
+        if (!Object.prototype.hasOwnProperty.call(state.mythFirstTry, card.id)) {
+          state.mythFirstTry[card.id] = isCorrect;
+        }
+        state.mythLastChoice[card.id] = choice;
+        renderMythBuster();
+      }
+
+      /* =====================================================================
+         6. STAGE 2: BOUNDARY RADAR (DRAG-AND-DROP + TAP-TO-PLACE)
+         ===================================================================== */
+      function getUnsortedRadarCards() {
+        return BOUNDARY_CARDS.filter(function (c) { return !state.radarSorted[c.id]; });
+      }
+
+      function syncRadarSelected() {
+        const rem = getUnsortedRadarCards();
+        if (rem.length === 0) {
+          state.selectedRadarCardId = null;
+          return;
+        }
+        const exists = rem.some(function (c) { return c.id === state.selectedRadarCardId; });
+        if (!exists) {
+          state.selectedRadarCardId = rem[0].id;
+        }
+      }
+
+      function showRadarFeedback(card, isMatch, attemptedBucket) {
+        const box = document.getElementById('radarFeedbackBox');
+        const title = document.getElementById('radarFeedbackTitle');
+        const rule = document.getElementById('radarFeedbackRule');
+        const moveBtn = document.getElementById('btnMoveValidated');
+
+        box.classList.remove('correct', 'rethink');
+        box.classList.add('visible', isMatch ? 'correct' : 'rethink');
+
+        const correctLabel = card.bucket === 'safe'
+          ? 'Safe & Respectful Boundary'
+          : 'Red Flag / Unsafe Boundary \u2014 Act Immediately';
+
+        if (isMatch) {
+          title.textContent = '\u2714 Spot On! \u2192 ' + correctLabel;
+          moveBtn.style.display = 'none';
+          state.radarPendingCardId = null;
+        } else {
+          const triedLabel = attemptedBucket === 'safe' ? 'Safe Boundary' : 'Red Flag / Unsafe';
+          title.textContent = '\u26A0 Let\'s Double-Check: The class tapped "' + triedLabel + '" \u2014 Safety Rule places this in: ' + correctLabel;
+          moveBtn.style.display = 'inline-flex';
+          state.radarPendingCardId = card.id;
+        }
+
+        rule.textContent = 'Protective Rule: ' + card.rule;
+      }
+
+      function attemptRadarSort(cardId, bucketKey) {
+        const card = BOUNDARY_CARDS.find(function (c) { return c.id === Number(cardId); });
+        if (!card || state.radarSorted[card.id]) return;
+
+        const isMatch = (card.bucket === bucketKey);
+        if (!state.radarFirstAttempted[card.id]) {
+          state.radarFirstAttempted[card.id] = true;
+          state.radarFirstTotal += 1;
+          if (isMatch) state.radarFirstCorrect += 1;
+        }
+
+        if (isMatch) {
+          state.radarSorted[card.id] = bucketKey;
+          showRadarFeedback(card, true, bucketKey);
+          syncRadarSelected();
+          renderStage2();
+        } else {
+          state.selectedRadarCardId = card.id;
+          showRadarFeedback(card, false, bucketKey);
+          renderStage2();
+        }
+      }
+
+      function renderStage2() {
+        syncRadarSelected();
+        const rem = getUnsortedRadarCards();
+        const sortedCount = BOUNDARY_CARDS.length - rem.length;
+        const accPct = pctInt(state.radarFirstCorrect, state.radarFirstTotal);
+
+        document.getElementById('radarSortedPill').textContent = sortedCount + ' / ' + BOUNDARY_CARDS.length + ' Sorted';
+        document.getElementById('radarAccuracyPill').textContent =
+          'First-Try Class Accuracy: ' + state.radarFirstCorrect + ' / ' + state.radarFirstTotal + ' (' + accPct + '%)';
+
+        document.getElementById('btnToggleRadarView').textContent =
+          state.radarView === 'focus' ? 'Show All 8 Cards Grid' : 'Show One-by-One Card';
+
+        const listEl = document.getElementById('radarCardList');
+        const hintEl = document.getElementById('radarDeckHint');
+        const bSafe = document.getElementById('bucketSafe');
+        const bRed = document.getElementById('bucketRedFlag');
+        listEl.innerHTML = '';
+
+        if (rem.length === 0) {
+          hintEl.textContent = 'All 8 Boundary Radar cards sorted! Tap any placed card below to review its Protective Rule.';
+          bSafe.classList.remove('target-ready');
+          bRed.classList.remove('target-ready');
+          const doneBanner = document.createElement('div');
+          doneBanner.style.fontSize = '1.16rem';
+          doneBanner.style.fontWeight = '900';
+          doneBanner.style.color = 'var(--emerald-800)';
+          doneBanner.textContent = '\u2714 Boundary Radar Complete! Proceed to Stage 3 for NO\u2013GO\u2013TELL Action Practice.';
+          listEl.appendChild(doneBanner);
+        } else {
+          hintEl.textContent = state.radarView === 'focus'
+            ? 'Scenario ' + (sortedCount + 1) + ' of ' + BOUNDARY_CARDS.length + ' \u2014 Drag this card into a bucket OR simply tap the matching bucket below:'
+            : 'Tap any card to select it, then tap either bucket below (or drag directly):';
+
+          const cardsToDisplay = state.radarView === 'focus'
+            ? [rem.find(function (c) { return c.id === state.selectedRadarCardId; }) || rem[0]]
+            : rem;
+
+          cardsToDisplay.forEach(function (card) {
+            const el = document.createElement('div');
+            el.className = 'scenario-card' +
+              (state.radarView === 'grid' ? ' grid-mode' : '') +
+              (card.id === state.selectedRadarCardId ? ' selected' : '');
+            el.draggable = true;
+            el.innerHTML = '<span class="card-num-badge">#' + card.id + '</span>' + card.text;
+
+            el.addEventListener('click', function () {
+              state.selectedRadarCardId = card.id;
+              renderStage2();
+            });
+
+            el.addEventListener('dragstart', function (e) {
+              state.selectedRadarCardId = card.id;
+              el.classList.add('dragging');
+              try {
+                e.dataTransfer.setData('text/plain', String(card.id));
+                e.dataTransfer.effectAllowed = 'move';
+              } catch (err) {
+                // fallback handled via state.selectedRadarCardId
+              }
+            });
+
+            el.addEventListener('dragend', function () {
+              el.classList.remove('dragging');
+            });
+
+            listEl.appendChild(el);
+          });
+
+          const ready = state.selectedRadarCardId !== null;
+          bSafe.classList.toggle('target-ready', ready);
+          bRed.classList.toggle('target-ready', ready);
+        }
+
+        // Render sorted bucket lists
+        const safeList = document.getElementById('listSafe');
+        const redList = document.getElementById('listRedFlag');
+        safeList.innerHTML = '';
+        redList.innerHTML = '';
+
+        let cntSafe = 0;
+        let cntRed = 0;
+
+        BOUNDARY_CARDS.forEach(function (card) {
+          const placed = state.radarSorted[card.id];
+          if (!placed) return;
+          const row = document.createElement('div');
+          row.className = 'sorted-card';
+          row.innerHTML = '<span>#' + card.id + '. ' + card.text + '</span><span class="sorted-view-tag">Rule</span>';
+          row.addEventListener('click', function (e) {
+            e.stopPropagation();
+            showRadarFeedback(card, true, placed);
+          });
+          if (placed === 'safe') {
+            safeList.appendChild(row);
+            cntSafe++;
+          } else {
+            redList.appendChild(row);
+            cntRed++;
+          }
+        });
+
+        if (cntSafe === 0) {
+          safeList.innerHTML = '<div class="bucket-empty">Drop or tap cards showing transparent, respectful boundaries here.</div>';
+        }
+        if (cntRed === 0) {
+          redList.innerHTML = '<div class="bucket-empty">Drop or tap cards showing grooming, unsafe secrets, or boundary violations here.</div>';
+        }
+
+        document.getElementById('ctaSafe').textContent = state.selectedRadarCardId ? 'Tap to Place (' + cntSafe + ')' : cntSafe + ' Placed';
+        document.getElementById('ctaRedFlag').textContent = state.selectedRadarCardId ? 'Tap to Place (' + cntRed + ')' : cntRed + ' Placed';
+
+        updateStageStatuses();
+        renderImpactSnapshot();
+      }
+
+      function bindRadarBucket(el, bucketKey) {
+        el.addEventListener('click', function () {
+          if (state.selectedRadarCardId !== null) {
+            attemptRadarSort(state.selectedRadarCardId, bucketKey);
+          }
+        });
+
+        el.addEventListener('keydown', function (e) {
+          if ((e.key === 'Enter' || e.key === ' ') && state.selectedRadarCardId !== null) {
+            e.preventDefault();
+            attemptRadarSort(state.selectedRadarCardId, bucketKey);
+          }
+        });
+
+        el.addEventListener('dragover', function (e) {
+          e.preventDefault();
+          el.classList.add('drag-over');
+        });
+
+        el.addEventListener('dragleave', function () {
+          el.classList.remove('drag-over');
+        });
+
+        el.addEventListener('drop', function (e) {
+          e.preventDefault();
+          el.classList.remove('drag-over');
+          let cardId = state.selectedRadarCardId;
+          try {
+            const raw = e.dataTransfer.getData('text/plain');
+            if (raw) cardId = Number(raw);
+          } catch (err) {
+            // fallback to state.selectedRadarCardId
+          }
+          if (cardId !== null) {
+            attemptRadarSort(cardId, bucketKey);
+          }
+        });
+      }
+
+      /* =====================================================================
+         7. STAGE 3: NO - GO - TELL ACTION SIMULATOR
+         ===================================================================== */
+      function renderStage3() {
+        const activeScenario = ACTION_SCENARIOS[state.simScenarioIdx];
+        const safeCount = Object.keys(state.simSafeCompleted).length;
+
+        document.getElementById('simCompletedBadge').textContent =
+          'Protective Path Practised: ' + safeCount + ' / ' + ACTION_SCENARIOS.length + ' Scenarios';
+
+        // Scenario Switcher Tabs
+        const tabsRow = document.getElementById('simTabsRow');
+        tabsRow.innerHTML = '';
+        ACTION_SCENARIOS.forEach(function (sc, idx) {
+          const isDone = Boolean(state.simSafeCompleted[sc.id]);
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'sim-tab' + (idx === state.simScenarioIdx ? ' active' : '') + (isDone ? ' done' : '');
+          btn.innerHTML =
+            '<span>' + sc.shortTitle + '</span>' +
+            '<span class="sim-tab-badge">' + (isDone ? '\u2713 Safe Practised' : 'Pending') + '</span>';
+          btn.addEventListener('click', function () {
+            state.simScenarioIdx = idx;
+            renderStage3();
+          });
+          tabsRow.appendChild(btn);
+        });
+
+        // Scenario Banner
+        document.getElementById('simScenarioKicker').textContent = activeScenario.kicker;
+        document.getElementById('simScenarioText').textContent = activeScenario.description;
+
+        // 3 Option Cards
+        const grid = document.getElementById('simOptionsGrid');
+        grid.innerHTML = '';
+        const selectedKey = state.simSelectedOpt[activeScenario.id] || null;
+        let activeOptionObj = null;
+
+        activeScenario.options.forEach(function (opt) {
+          const isSelected = (selectedKey === opt.key);
+          if (isSelected) activeOptionObj = opt;
+
+          const card = document.createElement('button');
+          card.type = 'button';
+          card.className = 'sim-option-card' + (isSelected ? (' selected-' + opt.type) : '');
+          card.innerHTML =
+            '<div>' +
+              '<span class="sim-opt-label">' + opt.label + '</span>' +
+              '<div class="sim-opt-text" style="margin-top:10px;">' + opt.text + '</div>' +
+            '</div>' +
+            '<div class="sim-opt-hint">' + (isSelected ? '\u2713 Viewing Outcome Below' : 'Tap to Test This Response \u2192') + '</div>';
+
+          card.addEventListener('click', function () {
+            state.simSelectedOpt[activeScenario.id] = opt.key;
+            if (opt.type === 'safe') {
+              state.simSafeCompleted[activeScenario.id] = true;
+            }
+            renderStage3();
+          });
+          grid.appendChild(card);
+        });
+
+        // Outcome Comparison Panel
+        const outPanel = document.getElementById('simOutcomePanel');
+        if (activeOptionObj) {
+          outPanel.classList.add('visible');
+          const badge = document.getElementById('simOutcomeBadge');
+          badge.className = 'sim-outcome-badge ' + activeOptionObj.type;
+          badge.textContent = activeOptionObj.verdict;
+          document.getElementById('simShortTermTxt').textContent = activeOptionObj.shortTerm;
+          document.getElementById('simLongTermTxt').textContent = activeOptionObj.longTerm;
+          document.getElementById('simSafeScriptTxt').textContent = activeOptionObj.script;
+        } else {
+          outPanel.classList.remove('visible');
+        }
+
+        updateStageStatuses();
+        renderImpactSnapshot();
+      }
+
+      /* =====================================================================
+         8. STAGE 4: QUICK RECALL, POST-CONFIDENCE & IMPACT SNAPSHOT
+         ===================================================================== */
+      function renderRecallPills() {
+        let revealedCount = 0;
+        RECALL_ANSWERS.forEach(function (ans, idx) {
+          const pill = document.getElementById('recall-' + idx);
+          const ansEl = document.getElementById('recall-a-' + idx);
+          const isRev = Boolean(state.recallRevealed[idx]);
+          if (isRev) revealedCount++;
+          pill.classList.toggle('revealed', isRev);
+          ansEl.textContent = isRev ? '\u2714 ' + ans : 'Tap to Reveal Answer \u2192';
+        });
+        document.getElementById('recallStatusBadge').textContent = revealedCount + ' / 3 Verified Together';
+        updateStageStatuses();
+      }
+
+      function computeSessionMetrics() {
+        const preTotal = state.pre.low + state.pre.mid + state.pre.high;
+        const postTotal = state.post.low + state.post.mid + state.post.high;
+
+        const preConfPct = pctOneDecNum(state.pre.high, preTotal);
+        const postConfPct = pctOneDecNum(state.post.high, postTotal);
+        const gainPct = Number((postConfPct - preConfPct).toFixed(1));
+
+        let mythCorrect = 0;
+        MYTH_CARDS.forEach(function (c) {
+          if (state.mythFirstTry[c.id] === true) mythCorrect++;
+        });
+        const mythTotal = MYTH_CARDS.length;
+        const mythAccPct = pctOneDecNum(mythCorrect, mythTotal);
+
+        const boundaryCorrect = state.radarFirstCorrect;
+        const boundaryTotal = BOUNDARY_CARDS.length;
+        const boundaryAccPct = pctOneDecNum(boundaryCorrect, boundaryTotal);
+
+        const simSafe = Object.keys(state.simSafeCompleted).length;
+        const simTotal = ACTION_SCENARIOS.length;
+
+        return {
+          preTotal: preTotal,
+          postTotal: postTotal,
+          preConfPct: preConfPct,
+          postConfPct: postConfPct,
+          gainPct: gainPct,
+          mythCorrect: mythCorrect,
+          mythTotal: mythTotal,
+          mythAccPct: mythAccPct,
+          boundaryCorrect: boundaryCorrect,
+          boundaryTotal: boundaryTotal,
+          boundaryAccPct: boundaryAccPct,
+          simSafe: simSafe,
+          simTotal: simTotal
+        };
+      }
+
+      function renderImpactSnapshot() {
+        const m = computeSessionMetrics();
+
+        document.getElementById('snapshotContextBadge').textContent =
+          state.className + ' \u2022 ' + state.batch + ' \u2022 Batch Size: ' + state.batchSize;
+
+        document.getElementById('snapPrePost').textContent =
+          m.preConfPct.toFixed(1) + '% \u2192 ' + m.postConfPct.toFixed(1) + '%';
+        document.getElementById('snapPrePostN').textContent =
+          'Pre n=' + m.preTotal + ' | Post n=' + m.postTotal;
+
+        document.getElementById('snapGain').textContent = formatSignedGain(m.gainPct);
+        document.getElementById('postGainInline').textContent =
+          'Confidence Gain vs. Pre-Session: ' + formatSignedGain(m.gainPct);
+
+        document.getElementById('snapMyth').textContent = m.mythCorrect + ' / ' + m.mythTotal;
+        document.getElementById('snapMythPct').textContent = m.mythAccPct.toFixed(1) + '% first-try';
+
+        document.getElementById('snapBoundary').textContent = m.boundaryCorrect + ' / ' + m.boundaryTotal;
+        document.getElementById('snapBoundaryPct').textContent = m.boundaryAccPct.toFixed(1) + '% first-try';
+
+        document.getElementById('snapSim').textContent = m.simSafe + ' / ' + m.simTotal;
+      }
+
+      function renderStage4() {
+        renderRecallPills();
+        renderConfidenceBlock('post', state.post);
+        renderImpactSnapshot();
+        updateStageStatuses();
+      }
+
+      /* =====================================================================
+         9. CSV REPORT EXPORT (R / jamovi READY)
+         ===================================================================== */
+      function csvEscape(val) {
+        const s = String(val == null ? '' : val);
+        if (/[",\r\n]/.test(s)) {
+          return '"' + s.replace(/"/g, '""') + '"';
+        }
+        return s;
+      }
+
+      function exportCSV() {
+        try {
+          const m = computeSessionMetrics();
+          const dateStr = getTodayISO();
+
+          const headers = [
+            'Date',
+            'Class',
+            'Batch',
+            'Batch_Size',
+            'Pre_NotSure',
+            'Pre_Basics',
+            'Pre_Confident',
+            'Pre_Confident_Pct',
+            'Myth_Correct',
+            'Myth_Total',
+            'Myth_Accuracy_Pct',
+            'Boundary_FirstTry_Correct',
+            'Boundary_Total',
+            'Boundary_Accuracy_Pct',
+            'ActionSim_Scenarios_Safe',
+            'ActionSim_Total',
+            'Post_NotSure',
+            'Post_Basics',
+            'Post_Confident',
+            'Post_Confident_Pct',
+            'Confidence_Gain_Pct',
+            'Created_By'
+          ];
+
+          const values = [
+            dateStr,
+            state.className,
+            state.batch,
+            state.batchSize,
+            state.pre.low,
+            state.pre.mid,
+            state.pre.high,
+            m.preConfPct.toFixed(1),
+            m.mythCorrect,
+            m.mythTotal,
+            m.mythAccPct.toFixed(1),
+            m.boundaryCorrect,
+            m.boundaryTotal,
+            m.boundaryAccPct.toFixed(1),
+            m.simSafe,
+            m.simTotal,
+            state.post.low,
+            state.post.mid,
+            state.post.high,
+            m.postConfPct.toFixed(1),
+            m.gainPct.toFixed(1),
+            CREATOR_ATTRIBUTION
+          ];
+
+          const csvContent = headers.map(csvEscape).join(',') + '\n' + values.map(csvEscape).join(',') + '\n';
+          const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+
+          const cleanClass = state.className.replace(/[^A-Za-z0-9]/g, '');
+          const cleanBatch = state.batch.replace(/\s+/g, '');
+          const fileName = 'POCSO_Safety_Session_' + cleanClass + '_' + cleanBatch + '_' + dateStr + '.csv';
+
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+
+          showToast('CSV Exported: ' + fileName);
+        } catch (err) {
+          showToast('Open this HTML file directly in Chrome or Edge to save the CSV file.');
+        }
+      }
+
+      /* =====================================================================
+         10. FULLSCREEN & RESET BOARD
+         ===================================================================== */
+      function toggleFullscreen() {
+        try {
+          if (!document.fullscreenElement) {
+            const req = document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen;
+            if (req) {
+              const p = req.call(document.documentElement);
+              if (p && typeof p.catch === 'function') {
+                p.catch(function () { showToast('Press F11 on your keyboard for Fullscreen mode.'); });
+              }
+            } else {
+              showToast('Press F11 on your keyboard for Fullscreen mode.');
+            }
+          } else {
+            const ex = document.exitFullscreen || document.webkitExitFullscreen;
+            if (ex) ex.call(document);
+          }
+        } catch (err) {
+          showToast('Press F11 on your keyboard for Fullscreen mode.');
+        }
+      }
+
+      function executeBoardReset() {
+        state = createFreshState(true);
+        document.getElementById('radarFeedbackBox').classList.remove('visible', 'correct', 'rethink');
+        renderFacilitatorCues();
+        renderStage1Pre();
+        renderMythBuster();
+        renderStage2();
+        renderStage3();
+        renderStage4();
+        setStage(1);
+        closeModal('resetModal');
+        showToast('Board reset \u2014 ready for your next batch!');
+      }
+
+      /* =====================================================================
+         11. INITIALIZE ALL EVENT LISTENERS
+         ===================================================================== */
+      function init() {
+        // Session Bar Controls
+        document.getElementById('classSelect').addEventListener('change', function (e) {
+          state.className = e.target.value;
+          renderImpactSnapshot();
+        });
+
+        document.getElementById('batchSelect').addEventListener('change', function (e) {
+          state.batch = e.target.value;
+          renderFacilitatorCues();
+          renderImpactSnapshot();
+          showToast('Facilitator cues adapted for ' + state.batch + '.');
+        });
+
+        document.getElementById('batchSizeInput').addEventListener('input', function (e) {
+          const parsed = parseInt(e.target.value, 10);
+          if (!isNaN(parsed) && parsed >= 1 && parsed <= 200) {
+            state.batchSize = parsed;
+            renderStage1Pre();
+            renderStage4();
+          }
+        });
+
+        document.getElementById('batchSizeInput').addEventListener('blur', function (e) {
+          const parsed = parseInt(e.target.value, 10);
+          const safeVal = isNaN(parsed) ? 35 : Math.min(200, Math.max(1, parsed));
+          state.batchSize = safeVal;
+          e.target.value = String(safeVal);
+          renderStage1Pre();
+          renderStage4();
+        });
+
+        // Header Buttons & Modals
+        document.getElementById('btnOpenLawModal').addEventListener('click', function () {
+          openModal('lawModal');
+        });
+        document.getElementById('btnFullscreen').addEventListener('click', toggleFullscreen);
+        document.getElementById('btnOpenResetModal').addEventListener('click', function () {
+          openModal('resetModal');
+        });
+        document.getElementById('btnConfirmReset').addEventListener('click', executeBoardReset);
+
+        document.querySelectorAll('[data-close-modal]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            closeModal(btn.dataset.closeModal);
+          });
+        });
+        document.querySelectorAll('.modal-overlay').forEach(function (ov) {
+          ov.addEventListener('click', function (e) {
+            if (e.target === ov) closeModal(ov.id);
+          });
+        });
+
+        // Stage Navigation
+        document.querySelectorAll('.stage-tab').forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            setStage(tab.dataset.stage);
+          });
+        });
+        document.getElementById('btnPrevStage').addEventListener('click', function () {
+          setStage(state.currentStage - 1);
+        });
+        document.getElementById('btnNextStage').addEventListener('click', function () {
+          setStage(state.currentStage + 1);
+        });
+
+        // Collapsible Facilitator Cues (all 4 stages)
+        document.querySelectorAll('.cue-toggle').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const targetId = btn.dataset.cueTarget;
+            const body = document.getElementById(targetId);
+            if (!body) return;
+            const isOpen = body.classList.toggle('open');
+            btn.setAttribute('aria-expanded', String(isOpen));
+            const arrow = btn.querySelector('.cue-arrow');
+            if (arrow) arrow.innerHTML = isOpen ? '&#x25B2;' : '&#x25BC;';
+          });
+        });
+
+        // Stage 1A: Pre-Session Tally Buttons
+        document.querySelectorAll('[data-pre]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const key = btn.dataset.pre;
+            const delta = parseInt(btn.dataset.delta, 10);
+            state.pre[key] = Math.max(0, state.pre[key] + delta);
+            renderStage1Pre();
+          });
+        });
+
+        // Stage 1B: Myth vs. Law Controls
+        document.getElementById('btnVoteFact').addEventListener('click', function () {
+          voteMythCard('fact');
+        });
+        document.getElementById('btnVoteMyth').addEventListener('click', function () {
+          voteMythCard('myth');
+        });
+        document.getElementById('btnMythPrev').addEventListener('click', function () {
+          if (state.mythIdx > 0) {
+            state.mythIdx -= 1;
+            renderMythBuster();
+          }
+        });
+        document.getElementById('btnMythNext').addEventListener('click', function () {
+          if (state.mythIdx < MYTH_CARDS.length - 1) {
+            state.mythIdx += 1;
+            renderMythBuster();
+          }
+        });
+        document.getElementById('btnMythReset').addEventListener('click', function () {
+          state.mythIdx = 0;
+          state.mythFirstTry = {};
+          state.mythLastChoice = {};
+          renderMythBuster();
+          showToast('Myth vs. Law cards reset.');
+        });
+
+        // Stage 2: Boundary Radar Controls
+        bindRadarBucket(document.getElementById('bucketSafe'), 'safe');
+        bindRadarBucket(document.getElementById('bucketRedFlag'), 'redflag');
+
+        document.getElementById('btnToggleRadarView').addEventListener('click', function () {
+          state.radarView = (state.radarView === 'focus') ? 'grid' : 'focus';
+          renderStage2();
+        });
+
+        document.getElementById('btnResetRadar').addEventListener('click', function () {
+          state.radarSorted = {};
+          state.radarFirstAttempted = {};
+          state.radarFirstCorrect = 0;
+          state.radarFirstTotal = 0;
+          state.selectedRadarCardId = 1;
+          state.radarPendingCardId = null;
+          document.getElementById('radarFeedbackBox').classList.remove('visible', 'correct', 'rethink');
+          renderStage2();
+          showToast('Boundary Radar cards reset.');
+        });
+
+        document.getElementById('btnMoveValidated').addEventListener('click', function () {
+          if (state.radarPendingCardId !== null) {
+            const card = BOUNDARY_CARDS.find(function (c) { return c.id === state.radarPendingCardId; });
+            if (card) {
+              state.radarSorted[card.id] = card.bucket;
+              showRadarFeedback(card, true, card.bucket);
+              syncRadarSelected();
+              renderStage2();
+            }
+          }
+        });
+
+        // Stage 4: Lock-In Recall Pills
+        document.querySelectorAll('[data-recall]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const idx = parseInt(btn.dataset.recall, 10);
+            state.recallRevealed[idx] = !state.recallRevealed[idx];
+            renderRecallPills();
+          });
+        });
+
+        // Stage 4: Post-Session Tally Buttons
+        document.querySelectorAll('[data-post]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const key = btn.dataset.post;
+            const delta = parseInt(btn.dataset.delta, 10);
+            state.post[key] = Math.max(0, state.post[key] + delta);
+            renderStage4();
+          });
+        });
+
+        // CSV Export
+        document.getElementById('btnExportCSV').addEventListener('click', exportCSV);
+
+        // Initial Render
+        renderFacilitatorCues();
+        renderStage1Pre();
+        renderMythBuster();
+        renderStage2();
+        renderStage3();
+        renderStage4();
+        setStage(1);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
+</html>
